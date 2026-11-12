@@ -1,0 +1,1470 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <script>
+      (function () {
+        try {
+          var p = localStorage.getItem("vsLang");
+          if (!p) {
+            var g = JSON.parse(localStorage.getItem("vsGeo") || "null");
+            if (
+              g &&
+              g.c &&
+              Date.now() - g.t < 6048e5 &&
+              /^(SA|AE|QA|KW|BH|OM|JO|LB|SY|IQ|YE|EG|LY|TN|DZ|MA|SD|PS|MR|DJ|SO|KM)$/.test(
+                g.c,
+              )
+            )
+              p = "ar";
+          }
+          if (/[?&]lang=ar\b/.test(location.search)) p = "ar";
+          if (p === "ar") {
+            document.documentElement.lang = "ar";
+            document.documentElement.dir = "rtl";
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Live Demo — Visitsly</title>
+    <meta
+      name="description"
+      content="Try Visitsly live: chat with the AI WhatsApp agent as a buyer, watch lead scoring, visit booking, agent alerts and the CRM update in real time."
+    />
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href="https://visitsly.com/demo.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Visitsly" />
+    <meta property="og:title" content="Live Demo — Visitsly" />
+    <meta
+      property="og:description"
+      content="Try Visitsly live: AI WhatsApp agent, lead scoring, visit booking and CRM in one interactive demo."
+    />
+    <meta property="og:url" content="https://visitsly.com/demo.html" />
+    <meta name="theme-color" content="#2563eb" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%232563eb'/><text x='50' y='68' font-size='56' text-anchor='middle'>🏠</text></svg>"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --font: "Plus Jakarta Sans", system-ui, sans-serif;
+      }
+      :root {
+        --bg: #ffffff;
+        --soft: #f5f8ff;
+        --soft2: #eaf1ff;
+        --line: #e2e8f5;
+        --ink: #0b1b3f;
+        --text: #1e2a4a;
+        --muted: #5b6788;
+        --blue: #2563eb;
+        --blue-d: #1d4ed8;
+        --indigo: #4f46e5;
+        --cyan: #06b6d4;
+        --sky: #38bdf8;
+        --green: #16a34a;
+        --wa: #25d366;
+        --gold: #f59e0b;
+        --pink: #e11d48;
+        --navy: #0b1b3f;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        overflow-x: hidden;
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .wrap {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 0 22px;
+      }
+      section {
+        padding: 96px 0;
+        position: relative;
+      }
+      h1,
+      h2,
+      h3 {
+        line-height: 1.18;
+        margin: 0;
+        letter-spacing: -0.02em;
+        color: var(--ink);
+      }
+      [dir="rtl"] h1,
+      [dir="rtl"] h2,
+      [dir="rtl"] h3 {
+        letter-spacing: 0;
+        line-height: 1.35;
+      }
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 12.5px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--blue);
+        background: var(--soft2);
+        border: 1px solid #d3e1ff;
+        padding: 6px 14px;
+        border-radius: 99px;
+        margin-bottom: 16px;
+      }
+      [dir="rtl"] .eyebrow {
+        letter-spacing: 0;
+        font-size: 13.5px;
+      }
+      .sec-head {
+        text-align: center;
+        max-width: 780px;
+        margin: 0 auto 56px;
+      }
+      .sec-head h2 {
+        font-size: clamp(30px, 4.2vw, 46px);
+        font-weight: 800;
+      }
+      .sec-head p {
+        color: var(--muted);
+        font-size: 17.5px;
+        margin: 16px 0 0;
+      }
+      .grad {
+        background: linear-gradient(
+          92deg,
+          #2563eb 0%,
+          #4f46e5 45%,
+          #06b6d4 100%
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        font-weight: 700;
+        font-size: 15px;
+        padding: 15px 26px;
+        border-radius: 14px;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s,
+          background 0.2s;
+        border: 0;
+        font-family: inherit;
+        cursor: pointer;
+      }
+      .btn-primary {
+        background: linear-gradient(135deg, #2563eb, #4f46e5);
+        color: #fff;
+        box-shadow: 0 12px 30px rgba(37, 99, 235, 0.35);
+      }
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 16px 40px rgba(37, 99, 235, 0.45);
+      }
+      .btn-ghost {
+        background: #fff;
+        border: 1px solid var(--line);
+        color: var(--ink);
+        box-shadow: 0 4px 14px rgba(11, 27, 63, 0.06);
+      }
+      .btn-ghost:hover {
+        border-color: #bcd0ff;
+        background: var(--soft);
+      }
+      .btn-wa {
+        background: var(--wa);
+        color: #fff;
+        box-shadow: 0 12px 30px rgba(37, 211, 102, 0.35);
+      }
+
+      .topbar {
+        background: linear-gradient(90deg, #1d4ed8, #4f46e5, #0891b2);
+        color: #e8efff;
+        font-size: 13px;
+        text-align: center;
+        padding: 8px 16px;
+      }
+      .topbar b {
+        color: #fff;
+      }
+
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid var(--line);
+      }
+      .nav .wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 72px;
+        gap: 16px;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 22px;
+      }
+      .logo-mark {
+        width: 38px;
+        height: 38px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #2563eb, #06b6d4);
+        display: grid;
+        place-items: center;
+        font-size: 19px;
+        box-shadow: 0 6px 18px rgba(37, 99, 235, 0.3);
+      }
+      .lw {
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        color: var(--ink);
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+      .lw span {
+        color: var(--blue);
+      }
+      .nav-links {
+        display: flex;
+        gap: 28px;
+        font-size: 14.5px;
+        color: var(--muted);
+        font-weight: 600;
+      }
+      .nav-links a:hover {
+        color: var(--blue);
+      }
+      .nav-right {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+      .seg {
+        display: inline-flex;
+        background: var(--soft);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 3px;
+      }
+      .seg a,
+      .seg button {
+        font: inherit;
+        font-size: 13px;
+        font-weight: 700;
+        padding: 7px 14px;
+        border-radius: 9px;
+        color: var(--muted);
+        background: none;
+        border: 0;
+        cursor: pointer;
+      }
+      .seg .on {
+        background: #fff;
+        color: var(--blue);
+        box-shadow: 0 2px 8px rgba(11, 27, 63, 0.1);
+      }
+      .nav .btn {
+        padding: 11px 18px;
+        font-size: 14px;
+      }
+      .menu-btn {
+        display: none;
+        background: none;
+        border: 0;
+        color: var(--ink);
+        font-size: 26px;
+        cursor: pointer;
+      }
+
+      footer {
+        border-top: 1px solid var(--line);
+        padding: 56px 0 30px;
+        background: var(--soft);
+        margin-top: 96px;
+      }
+      .foot {
+        display: grid;
+        grid-template-columns: 1.6fr 1fr 1fr 1.3fr;
+        gap: 30px;
+      }
+      .foot p,
+      .foot a,
+      .foot li {
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .foot h4 {
+        font-size: 14px;
+        margin: 0 0 14px;
+        color: var(--ink);
+      }
+      .foot ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 9px;
+      }
+      .foot a:hover {
+        color: var(--blue);
+      }
+      .seo-text {
+        margin-top: 40px;
+        padding-top: 26px;
+        border-top: 1px solid var(--line);
+        color: #7a85a5;
+        font-size: 13px;
+        line-height: 1.8;
+      }
+      .seo-text h2 {
+        font-size: 14px;
+        color: var(--muted);
+        margin-bottom: 8px;
+        letter-spacing: 0;
+      }
+      .copy {
+        text-align: center;
+        color: var(--muted);
+        font-size: 12.5px;
+        margin-top: 26px;
+      }
+      .wa-float {
+        position: fixed;
+        inset-inline-end: 22px;
+        bottom: 22px;
+        z-index: 60;
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        background: #25d366;
+        display: grid;
+        place-items: center;
+        box-shadow: 0 10px 30px rgba(37, 211, 102, 0.45);
+        transition: transform 0.2s;
+      }
+      html[lang="ar"] {
+        --font:
+          "IBM Plex Sans Arabic", "Plus Jakarta Sans", system-ui, sans-serif;
+      }
+      html[lang="ar"] .en {
+        display: none !important;
+      }
+      html:not([lang="ar"]) .ar {
+        display: none !important;
+      }
+      .nav-right .seg {
+        margin-inline-end: 2px;
+      }
+      .nav-right .seg button {
+        padding: 7px 12px;
+      }
+      .hero-l {
+        padding: 56px 0 8px;
+        background: linear-gradient(180deg, #f3f7ff 0%, #fff 100%);
+      }
+      .hero-l .wrap,
+      .lw-wrap {
+        max-width: 900px;
+      }
+      .hero-l h1 {
+        font-size: clamp(32px, 5vw, 50px);
+        font-weight: 800;
+        margin: 6px 0 10px;
+      }
+      .upd {
+        color: var(--muted);
+        font-size: 14px;
+        font-weight: 600;
+      }
+      .lead {
+        font-size: 17px;
+        color: var(--text);
+        margin: 18px 0 0;
+      }
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 20px;
+      }
+      .chip {
+        display: inline-flex;
+        gap: 6px;
+        align-items: center;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 99px;
+        padding: 8px 16px;
+        font-size: 13.5px;
+        font-weight: 700;
+        color: var(--ink);
+        box-shadow: 0 4px 14px rgba(11, 27, 63, 0.05);
+      }
+      .chip:hover {
+        border-color: #bcd0ff;
+        background: var(--soft);
+      }
+      .lw-wrap {
+        margin: 0 auto;
+        padding: 10px 22px 0;
+      }
+      .toc {
+        background: var(--soft);
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        padding: 22px 26px;
+        margin: 26px 0 8px;
+      }
+      .toc b {
+        display: block;
+        color: var(--ink);
+        margin-bottom: 10px;
+      }
+      .toc ol {
+        margin: 0;
+        padding-inline-start: 22px;
+        columns: 2;
+        column-gap: 36px;
+        font-size: 14.5px;
+      }
+      .toc li {
+        break-inside: avoid;
+        padding: 3px 0;
+      }
+      .toc a {
+        color: var(--blue-d);
+        font-weight: 600;
+      }
+      .toc a:hover {
+        text-decoration: underline;
+      }
+      .lg {
+        padding: 34px 0 0;
+        scroll-margin-top: 90px;
+      }
+      .lg h2 {
+        font-size: clamp(21px, 2.6vw, 27px);
+        font-weight: 800;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 12px;
+      }
+      .lg .num {
+        flex: none;
+        width: 34px;
+        height: 34px;
+        border-radius: 10px;
+        background: var(--soft2);
+        color: var(--blue);
+        display: grid;
+        place-items: center;
+        font-size: 15px;
+        font-weight: 800;
+      }
+      .lg p,
+      .lg li {
+        font-size: 16px;
+        color: var(--text);
+      }
+      .lg p {
+        margin: 0 0 12px;
+      }
+      .lg ul {
+        margin: 0 0 12px;
+        padding-inline-start: 24px;
+      }
+      .lg li {
+        margin: 6px 0;
+      }
+      .lg a {
+        color: var(--blue-d);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+      .lg.region > div {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-inline-start: 5px solid var(--blue);
+        border-radius: 18px;
+        padding: 22px 24px;
+        box-shadow: 0 10px 30px rgba(11, 27, 63, 0.05);
+      }
+      .lg.region#uae > div {
+        border-inline-start-color: var(--cyan);
+      }
+      mark.ph {
+        background: #fff1b8;
+        color: #6b4e00;
+        padding: 0 5px;
+        border-radius: 5px;
+        font-weight: 700;
+      }
+      .xlink {
+        margin: 40px 0 0;
+        padding: 20px 24px;
+        border: 1px dashed #c8d6f5;
+        border-radius: 16px;
+        color: var(--muted);
+        font-size: 15px;
+      }
+      .xlink a {
+        color: var(--blue-d);
+        font-weight: 700;
+      }
+      @media (max-width: 860px) {
+        section {
+          padding: 0;
+        }
+        .toc ol {
+          columns: 1;
+        }
+        .lg.region > div {
+          padding: 18px;
+        }
+      }
+      @media print {
+        .nav,
+        .topbar,
+        .wa-float,
+        footer,
+        .chips {
+          display: none;
+        }
+      }
+
+      /* mobile nav + footer (shared with index.html) */
+      @media (max-width: 1000px){.nav-links{gap:18px}}
+      @media (max-width: 860px){
+        .nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:#fff;border-bottom:1px solid var(--line);padding:10px 22px}
+        .nav-links.open{display:flex}
+        .nav-links a{padding:12px 0}
+        .menu-btn{display:block}
+        .nav .btn{display:none}
+        .foot{grid-template-columns:1fr 1fr}
+      }
+      @media (max-width: 560px){.foot{grid-template-columns:1fr}.topbar{font-size:12px}}
+      .foot a[href^="tel:"]{unicode-bidi:isolate;direction:ltr;display:inline-block}
+
+      /* ---------- live demo page ---------- */
+      .hero-l.c .wrap{max-width:1180px}
+      .dm-wrap{max-width:1180px;margin:0 auto;padding:28px 22px 0}
+      .dsteps{list-style:none;margin:0 0 22px;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+      .dsteps li{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px 12px;font-size:13px;font-weight:700;color:var(--muted);transition:all .3s}
+      .dsteps li b{flex:none;width:24px;height:24px;border-radius:50%;background:var(--soft2);color:var(--blue);display:grid;place-items:center;font-size:12px}
+      .dsteps li.act{border-color:var(--blue);color:var(--ink);box-shadow:0 6px 18px rgba(37,99,235,.15)}
+      .dsteps li.done{background:#f0fdf4;border-color:#bbf7d0;color:#15803d}
+      .dsteps li.done b{background:#16a34a;color:#fff}
+      .dgrid>*{min-width:0}.dgrid{display:grid;grid-template-columns:390px 1fr;gap:26px;align-items:start}
+      .phone{background:#fff;border:1px solid var(--line);border-radius:26px;box-shadow:0 24px 60px rgba(11,27,63,.14);overflow:hidden;display:flex;flex-direction:column;height:640px}
+      .ph-head{display:flex;align-items:center;gap:12px;padding:14px 16px;background:linear-gradient(135deg,#1d4ed8,#4f46e5 60%,#0891b2);color:#fff}
+      .ph-av{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.2);display:grid;place-items:center;font-size:20px}
+      .ph-t{flex:1;line-height:1.3}.ph-t b{display:block;font-size:15px}.ph-t small{font-size:12px;opacity:.85}
+      .ph-rs{background:rgba(255,255,255,.18);color:#fff;border:0;width:34px;height:34px;border-radius:50%;font-size:18px;cursor:pointer}
+      .ph-chat{flex:1;overflow-y:auto;padding:16px 14px;background:#eef3ff;display:flex;flex-direction:column;gap:10px;scroll-behavior:smooth}
+      .msg{max-width:84%;padding:10px 13px 6px;border-radius:16px;font-size:14px;line-height:1.5;color:var(--ink);box-shadow:0 2px 6px rgba(11,27,63,.06);animation:pop .25s ease}
+      @keyframes pop{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+      .msg.bot{align-self:flex-start;background:#fff;border:1px solid var(--line);border-end-start-radius:4px}
+      .msg.me{align-self:flex-end;background:linear-gradient(135deg,#2563eb,#4f46e5);color:#fff;border-end-end-radius:4px}
+      .msg .tg{display:block;font-size:11px;font-weight:800;color:var(--blue);margin-bottom:2px}
+      .msg time{display:block;text-align:end;font-size:10.5px;opacity:.65;margin-top:2px}
+      .msg .slots{display:flex;flex-direction:column;gap:6px;margin:8px 0 4px}
+      .msg .slots button{font:inherit;font-size:13.5px;font-weight:700;padding:9px 12px;border-radius:10px;border:1px solid #bcd0ff;background:var(--soft);color:var(--blue-d);cursor:pointer;text-align:start}
+      .msg .slots button:hover:not([disabled]){background:var(--soft2)}
+      .msg .slots button[disabled]{opacity:.55;cursor:default}
+      .msg .pin{display:flex;gap:8px;align-items:center;background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:8px 10px;margin-top:8px;font-size:13px;font-weight:700;color:var(--ink)}
+      .typing{align-self:flex-start;background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px 14px;display:flex;gap:4px}
+      .typing i{width:7px;height:7px;border-radius:50%;background:#9aa7c7;animation:bl 1s infinite}.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+      @keyframes bl{0%,60%,100%{opacity:.3;transform:none}30%{opacity:1;transform:translateY(-3px)}}
+      .ph-chips{display:flex;gap:8px;overflow-x:auto;padding:10px 12px;background:#fff;border-top:1px solid var(--line);scrollbar-width:none}
+      .ph-chips:empty{display:none}.ph-chips::-webkit-scrollbar{display:none}
+      .ph-chips button{flex:none;font:inherit;font-size:13px;font-weight:700;padding:8px 14px;border-radius:99px;border:1px solid #bcd0ff;background:var(--soft);color:var(--blue-d);cursor:pointer;white-space:nowrap}
+      .ph-chips button:hover{background:var(--soft2)}
+      .ph-chips button.cta{background:linear-gradient(135deg,#2563eb,#4f46e5);color:#fff;border-color:transparent}
+      .ph-in{display:flex;gap:8px;padding:10px 12px 14px;background:#fff}
+      .ph-in input{flex:1;font:inherit;font-size:14px;padding:12px 16px;border-radius:99px;border:1px solid var(--line);background:var(--soft);outline:none;min-width:0}
+      .ph-in input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.14);background:#fff}
+      .ph-in button{flex:none;width:44px;height:44px;border-radius:50%;border:0;background:linear-gradient(135deg,#2563eb,#4f46e5);color:#fff;font-size:16px;cursor:pointer}
+      html[dir=rtl] .ph-in button{transform:scaleX(-1)}
+      .dpanel{background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:0 20px 50px rgba(11,27,63,.08);padding:20px;min-height:640px}
+      .ltoast{display:none;align-items:center;gap:10px;background:linear-gradient(90deg,#eff6ff,#eef2ff);border:1px solid #c7d7ff;border-radius:14px;padding:10px 14px;font-size:13.5px;margin-bottom:14px;color:var(--ink)}
+      .ltoast.show{display:flex;animation:pop .3s}
+      .dtabs{display:flex;gap:6px;overflow-x:auto;margin-bottom:18px;background:var(--soft);padding:4px;border-radius:14px;border:1px solid var(--line);scrollbar-width:none}
+      .dtabs button{flex:1;font:inherit;font-size:13.5px;font-weight:700;padding:10px 12px;border-radius:10px;border:0;background:none;color:var(--muted);cursor:pointer;white-space:nowrap}
+      .dtabs button.on{background:#fff;color:var(--blue);box-shadow:0 2px 8px rgba(11,27,63,.1)}
+      .dtabs button.ping::after{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--pink);margin-inline-start:6px}
+      .tp{display:none}.tp.on{display:block}
+      .hint{color:var(--muted);font-size:13px;margin:12px 0 0}
+      .sc-top{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+      .ring{--p:0;--c:#9aa7c7;width:132px;height:132px;border-radius:50%;background:conic-gradient(var(--c) calc(var(--p)*1%),var(--soft2) 0);display:grid;place-items:center;position:relative;flex:none}
+      .ring::before{content:"";position:absolute;inset:11px;background:#fff;border-radius:50%}
+      .ring span{position:relative;font-size:38px;font-weight:800;color:var(--ink)}
+      .badge{display:inline-block;padding:7px 16px;border-radius:99px;font-weight:800;font-size:14px;background:#eef2f9;color:#5b6788;transition:all .3s}
+      .badge.int{background:#fef3c7;color:#b45309}.badge.hot{background:#ffe4e9;color:#be123c}.badge.ready{background:#dcfce7;color:#15803d}
+      .sum{margin-top:22px;border:1px solid var(--line);border-radius:16px;background:var(--soft);padding:16px 18px}
+      .sum-h{font-weight:800;color:var(--ink);font-size:14px;margin-bottom:8px}
+      .sum dl{margin:0}.sum dl div{display:flex;justify-content:space-between;gap:14px;padding:9px 0;border-top:1px dashed #d5def2;font-size:14px}
+      .sum dt{color:var(--muted);font-weight:600}.sum dd{margin:0;font-weight:700;color:var(--ink);text-align:end}
+      .sum dd.upd2{animation:flash 1s}
+      @keyframes flash{0%{background:#fef9c3}100%{background:transparent}}
+      .cal{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+      .day{border:1px solid var(--line);border-radius:16px;padding:12px;background:#fff}
+      .day h4{margin:0 0 8px;font-size:13px;color:var(--muted);font-weight:800;text-transform:uppercase;letter-spacing:.04em}
+      .day h4 b{display:block;font-size:24px;color:var(--ink);letter-spacing:0;text-transform:none}
+      .slot{font-size:12.5px;font-weight:700;padding:7px 9px;border-radius:9px;margin-top:6px;background:var(--soft);color:var(--muted);border:1px solid var(--line)}
+      .slot.taken{background:#f1f3f9;text-decoration:line-through;opacity:.6}
+      .slot.open{color:var(--blue-d);border-color:#bcd0ff;background:#eff4ff}
+      .slot.mine{background:linear-gradient(135deg,#16a34a,#22c55e);color:#fff;border-color:transparent;animation:pop .4s}
+      .rem{list-style:none;padding:0;margin:18px 0 0;display:flex;flex-direction:column;gap:9px}
+      .rem li{display:flex;gap:10px;align-items:center;font-size:14px;color:var(--muted);font-weight:600}
+      .rem li i{font-style:normal;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:var(--soft2);font-size:12px;flex:none}
+      .rem li.ok{color:var(--ink)}.rem li.ok i{background:#16a34a;color:#fff}
+      .agent .empty{border:1px dashed #c7d3ee;border-radius:16px;padding:34px 20px;text-align:center;color:var(--muted);font-size:14px;margin-top:14px}
+      .wa-card{margin-top:14px;background:#e7fbe0;border:1px solid #c9eec0;border-radius:16px;padding:14px 16px;font-size:14px;line-height:1.7;color:#13341b;animation:pop .4s;white-space:pre-line}
+      .wa-card .wh{display:flex;align-items:center;gap:8px;font-weight:800;margin-bottom:6px;white-space:normal}
+      .wa-card .wh span{width:28px;height:28px;border-radius:50%;background:var(--wa);display:grid;place-items:center;font-size:14px}
+      .kpis2{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+      .kpis2 div{background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+      .kpis2 small{display:block;color:var(--muted);font-size:12px;font-weight:700}.kpis2 b{font-size:26px;color:var(--ink)}
+      .kpis2 b.bump{animation:flash 1.2s;color:var(--blue)}
+      .tbl-w{overflow-x:auto;margin-top:14px;border:1px solid var(--line);border-radius:14px}
+      .tbl{width:100%;border-collapse:collapse;font-size:13.5px;min-width:420px}
+      .tbl th{background:var(--soft);color:var(--muted);text-align:start;font-weight:700;padding:10px 12px;font-size:12px}
+      .tbl td{padding:11px 12px;border-top:1px solid var(--line);color:var(--ink);font-weight:600}
+      .tbl tr.me td{background:#eff6ff;animation:flash 1.5s}
+      .pill{display:inline-block;padding:3px 10px;border-radius:99px;font-size:12px;font-weight:800;background:#eef2f9;color:#5b6788}
+      .pill.int{background:#fef3c7;color:#b45309}.pill.hot{background:#ffe4e9;color:#be123c}.pill.ready{background:#dcfce7;color:#15803d}
+      .more{padding-top:56px}
+      .sec-h{text-align:center;margin-bottom:24px}.sec-h h2{font-size:clamp(26px,4vw,38px);font-weight:800;color:var(--ink);margin:0 0 6px}.sec-h p{margin:0;color:var(--muted)}
+      .mgrid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+      .mcard{background:#fff;border:1px solid var(--line);border-radius:22px;padding:26px;box-shadow:0 12px 34px rgba(11,27,63,.06)}
+      .mc-i{width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,#2563eb,#06b6d4);display:grid;place-items:center;font-size:22px;box-shadow:0 6px 18px rgba(37,99,235,.3)}
+      .mcard h3{margin:14px 0 6px;font-size:20px;color:var(--ink)}.mcard p{margin:0 0 16px;color:var(--muted);font-size:14.5px}
+      .tag{font-size:11px;background:#fef3c7;color:#b45309;padding:3px 9px;border-radius:99px;vertical-align:middle;font-weight:800}
+      .ml{display:block;font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:12px}
+      .ml select{display:block;width:100%;margin-top:6px;font:inherit;font-size:15px;padding:12px 14px;border-radius:14px;border:1px solid var(--line);background:var(--soft);color:var(--ink)}
+      .mcard .btn{padding:12px 20px;font-size:14.5px}
+      .bar{height:8px;border-radius:99px;background:var(--soft2);margin-top:16px;overflow:hidden}.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#2563eb,#06b6d4);transition:width .15s linear}
+      .cres{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+      .cres div{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:10px;text-align:center;animation:pop .4s}
+      .cres b{display:block;font-size:20px;color:var(--ink)}.cres small{font-size:12px;color:var(--muted);font-weight:700}
+      .call{margin-top:14px;display:flex;flex-direction:column;gap:8px;min-height:60px}
+      .call div{max-width:92%;padding:9px 13px;border-radius:14px;font-size:14px;animation:pop .3s}
+      .call .ai{align-self:flex-start;background:var(--soft2);color:var(--ink)}.call .ld{align-self:flex-end;background:#f1f3f9;color:var(--ink)}
+      .call .ok{align-self:center;background:#dcfce7;color:#15803d;font-weight:800}
+      .call b{display:block;font-size:11px;color:var(--blue);margin-bottom:1px}
+      .cta2{margin-top:56px;text-align:center;background:linear-gradient(135deg,#1d4ed8,#4f46e5 55%,#0891b2);color:#fff;border-radius:26px;padding:48px 24px}
+      .cta2 h2{margin:0 0 8px;font-size:clamp(24px,4vw,36px);font-weight:800}.cta2 p{margin:0 auto 22px;max-width:560px;opacity:.9}
+      .cta2 .btn-ghost{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.3);color:#fff;box-shadow:none}
+      .cta2 .btn-ghost:hover{background:rgba(255,255,255,.24)}
+      @media (max-width:980px){.dgrid{grid-template-columns:minmax(0,1fr)}.phone{height:600px;max-width:460px;margin:0 auto;width:100%}.dpanel{min-height:0}.mgrid{grid-template-columns:1fr}.dsteps{grid-template-columns:repeat(5,minmax(120px,1fr));overflow-x:auto}}
+      @media (max-width:560px){.cal{grid-template-columns:1fr}.cres{grid-template-columns:1fr}.dm-wrap{padding-inline:16px}}
+
+      .nav-links{align-items:center}
+      .nav-links a.nav-demo{color:#fff;background:linear-gradient(135deg,#2563eb,#4f46e5);padding:6px 14px;border-radius:99px;box-shadow:0 6px 16px rgba(37,99,235,.3)}
+      .nav-links a.nav-demo:hover{color:#fff;transform:translateY(-1px)}
+      @media (max-width:860px){.nav-links a.nav-demo{padding:8px 16px;margin:8px 0;align-self:flex-start}}
+    </style>
+  </head>
+  <body>
+    <div class="topbar">
+      <span class="en"
+        >🚀 <b>Visitsly</b> — the ultimate visit booking AI system for real
+        estate</span
+      ><span class="ar"
+        >🚀 <b>Visitsly</b> — نظام حجز المعاينات العقارية الأمثل بالذكاء
+        الاصطناعي</span
+      >
+    </div>
+    <nav class="nav" aria-label="Main">
+      <div class="wrap">
+        <a href="index.html" class="logo" aria-label="Visitsly"
+          ><div class="logo-mark">🏠</div>
+          <b class="lw">Visit<span>sly</span></b></a
+        >
+        <div class="nav-links" id="navLinks">
+          <a href="index.html#how-it-works"
+            ><span class="en">How it works</span
+            ><span class="ar">كيف يعمل</span></a
+          ><a href="index.html#features"
+            ><span class="en">Features</span><span class="ar">المزايا</span></a
+          ><a href="index.html#calculator"
+            ><span class="en">ROI</span><span class="ar">العائد</span></a
+          ><a href="index.html#pricing"
+            ><span class="en">Pricing</span><span class="ar">الأسعار</span></a
+          ><a href="contact.html"
+            ><span class="en">Contact</span><span class="ar">تواصل معنا</span></a
+          >
+        </div>
+        <div class="nav-right">
+          <div
+            class="seg"
+            role="group"
+            aria-label="Language / اللغة"
+            id="langSeg"
+          >
+            <button
+              type="button"
+              data-lang="en"
+              lang="en"
+              class="on"
+              aria-pressed="true"
+            >
+              EN</button
+            ><button
+              type="button"
+              data-lang="ar"
+              lang="ar"
+              aria-pressed="false"
+            >
+              العربية
+            </button>
+          </div>
+          <a
+            class="btn btn-primary"
+            data-wa
+            href="https://wa.me/919250119045?text=Hi%2C%20I%20want%20a%20free%20demo%20of%20Visitsly"
+            target="_blank"
+            rel="noopener"
+            ><span class="en">Book free demo</span
+            ><span class="ar">احجز عرضاً مجانياً</span></a
+          >
+          <button
+            class="menu-btn"
+            aria-label="Menu"
+            onclick="
+              document.getElementById('navLinks').classList.toggle('open')
+            "
+          >
+            ☰
+          </button>
+        </div>
+      </div>
+    </nav>
+    <header class="hero-l c">
+      <div class="wrap">
+        <div class="eyebrow"><span class="en">Live demo</span><span class="ar">عرض مباشر</span></div>
+        <h1><span class="en">Try Visitsly live — in 2 minutes</span><span class="ar">جرّب Visitsly مباشرة — في دقيقتين</span></h1>
+        <p class="lead"><span class="en">You are the buyer. Message our AI on WhatsApp, ask about price, location or payment plans, and book a site visit. Watch lead scoring, visit booking, the agent alert and the CRM update live on the right.</span><span class="ar">أنت المشتري الآن. راسل مساعدنا الذكي على واتساب واسأل عن السعر والموقع وخطة الدفع واحجز معاينة. شاهد تقييم العميل وحجز المعاينة وتنبيه الوكيل والـ CRM تتحدث مباشرة على اليمين.</span></p>
+        <div class="chips" style="align-items:center">
+          <div class="seg" role="group" aria-label="Region">
+            <button type="button" data-reg="in" class="on" aria-pressed="true">🇮🇳 <span class="en">India demo</span><span class="ar">عرض الهند</span></button><button type="button" data-reg="ae" aria-pressed="false">🇦🇪 <span class="en">UAE demo</span><span class="ar">عرض الإمارات</span></button>
+          </div>
+          <span class="upd"><span class="en">Sample data. Nothing is sent anywhere.</span><span class="ar">بيانات تجريبية. لا يتم إرسال أي شيء.</span></span>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="dm-wrap">
+        <ol class="dsteps" id="dsteps">
+          <li data-s="1"><b>1</b><span class="en">Lead captured</span><span class="ar">استقبال العميل</span></li>
+          <li data-s="2"><b>2</b><span class="en">AI engages</span><span class="ar">الرد الذكي</span></li>
+          <li data-s="3"><b>3</b><span class="en">Lead scored</span><span class="ar">تقييم العميل</span></li>
+          <li data-s="4"><b>4</b><span class="en">Visit booked</span><span class="ar">حجز المعاينة</span></li>
+          <li data-s="5"><b>5</b><span class="en">Agent alerted</span><span class="ar">تنبيه الوكيل</span></li>
+        </ol>
+        <div class="dgrid">
+          <div class="phone" aria-label="WhatsApp demo">
+            <div class="ph-head">
+              <div class="ph-av">🏠</div>
+              <div class="ph-t"><b>Visitsly AI Assistant</b><small><span class="en">online · replies in 3 sec</span><span class="ar">متصل · يرد خلال 3 ثوانٍ</span></small></div>
+              <button type="button" class="ph-rs" id="restart" title="Restart">↻</button>
+            </div>
+            <div class="ph-chat" id="chat" aria-live="polite"></div>
+            <div class="ph-chips" id="chips"></div>
+            <form class="ph-in" id="chatForm" autocomplete="off">
+              <input id="chatIn" type="text" maxlength="140" data-ph-en="Type like a buyer… e.g. what is the price?" data-ph-ar="اكتب كأنك مشترٍ… مثال: كم السعر؟" placeholder="Type like a buyer…">
+              <button type="submit" aria-label="Send">➤</button>
+            </form>
+          </div>
+
+          <div class="dpanel">
+            <div class="ltoast" id="ltoast"></div>
+            <div class="dtabs" id="dtabs" role="tablist">
+              <button type="button" data-t="score" class="on">🎯 <span class="en">Lead score</span><span class="ar">تقييم العميل</span></button>
+              <button type="button" data-t="visit">📅 <span class="en">Site visits</span><span class="ar">المعاينات</span></button>
+              <button type="button" data-t="agent">🔔 <span class="en">Agent alert</span><span class="ar">تنبيه الوكيل</span></button>
+              <button type="button" data-t="crm">📊 CRM</button>
+            </div>
+
+            <div class="tp on" data-p="score">
+              <div class="sc-top">
+                <div class="ring" id="ring"><span id="ringN">0</span></div>
+                <div>
+                  <div class="badge" id="badge"></div>
+                  <p class="hint"><span class="en">Scored 0–100 from the conversation: budget, timeline and intent.</span><span class="ar">يُقيَّم من 0 إلى 100 من المحادثة: الميزانية والجدول الزمني والنية.</span></p>
+                </div>
+              </div>
+              <div class="sum">
+                <div class="sum-h">🧾 <span class="en">AI summary</span><span class="ar">ملخص الذكاء الاصطناعي</span></div>
+                <dl>
+                  <div><dt><span class="en">Looking for</span><span class="ar">يبحث عن</span></dt><dd id="s_need">—</dd></div>
+                  <div><dt><span class="en">Budget</span><span class="ar">الميزانية</span></dt><dd id="s_bud">—</dd></div>
+                  <div><dt><span class="en">Timeline</span><span class="ar">الجدول الزمني</span></dt><dd id="s_time">—</dd></div>
+                  <div><dt><span class="en">Intent</span><span class="ar">النية</span></dt><dd id="s_int">—</dd></div>
+                  <div><dt><span class="en">Site visit</span><span class="ar">المعاينة</span></dt><dd id="s_vis">—</dd></div>
+                </dl>
+              </div>
+            </div>
+
+            <div class="tp" data-p="visit">
+              <p class="hint" style="margin-top:0"><span class="en">The AI offers open slots, confirms the visit and sends the location and reminders.</span><span class="ar">يعرض المساعد المواعيد المتاحة ويؤكد المعاينة ويرسل الموقع والتذكيرات.</span></p>
+              <div class="cal" id="cal"></div>
+              <ul class="rem" id="rem"></ul>
+            </div>
+
+            <div class="tp" data-p="agent">
+              <p class="hint" style="margin-top:0"><span class="en">Your agent gets the hot lead on WhatsApp with the full context.</span><span class="ar">يصل العميل الساخن إلى الوكيل على واتساب مع كامل السياق.</span></p>
+              <div class="agent" id="agent"><div class="empty"><span class="en">Book a visit in the chat to see the alert your agent receives.</span><span class="ar">احجز معاينة في المحادثة لترى التنبيه الذي يصل إلى الوكيل.</span></div></div>
+            </div>
+
+            <div class="tp" data-p="crm">
+              <div class="kpis2">
+                <div><small><span class="en">New leads</span><span class="ar">عملاء جدد</span></small><b id="k1">128</b></div>
+                <div><small><span class="en">Hot leads</span><span class="ar">عملاء ساخنون</span></small><b id="k2">34</b></div>
+                <div><small><span class="en">Visits booked</span><span class="ar">معاينات محجوزة</span></small><b id="k3">19</b></div>
+              </div>
+              <div class="tbl-w"><table class="tbl">
+                <thead><tr><th><span class="en">Lead</span><span class="ar">العميل</span></th><th><span class="en">Source</span><span class="ar">المصدر</span></th><th><span class="en">Score</span><span class="ar">التقييم</span></th><th><span class="en">Status</span><span class="ar">الحالة</span></th></tr></thead>
+                <tbody id="crmBody"></tbody>
+              </table></div>
+              <p class="hint"><span class="en">Your row updates in real time as you chat.</span><span class="ar">يتحدث صفك مباشرة أثناء المحادثة.</span></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="dm-wrap more">
+        <div class="sec-h">
+          <h2><span class="en">More to explore</span><span class="ar">المزيد لتستكشفه</span></h2>
+          <p><span class="en">Visitsly does more than chat. Try two more tools.</span><span class="ar">Visitsly أكثر من مجرد محادثة. جرّب أداتين إضافيتين.</span></p>
+        </div>
+        <div class="mgrid">
+          <div class="mcard">
+            <div class="mc-i">📣</div>
+            <h3><span class="en">Bulk WhatsApp campaign</span><span class="ar">حملة واتساب جماعية</span></h3>
+            <p><span class="en">Revive your old database. The AI chats with everyone who replies.</span><span class="ar">أعد إحياء قاعدة بياناتك القديمة. يتحدث المساعد مع كل من يرد.</span></p>
+            <label class="ml"><span class="en">Audience</span><span class="ar">الجمهور</span>
+              <select id="cAud">
+                <option value="2400" data-en="Old leads (2,400)" data-ar="عملاء قدامى (2,400)">Old leads (2,400)</option>
+                <option value="1300" data-en="Portal inquiries (1,300)" data-ar="استفسارات البوابات (1,300)">Portal inquiries (1,300)</option>
+                <option value="860" data-en="Website visitors (860)" data-ar="زوار الموقع (860)">Website visitors (860)</option>
+              </select></label>
+            <button class="btn btn-primary" type="button" id="cGo"><span class="en">Send campaign</span><span class="ar">إرسال الحملة</span></button>
+            <div class="bar"><i id="cBar"></i></div>
+            <div class="cres" id="cRes"></div>
+          </div>
+          <div class="mcard">
+            <div class="mc-i">📞</div>
+            <h3><span class="en">AI voice calling</span><span class="ar">المكالمات الصوتية الذكية</span> <span class="tag"><span class="en">Add-on</span><span class="ar">إضافة</span></span></h3>
+            <p><span class="en">The AI calls leads who don't reply on WhatsApp and confirms the visit.</span><span class="ar">يتصل المساعد بالعملاء الذين لا يردون على واتساب ويؤكد المعاينة.</span></p>
+            <button class="btn btn-ghost" type="button" id="vGo">▶ <span class="en">Play sample call</span><span class="ar">تشغيل مكالمة تجريبية</span></button>
+            <div class="call" id="call"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="dm-wrap">
+        <div class="cta2">
+          <h2><span class="en">Want this on your own leads?</span><span class="ar">هل تريد هذا على عملائك أنت؟</span></h2>
+          <p><span class="en">We set it up for you. See Visitsly reply to your real inquiries in a free demo.</span><span class="ar">نقوم بإعداده لك. شاهد Visitsly يرد على استفساراتك الحقيقية في عرض مجاني.</span></p>
+          <div class="hero-cta" style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+            <a class="btn btn-wa" data-wa href="https://wa.me/919250119045?text=Hi%2C%20I%20want%20a%20free%20demo%20of%20Visitsly" target="_blank" rel="noopener">💬 <span class="en">Book a free demo on WhatsApp</span><span class="ar">احجز عرضاً مجانياً على واتساب</span></a>
+            <a class="btn btn-ghost" href="index.html#pricing"><span class="en">See pricing</span><span class="ar">الأسعار</span></a>
+            <a class="btn btn-ghost" href="index.html#calculator"><span class="en">Lost-lead calculator</span><span class="ar">حاسبة العملاء الضائعين</span></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <div class="foot">
+          <div>
+            <a href="index.html" class="logo"
+              ><div class="logo-mark">🏠</div>
+              <b class="lw">Visit<span>sly</span></b></a
+            >
+            <p style="margin-top: 14px; max-width: 330px">
+              <span class="en"
+                >The ultimate visit booking AI system for real estate. A product
+                by Deific Digital.</span
+              ><span class="ar"
+                >نظام حجز المعاينات العقارية الأمثل بالذكاء الاصطناعي. أحد
+                منتجات Deific Digital.</span
+              >
+            </p>
+          </div>
+          <div>
+            <h4>
+              <span class="en">Product</span><span class="ar">المنتج</span>
+            </h4>
+            <ul>
+              <li>
+                <a href="index.html#how-it-works"
+                  ><span class="en">How it works</span
+                  ><span class="ar">كيف يعمل</span></a
+                >
+              </li>
+              <li>
+                <a href="index.html#features"
+                  ><span class="en">Features</span
+                  ><span class="ar">المزايا</span></a
+                >
+              </li>
+              <li>
+                <a href="index.html#calculator"
+                  ><span class="en">ROI</span><span class="ar">العائد</span></a
+                >
+              </li>
+              <li>
+                <a href="index.html#pricing"
+                  ><span class="en">Pricing</span
+                  ><span class="ar">الأسعار</span></a
+                >
+              </li>
+              <li>
+                <a href="index.html#faq"
+                  ><span class="en">FAQ</span
+                  ><span class="ar">الأسئلة الشائعة</span></a
+                >
+              </li>
+              <li>
+                </li>
+            </ul>
+          </div>
+          <div>
+            <h4><span class="en">More</span><span class="ar">المزيد</span></h4>
+            <ul>
+              <li><a href="#" data-setlang="en" lang="en">English</a></li>
+              <li><a href="#" data-setlang="ar" lang="ar">العربية</a></li>
+              <li>
+                <a
+                  href="https://www.deificdigital.com"
+                  target="_blank"
+                  rel="noopener"
+                  >Deific Digital</a
+                >
+              </li>
+              <li>
+                <a href="privacy.html"
+                  ><span class="en">Privacy Policy</span
+                  ><span class="ar">سياسة الخصوصية</span></a
+                >
+              </li>
+              <li>
+                <a href="terms.html"
+                  ><span class="en">Terms of Service</span
+                  ><span class="ar">شروط الخدمة</span></a
+                >
+              </li>
+              <li>
+                <a href="demo.html"
+                  ><span class="en">Live Demo</span
+                  ><span class="ar">عرض مباشر</span></a
+                >
+              </li>
+              <li>
+                <a href="contact.html"
+                  ><span class="en">Contact Us</span
+                  ><span class="ar">تواصل معنا</span></a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4>
+              <span class="en">Contact</span><span class="ar">تواصل معنا</span>
+            </h4>
+            <ul>
+              <li>
+                <a
+                  href="https://wa.me/919250119045"
+                  target="_blank"
+                  rel="noopener"
+                  >WhatsApp: +91 92501 19045</a
+                >
+              </li>
+              <li><a href="tel:+918750200899">+91 87502 00899</a></li>
+              <li>
+                <a href="mailto:hello@deificdigital.com"
+                  >hello@deificdigital.com</a
+                >
+              </li>
+              <li>
+                <a href="mailto:uae@deificdigital.com"
+                  >uae@deificdigital.com (UAE)</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="copy">
+          © <span id="yr">2026</span> Visitsly · Deific Digital.
+          <span class="en">All rights reserved.</span
+          ><span class="ar">جميع الحقوق محفوظة.</span>
+        </div>
+      </div>
+    </footer>
+    <a
+      class="wa-float"
+      data-wa
+      href="https://wa.me/919250119045?text=Hi%2C%20I%20want%20a%20free%20demo%20of%20Visitsly"
+      target="_blank"
+      rel="noopener"
+      aria-label="WhatsApp"
+      ><svg width="30" height="30" viewBox="0 0 24 24" fill="#fff">
+        <path
+          d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.3c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2 1.3 2.3 1.4.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"
+        /></svg
+    ></a>
+    <script>
+      (function () {
+        var TT = {
+            en: "Live Demo — Visitsly",
+            ar: "عرض مباشر — Visitsly",
+          },
+          WA = {
+            en: "https://wa.me/919250119045?text=Hi%2C%20I%20want%20a%20free%20demo%20of%20Visitsly",
+            ar: "https://wa.me/919250119045?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%B9%D8%B1%D8%B6%D8%A7%D9%8B%20%D9%85%D8%AC%D8%A7%D9%86%D9%8A%D8%A7%D9%8B%20%D9%84%D9%86%D8%B8%D8%A7%D9%85%20Visitsly",
+          };
+        var AR_CC =
+          /^(SA|AE|QA|KW|BH|OM|JO|LB|SY|IQ|YE|EG|LY|TN|DZ|MA|SD|PS|MR|DJ|SO|KM)$/;
+        var AR_TZ =
+          /^(Asia\/(Dubai|Riyadh|Qatar|Kuwait|Bahrain|Muscat|Baghdad|Amman|Beirut|Damascus|Aden|Gaza|Hebron)|Africa\/(Cairo|Tripoli|Tunis|Algiers|Casablanca|El_Aaiun|Khartoum|Djibouti|Mogadishu|Nouakchott)|Indian\/Comoro)$/;
+        var GEO = [
+          [
+            "https://api.country.is/",
+            function (j) {
+              return j && j.country;
+            },
+          ],
+          [
+            "https://get.geojs.io/v1/ip/country.json",
+            function (j) {
+              return j && j.country;
+            },
+          ],
+          [
+            "https://ipapi.co/json/",
+            function (j) {
+              return j && j.country_code;
+            },
+          ],
+        ];
+        var picked = false;
+        function setLang(l, save) {
+          if (l !== "ar") l = "en";
+          var d = document.documentElement;
+          d.lang = l;
+          d.dir = l === "ar" ? "rtl" : "ltr";
+          document.title = TT[l];
+          document.querySelectorAll("[data-lang]").forEach(function (b) {
+            var on = b.getAttribute("data-lang") === l;
+            b.classList.toggle("on", on);
+            b.setAttribute("aria-pressed", on);
+          });
+          document.querySelectorAll("[data-wa]").forEach(function (a) {
+            a.href = WA[l];
+          });
+          document.getElementById("yr").textContent = new Date().getFullYear();
+          if (save) {
+            picked = true;
+            try {
+              localStorage.setItem("vsLang", l);
+            } catch (e) {}
+          }
+        }
+        document.addEventListener("click", function (e) {
+          var b =
+            e.target.closest && e.target.closest("[data-lang],[data-setlang]");
+          if (!b) return;
+          e.preventDefault();
+          setLang(
+            b.getAttribute("data-lang") || b.getAttribute("data-setlang"),
+            true,
+          );
+        });
+        document.querySelectorAll("#navLinks a").forEach(function (a) {
+          a.addEventListener("click", function () {
+            document.getElementById("navLinks").classList.remove("open");
+          });
+        });
+        function getJSON(u, ms) {
+          return new Promise(function (res, rej) {
+            var c = window.AbortController ? new AbortController() : null,
+              t = setTimeout(function () {
+                if (c) c.abort();
+                rej();
+              }, ms);
+            fetch(u, { signal: c ? c.signal : undefined, cache: "no-store" })
+              .then(function (r) {
+                if (!r.ok) throw 0;
+                return r.json();
+              })
+              .then(
+                function (j) {
+                  clearTimeout(t);
+                  res(j);
+                },
+                function (e) {
+                  clearTimeout(t);
+                  rej(e);
+                },
+              );
+          });
+        }
+        function tz() {
+          var z = "";
+          try {
+            z = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
+          } catch (e) {}
+          return AR_TZ.test(z) ? "XA" : "";
+        }
+        function detect(cb) {
+          try {
+            var g = JSON.parse(localStorage.getItem("vsGeo") || "null");
+            if (g && g.c && Date.now() - g.t < 6048e5) {
+              cb(g.c);
+              return;
+            }
+          } catch (e) {}
+          var i = 0;
+          (function next() {
+            if (i >= GEO.length) {
+              cb(tz());
+              return;
+            }
+            var s = GEO[i++];
+            getJSON(s[0], 2500).then(function (j) {
+              var c = s[1](j);
+              if (c && /^[A-Za-z]{2}$/.test(c)) {
+                c = c.toUpperCase();
+                try {
+                  localStorage.setItem(
+                    "vsGeo",
+                    JSON.stringify({ c: c, t: Date.now() }),
+                  );
+                } catch (e) {}
+                cb(c);
+              } else next();
+            }, next);
+          })();
+        }
+        var saved = null,
+          q = location.search.match(/[?&]lang=(ar|en)\b/);
+        try {
+          saved = localStorage.getItem("vsLang");
+        } catch (e) {}
+        if (q) {
+          saved = q[1];
+          try {
+            localStorage.setItem("vsLang", saved);
+          } catch (e) {}
+        }
+        if (saved === "ar" || saved === "en") {
+          setLang(saved, false);
+        } else {
+          setLang(document.documentElement.lang === "ar" ? "ar" : "en", false);
+          detect(function (c) {
+            var p = null;
+            try {
+              p = localStorage.getItem("vsLang");
+            } catch (e) {}
+            if (!picked && !p && (AR_CC.test(c) || c === "XA"))
+              setLang("ar", false);
+          });
+        }
+      })();
+    </script>
+    <script>
+      (function () {
+        var root = document.documentElement;
+        function AR() { return root.lang === "ar"; }
+        function T(p) { return AR() ? p[1] : p[0]; }
+        var $ = function (i) { return document.getElementById(i); };
+        var REG = "in";
+        var INV = {
+          in: { proj: ["Skyline Residences, Noida", "سكاي لاين ريزيدنس، نويدا"], unit: ["3BHK", "3 غرف نوم"], size: ["1,450 sq ft", "1,450 قدم مربع"], price: ["₹1.25 Cr onwards", "من 1.25 كرور روبية"], loc: ["in Sector 150, Noida, 10 minutes from the Expressway", "في القطاع 150 بنويدا، على بُعد 10 دقائق من الطريق السريع"], poss: ["December 2027", "ديسمبر 2027"], plan: ["10% on booking, 40% during construction, 50% on possession", "10% عند الحجز و40% أثناء البناء و50% عند التسليم"], bud: ["My budget is ₹1.2 Cr", "ميزانيتي 1.2 كرور روبية"], src: ["Facebook Ad", "إعلان فيسبوك"] },
+          ae: { proj: ["Skyline Marina, Dubai", "سكاي لاين مارينا، دبي"], unit: ["2BR", "غرفتا نوم"], size: ["1,180 sq ft", "1,180 قدم مربع"], price: ["AED 1.45M onwards", "من 1.45 مليون درهم"], loc: ["in Dubai Marina, a 5-minute walk from the tram and the beach", "في دبي مارينا، على بُعد 5 دقائق مشياً من الترام والشاطئ"], poss: ["Q4 2027", "الربع الرابع 2027"], plan: ["20% on booking, 40% during construction, 40% on handover", "20% عند الحجز و40% أثناء البناء و40% عند التسليم"], bud: ["My budget is AED 1.4M", "ميزانيتي 1.4 مليون درهم"], src: ["Property Finder", "بروبرتي فايندر"] }
+        };
+        function V() { return INV[REG]; }
+        var RX = {
+          hi: /^\s*(hi+|hello|hey|namaste|salam|مرحبا|اهلا|أهلا|السلام)/i,
+          price: /price|cost|rate|how much|kitna|kimat|कीमत|दाम|سعر|كم |تكلفة|بكم/i,
+          loc: /where|location|locat|area|address|map|kahan|कहाँ|कहां|موقع|أين|اين|وين|عنوان/i,
+          pay: /payment|plan|emi|loan|instal|down ?payment|किस्त|دفع|تقسيط|خطة|قسط/i,
+          poss: /possession|handover|delivery|when.*(ready|complete|move)|कब|تسليم|استلام|متى/i,
+          size: /size|sq ?ft|bhk|bedroom|\bbr\b|flat|apartment|unit|available|avail|مساحة|غرف|غرفة|شقة|متاح|متوفر/i,
+          visit: /visit|see it|tour|site|view|book|meet|appointment|देख|विज़िट|معاينة|زيارة|احجز|موعد|اشوف|أشوف/i,
+          bud: /\d+(\.\d+)?\s*(cr|crore|lakh|lac|m|mn|million|k|aed)\b|budget|ميزانية|مليون|करोड़|लाख/i,
+          time: /this month|next month|this week|next week|soon|urgent|asap|immediate|today|tomorrow|in \d+ (days|weeks|months)|इस महीने|जल्दी|هذا الشهر|هذا الأسبوع|الأسبوع القادم|قريب|فور|عاجل/i
+        };
+        var PTS = { first: 12, price: 10, loc: 6, pay: 12, poss: 8, size: 6, bud: 18, time: 20, visit: 20, slot: 20 };
+        var S;
+        var chat = $("chat"), chips = $("chips"), tm = [];
+        function later(fn, ms) { tm.push(setTimeout(fn, ms)); }
+
+        function clock() { var m = 14 + S.tick++; return AR() ? "2:" + (m < 10 ? "0" : "") + m + " ص" : "2:" + (m < 10 ? "0" : "") + m + " AM"; }
+        function scroll() { chat.scrollTop = chat.scrollHeight; }
+        function addMsg(kind, html) {
+          var d = document.createElement("div");
+          d.className = "msg " + kind;
+          d.innerHTML = (kind === "bot" ? '<span class="tg">🤖 ' + T(["AI Assistant", "المساعد الذكي"]) + "</span>" : "") + html + "<time>" + clock() + "</time>";
+          chat.appendChild(d); scroll(); return d;
+        }
+        function esc(s) { return s.replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+        function typing(on) {
+          if (on) { var t = document.createElement("div"); t.className = "typing"; t.id = "typ"; t.innerHTML = "<i></i><i></i><i></i>"; chat.appendChild(t); scroll(); }
+          else { var e = $("typ"); if (e) e.remove(); }
+        }
+        function botSay(html, ms, cb) { typing(true); later(function () { typing(false); var m = addMsg("bot", html); if (cb) cb(m); }, ms || 900); }
+
+        /* ---------- steps ---------- */
+        function steps() {
+          var lis = document.querySelectorAll("#dsteps li"), act = false;
+          lis.forEach(function (li, i) {
+            var done = S.done[i], on = !done && !act;
+            if (on) act = true;
+            li.classList.toggle("done", !!done); li.classList.toggle("act", on);
+          });
+        }
+
+        /* ---------- score ---------- */
+        var curP = 0, raf;
+        function level(p) { return p >= 80 ? "ready" : p >= 60 ? "hot" : p >= 50 ? "int" : "normal"; }
+        var LBL = { normal: ["Normal lead", "عميل عادي"], int: ["Interested", "مهتم"], hot: ["🔥 Hot lead", "🔥 عميل ساخن"], ready: ["✅ Ready to buy", "✅ جاهز للشراء"] };
+        var COL = { normal: "#9aa7c7", int: "#f59e0b", hot: "#e11d48", ready: "#16a34a" };
+        function drawScore() {
+          var to = S.score, from = curP, st = null, ring = $("ring");
+          cancelAnimationFrame(raf);
+          var lv = level(to);
+          ring.style.setProperty("--c", COL[lv]);
+          var b = $("badge"); b.className = "badge " + (lv === "normal" ? "" : lv); b.textContent = T(LBL[lv]);
+          (function tick(ts) { if (!st) st = ts; var x = Math.min((ts - st) / 700, 1); curP = Math.round(from + (to - from) * x); ring.style.setProperty("--p", curP); $("ringN").textContent = curP; if (x < 1) raf = requestAnimationFrame(tick); })(performance.now());
+          drawIntent(); drawCRM();
+        }
+        function award(k) { if (S.got[k]) return false; S.got[k] = 1; S.score = Math.min(100, S.score + PTS[k]); return true; }
+        function setSum(id, v) { var e = $(id); if (e.textContent !== v) { e.textContent = v; e.classList.remove("upd2"); void e.offsetWidth; e.classList.add("upd2"); } }
+        function drawIntent() {
+          var p = S.score, k = p >= 80 ? ["Ready to buy", "جاهز للشراء"] : p >= 60 ? ["Hot — wants a visit", "ساخن — يريد معاينة"] : p >= 50 ? ["Interested", "مهتم"] : p > 0 ? ["Exploring", "يستكشف"] : null;
+          setSum("s_int", k ? T(k) : "—");
+        }
+
+        /* ---------- visits ---------- */
+        function baseDate() { var d = new Date(); d.setHours(0, 0, 0, 0); d.setDate(d.getDate() + ((6 - d.getDay() + 7) % 7 || 7)); return d; }
+        var SLOTS = [
+          { d: 0, t: ["11:00 AM", "11:00 ص"], free: true }, { d: 1, t: ["4:00 PM", "4:00 م"], free: true }, { d: 2, t: ["6:00 PM", "6:00 م"], free: true }
+        ];
+        var TAKEN = [{ d: 0, t: ["2:00 PM", "2:00 م"] }, { d: 1, t: ["11:00 AM", "11:00 ص"] }, { d: 2, t: ["10:00 AM", "10:00 ص"] }];
+        function dayStr(i, long) { var d = baseDate(); d.setDate(d.getDate() + i); return d.toLocaleDateString(AR() ? "ar-AE" : "en-GB", long ? { weekday: "short", day: "numeric", month: "short" } : { weekday: "short" }); }
+        function dayNum(i) { var d = baseDate(); d.setDate(d.getDate() + i); return d.toLocaleDateString(AR() ? "ar-AE" : "en-GB", { day: "numeric", month: "short" }); }
+        function slotLabel(i) { return dayStr(SLOTS[i].d, true) + ", " + T(SLOTS[i].t); }
+        function drawCal() {
+          var h = "";
+          for (var d = 0; d < 3; d++) {
+            h += '<div class="day"><h4>' + dayStr(d) + "<b>" + dayNum(d) + "</b></h4>";
+            var s = SLOTS[d], mine = S.slot === d;
+            h += '<div class="slot taken">' + T(TAKEN[d].t) + "</div>";
+            h += '<div class="slot ' + (mine ? "mine" : "open") + '">' + T(s.t) + (mine ? " ✓ " + T(["Demo Lead", "عميل تجريبي"]) : "") + "</div></div>";
+          }
+          $("cal").innerHTML = h;
+          var r = S.slot != null, items = [["Visit confirmed on WhatsApp", "تم تأكيد المعاينة على واتساب"], ["Google Maps location pin sent", "تم إرسال موقع خرائط جوجل"], ["Reminder — 24 hours before", "تذكير — قبل 24 ساعة"], ["Reminder — 2 hours before", "تذكير — قبل ساعتين"]];
+          $("rem").innerHTML = items.map(function (x, i) { return '<li class="' + (r ? "ok" : "") + '"><i>' + (r ? (i < 2 ? "✓" : "⏰") : "•") + "</i>" + T(x) + (r && i >= 2 ? " (" + T(["scheduled", "مجدولة"]) + ")" : "") + "</li>"; }).join("");
+        }
+
+        /* ---------- agent card + crm ---------- */
+        function agentCard() {
+          var v = V(), lead = T(["Demo Lead", "عميل تجريبي"]);
+          var txt = "🔥 " + T(["Hot lead", "عميل ساخن"]) + " — " + lead + " (" + T(["score", "التقييم"]) + " " + S.score + ")\n" +
+            "🏠 " + T(["Looking for", "يبحث عن"]) + ": " + T(v.unit) + " · " + T(v.proj) + "\n" +
+            "💰 " + T(["Budget", "الميزانية"]) + ": " + (S.bud || T(["Not shared yet", "لم تُذكر بعد"])) + "\n" +
+            "⏱️ " + T(["Timeline", "الجدول"]) + ": " + (S.time || T(["Not shared yet", "لم يُذكر بعد"])) + "\n" +
+            "📅 " + T(["Visit", "المعاينة"]) + ": " + slotLabel(S.slot) + "\n" +
+            "🧾 " + T(["AI summary: asked about", "ملخص الذكاء: سأل عن"]) + " " + (S.topics.length ? S.topics.join(", ") : T(["the project", "المشروع"])) + ". " + T(["Visit confirmed — call to close.", "تم تأكيد المعاينة — اتصل لإتمام الصفقة."]);
+          $("agent").innerHTML = '<div class="wa-card"><div class="wh"><span>🏠</span>Visitsly → Amit (' + T(["Agent", "الوكيل"]) + ")</div>" + esc(txt) + "</div>";
+        }
+        var BASE = [["Ahmed R.", ["Property Finder", "بروبرتي فايندر"], 74, "hot", ["Hot", "ساخن"]], ["Priya M.", ["99acres", "99acres"], 54, "int", ["Interested", "مهتم"]], ["James T.", ["Website", "الموقع"], 22, "normal", ["Normal", "عادي"]]];
+        function drawCRM() {
+          var lv = level(S.score), st = S.slot != null ? ["Visit booked 📅", "تم حجز المعاينة 📅"] : S.started ? ["Chatting", "قيد المحادثة"] : ["New", "جديد"];
+          var rows = '<tr class="me"><td>' + T(["Demo Lead", "عميل تجريبي"]) + "</td><td>" + T(V().src) + '</td><td><span class="pill ' + (lv === "normal" ? "" : lv) + '">' + S.score + "</span></td><td>" + T(st) + "</td></tr>";
+          BASE.forEach(function (b) { rows += "<tr><td>" + b[0] + "</td><td>" + T(b[1]) + '</td><td><span class="pill ' + b[3] + '">' + b[2] + "</span></td><td>" + T(b[4]) + "</td></tr>"; });
+          $("crmBody").innerHTML = rows;
+          function k(id, v) { var e = $(id); if (e.textContent != v) { e.textContent = v; e.classList.remove("bump"); void e.offsetWidth; e.classList.add("bump"); } }
+          k("k1", 128 + (S.started ? 1 : 0)); k("k2", 34 + (S.score >= 60 ? 1 : 0)); k("k3", 19 + (S.slot != null ? 1 : 0));
+        }
+
+        /* ---------- tabs ---------- */
+        function tab(t) {
+          document.querySelectorAll("#dtabs button").forEach(function (b) { var on = b.getAttribute("data-t") === t; b.classList.toggle("on", on); if (on) b.classList.remove("ping"); });
+          document.querySelectorAll(".tp").forEach(function (p) { p.classList.toggle("on", p.getAttribute("data-p") === t); });
+        }
+        function ping(t) { var b = document.querySelector('#dtabs button[data-t="' + t + '"]'); if (b && !b.classList.contains("on")) b.classList.add("ping"); }
+        $("dtabs").addEventListener("click", function (e) { var b = e.target.closest("button"); if (b) tab(b.getAttribute("data-t")); });
+
+        /* ---------- chips ---------- */
+        var CH = {
+          price: ["What is the price?", "كم السعر؟"], pay: ["Is there a payment plan?", "هل توجد خطة دفع؟"], loc: ["Where is it located?", "أين الموقع؟"],
+          poss: ["When is possession?", "متى التسليم؟"], size: null, bud: null, time: ["I want to buy this month", "أريد الشراء هذا الشهر"]
+        };
+        function chipText(k) { var v = V(); if (k === "size") return T(["Is a " + v.unit[0] + " available?", "هل تتوفر شقة " + v.unit[1] + "؟"]); if (k === "bud") return T(v.bud); return T(CH[k]); }
+        function drawChips() {
+          chips.innerHTML = "";
+          if (S.slot != null) return;
+          var order = ["price", "size", "pay", "bud", "time", "loc", "poss"], n = 0;
+          order.forEach(function (k) { if (!S.asked[k] && n < 3) { n++; mk(chipText(k), k, false); } });
+          mk(T(["📅 I want to visit", "📅 أريد زيارة الموقع"]), "visit", true);
+          function mk(txt, k, cta) { var b = document.createElement("button"); b.type = "button"; b.textContent = txt; if (cta) b.className = "cta"; b.onclick = function () { userSay(txt); }; chips.appendChild(b); }
+        }
+
+        /* ---------- conversation ---------- */
+        function userSay(text) {
+          text = text.trim(); if (!text || S.busy) return;
+          S.busy = true; chips.innerHTML = "";
+          addMsg("me", esc(text));
+          var first = !S.started; S.started = true;
+          if (first) { award("first"); S.done[2] = true; steps(); }
+          var v = V(), segs = [], hit = {};
+          Object.keys(RX).forEach(function (k) { if (RX[k].test(text)) hit[k] = 1; });
+          if (hit.hi && Object.keys(hit).length === 1) segs.push(T(["Hello again! 😊 How can I help you with " + v.proj[0] + "?", "أهلاً بك مجدداً! 😊 كيف أساعدك بخصوص " + v.proj[1] + "؟"]));
+          if (hit.size) { S.asked.size = 1; award("size"); S.need = true; S.topics.push(T(["availability", "التوفر"])); segs.push(T(["Yes, " + v.unit[0] + " units (" + v.size[0] + ") are available in " + v.proj[0] + ". 🏠", "نعم، وحدات " + v.unit[1] + " (" + v.size[1] + ") متاحة في " + v.proj[1] + ". 🏠"])); }
+          if (hit.price) { S.asked.price = 1; award("price"); S.topics.push(T(["price", "السعر"])); segs.push(T([v.unit[0] + " units start at " + v.price[0] + " with a flexible payment plan.", "تبدأ وحدات " + v.unit[1] + " " + v.price[1] + " مع خطة دفع مرنة."])); }
+          if (hit.pay) { S.asked.pay = 1; award("pay"); S.topics.push(T(["payment plan", "خطة الدفع"])); segs.push(T(["Payment plan: " + v.plan[0] + ". Home loans from leading banks are available.", "خطة الدفع: " + v.plan[1] + ". تتوفر قروض عقارية من البنوك الكبرى."])); }
+          if (hit.poss) { S.asked.poss = 1; award("poss"); S.topics.push(T(["possession", "التسليم"])); segs.push(T(["Possession is planned for " + v.poss[0] + ".", "التسليم مخطط له في " + v.poss[1] + "."])); }
+          if (hit.loc) { S.asked.loc = 1; award("loc"); S.topics.push(T(["location", "الموقع"])); segs.push(T(["It is " + v.loc[0] + ". I will send the exact map pin once you book a visit. 📍", "المشروع " + v.loc[1] + ". سأرسل موقع الخريطة بعد حجز المعاينة. 📍"])); }
+          if (hit.bud) { S.asked.bud = 1; award("bud"); var bm = text.match(/(₹|aed|rs\.?)?\s*\d+(\.\d+)?\s*(cr|crore|lakh|lac|m|mn|million|k)?/i); S.bud = bm && /\d/.test(bm[0]) ? bm[0].trim() : T(["Shared", "تمت مشاركتها"]); setSum("s_bud", S.bud); segs.push(T(["Thanks, noted your budget. 👍 That fits our " + v.unit[0] + " options.", "شكراً، سجلت ميزانيتك. 👍 تناسب خيارات " + v.unit[1] + " لدينا."])); }
+          if (hit.time) { S.asked.time = 1; award("time"); var tmx = text.match(RX.time); S.time = tmx ? tmx[0] : ""; setSum("s_time", S.time); segs.push(T(["Great, you are planning soon — the best time to see it in person.", "رائع، تخطط قريباً — أفضل وقت لرؤيته على أرض الواقع."])); }
+          if (S.need || hit.size) setSum("s_need", T(v.unit) + " · " + T(v.proj));
+          var wantsVisit = !!hit.visit;
+          if (wantsVisit) { award("visit"); S.topics.push(T(["site visit", "المعاينة"])); }
+          if (!segs.length && !wantsVisit) segs.push(T(["Good question! I can share price, payment plan, location and possession for " + v.proj[0] + ". Or I can book you a site visit. 📅", "سؤال ممتاز! يمكنني إخبارك بالسعر وخطة الدفع والموقع والتسليم لمشروع " + v.proj[1] + ". أو أحجز لك معاينة. 📅"]));
+          S.msgs++;
+          drawScore();
+          var html = segs.join("<br><br>");
+          if (wantsVisit && S.slot == null) {
+            var intro = (html ? html + "<br><br>" : "") + T(["Let's get you a site visit. Pick a slot:", "لنحجز لك معاينة. اختر موعداً:"]);
+            botSay(intro, 1000, function (m) {
+              var w = document.createElement("div"); w.className = "slots";
+              SLOTS.forEach(function (s, i) { var b = document.createElement("button"); b.type = "button"; b.textContent = "📅 " + slotLabel(i); b.onclick = function () { pickSlot(i, w); }; w.appendChild(b); });
+              m.insertBefore(w, m.querySelector("time")); scroll(); S.busy = false;
+              tab("visit"); drawCal(); steps();
+            });
+            return;
+          }
+          if (S.msgs >= 2 && !wantsVisit) html += "<br><br>" + T(["Would you like to see it in person? I can book a site visit for you. 📅", "هل تحب رؤيته على أرض الواقع؟ يمكنني حجز معاينة لك. 📅"]);
+          botSay(html, 1000, function () { S.busy = false; drawChips(); });
+        }
+        function pickSlot(i, wrap) {
+          if (S.slot != null) return;
+          S.slot = i; S.busy = true;
+          wrap.querySelectorAll("button").forEach(function (b) { b.disabled = true; });
+          addMsg("me", "📅 " + slotLabel(i));
+          award("slot"); drawScore(); drawCal(); setSum("s_vis", slotLabel(i));
+          S.done[3] = true; steps(); tab("visit");
+          var v = V();
+          botSay("✅ " + T(["Your visit is confirmed for <b>" + slotLabel(i) + "</b>. I've sent the location and I will remind you before the visit. See you at " + v.proj[0] + "!", "تم تأكيد معاينتك يوم <b>" + slotLabel(i) + "</b>. أرسلت الموقع وسأذكّرك قبل المعاينة. بانتظارك في " + v.proj[1] + "!"]) + '<div class="pin">📍 ' + T(v.proj) + "</div>", 1100, function () {
+            S.busy = false; chips.innerHTML = "";
+            later(function () { S.done[4] = true; steps(); agentCard(); ping("agent"); tab("agent"); ping("crm"); }, 1200);
+            later(function () { addMsg("bot", "🎉 " + T(["That was the whole flow — no manual work from your team. Explore the tabs on the right, or press ↻ to try again.", "هذه هي الدورة كاملة — دون أي عمل يدوي من فريقك. استكشف التبويبات على اليمين أو اضغط ↻ للتجربة مرة أخرى."])); }, 2600);
+          });
+        }
+
+        /* ---------- start / reset ---------- */
+        function reset() {
+          tm.forEach(clearTimeout); tm = []; cancelAnimationFrame(raf); typing(false);
+          S = { score: 0, got: {}, asked: {}, topics: [], bud: "", time: "", slot: null, started: false, busy: true, msgs: 0, tick: 0, need: false, done: [false, false, false, false, false] };
+          curP = 0; chat.innerHTML = ""; chips.innerHTML = "";
+          ["s_need", "s_bud", "s_time", "s_vis"].forEach(function (i) { $(i).textContent = "—"; });
+          $("agent").innerHTML = '<div class="empty">' + T(["Book a visit in the chat to see the alert your agent receives.", "احجز معاينة في المحادثة لترى التنبيه الذي يصل إلى الوكيل."]) + "</div>";
+          document.querySelectorAll("#dtabs button").forEach(function (b) { b.classList.remove("ping"); });
+          tab("score"); drawScore(); drawCal(); steps();
+          var lt = $("ltoast"); lt.classList.remove("show");
+          later(function () { lt.innerHTML = "🔔 <b>" + T(["New lead: Demo Lead", "عميل جديد: عميل تجريبي"]) + "</b> · " + T(V().src) + " · " + (AR() ? "2:14 ص" : "2:14 AM"); lt.classList.add("show"); S.done[0] = true; steps(); }, 300);
+          later(function () {
+            var v = V();
+            botSay(T(["Hi 👋 Thanks for your interest in <b>" + v.proj[0] + "</b>! I'm the Visitsly AI assistant. Ask me anything — price, location, payment plan — or tap a suggestion below.", "مرحباً 👋 شكراً لاهتمامك بـ<b>" + v.proj[1] + "</b>! أنا مساعد Visitsly الذكي. اسألني عن أي شيء — السعر أو الموقع أو خطة الدفع — أو اختر اقتراحاً بالأسفل."]), 1100, function () { S.done[1] = true; steps(); S.busy = false; drawChips(); });
+          }, 900);
+        }
+        $("chatForm").addEventListener("submit", function (e) { e.preventDefault(); var i = $("chatIn"); var t = i.value; i.value = ""; userSay(t); });
+        $("restart").onclick = reset;
+        document.querySelectorAll("[data-reg]").forEach(function (b) {
+          b.addEventListener("click", function () {
+            REG = b.getAttribute("data-reg");
+            document.querySelectorAll("[data-reg]").forEach(function (x) { var on = x === b; x.classList.toggle("on", on); x.setAttribute("aria-pressed", on); });
+            reset();
+          });
+        });
+
+        /* ---------- campaign ---------- */
+        var fmt = new Intl.NumberFormat("en-US");
+        $("cGo").onclick = function () {
+          var n = +$("cAud").value, bar = $("cBar"), res = $("cRes"), p = 0, btn = this;
+          res.innerHTML = ""; btn.disabled = true; bar.style.width = "0";
+          var iv = setInterval(function () {
+            p += 8; bar.style.width = Math.min(p, 100) + "%";
+            if (p >= 100) {
+              clearInterval(iv); btn.disabled = false;
+              var del = Math.round(n * 0.98), rep = Math.round(n * 0.14), vis = Math.round(rep * 0.12);
+              res.innerHTML = '<div><b>' + fmt.format(del) + "</b><small>" + T(["Delivered", "تم التسليم"]) + "</small></div><div><b>" + fmt.format(rep) + "</b><small>" + T(["Replied to AI", "ردوا على المساعد"]) + "</small></div><div><b>~" + fmt.format(vis) + "</b><small>" + T(["Visits booked", "معاينات محجوزة"]) + "</small></div>";
+            }
+          }, 120);
+        };
+        /* ---------- voice call ---------- */
+        var callT = [];
+        $("vGo").onclick = function () {
+          callT.forEach(clearTimeout); callT = []; var box = $("call"), v = V(); box.innerHTML = "";
+          var L = [
+            ["ai", T(["Hello! This is the Visitsly assistant calling about " + v.proj[0] + ". You asked about a " + v.unit[0] + " earlier — do you have a minute?", "مرحباً! أنا مساعد Visitsly أتصل بخصوص " + v.proj[1] + ". سألت سابقاً عن " + v.unit[1] + " — هل لديك دقيقة؟"])],
+            ["ld", T(["Yes, tell me.", "نعم، تفضل."])],
+            ["ai", T(["Great. Would Saturday at 11 AM work for a site visit?", "ممتاز. هل يناسبك السبت الساعة 11 صباحاً للمعاينة؟"])],
+            ["ld", T(["Saturday works for me.", "السبت يناسبني."])],
+            ["ok", T(["✅ Visit confirmed · WhatsApp reminder sent", "✅ تم تأكيد المعاينة · أُرسل تذكير واتساب"])]
+          ];
+          L.forEach(function (l, i) { callT.push(setTimeout(function () { var d = document.createElement("div"); d.className = l[0]; d.innerHTML = (l[0] === "ai" ? "<b>🤖 AI</b>" : l[0] === "ld" ? "<b>" + T(["Lead", "العميل"]) + "</b>" : "") + l[1]; box.appendChild(d); }, i * 1500)); });
+        };
+
+        /* ---------- i18n sync ---------- */
+        function sync() {
+          document.querySelectorAll("[data-ph-en]").forEach(function (e) { e.placeholder = e.getAttribute(AR() ? "data-ph-ar" : "data-ph-en"); });
+          document.querySelectorAll("option[data-en]").forEach(function (o) { o.textContent = o.getAttribute(AR() ? "data-ar" : "data-en"); });
+          $("cRes").innerHTML = ""; $("cBar").style.width = "0"; $("call").innerHTML = ""; callT.forEach(clearTimeout);
+        }
+        var last = root.lang;
+        new MutationObserver(function () { if (root.lang !== last) { last = root.lang; sync(); reset(); } }).observe(root, { attributes: true, attributeFilter: ["lang"] });
+        sync(); reset();
+      })();
+    </script>
+  </body>
+</html>
