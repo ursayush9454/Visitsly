@@ -696,6 +696,57 @@
       .nav-links a.nav-demo{color:#fff;background:linear-gradient(135deg,#2563eb,#4f46e5);padding:6px 14px;border-radius:99px;box-shadow:0 6px 16px rgba(37,99,235,.3)}
       .nav-links a.nav-demo:hover{color:#fff;transform:translateY(-1px)}
       @media (max-width:860px){.nav-links a.nav-demo{padding:8px 16px;margin:8px 0;align-self:flex-start}}
+
+      /* ---------- lead management system ---------- */
+      .lm{background:#fff;border:1px solid var(--line);border-radius:26px;box-shadow:0 24px 60px rgba(11,27,63,.1);overflow:hidden}
+      .lm-top{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;padding:18px 22px;background:linear-gradient(135deg,#1d4ed8,#4f46e5 60%,#0891b2);color:#fff}
+      .lm-top h3{color:#fff;font-size:18px;display:flex;align-items:center;gap:10px}.lm-top small{opacity:.85;font-size:12.5px;display:block;margin-top:2px}
+      .live-dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#4ade80;box-shadow:0 0 0 0 rgba(74,222,128,.7);animation:lmp 1.6s infinite}
+      @keyframes lmp{70%{box-shadow:0 0 0 10px rgba(74,222,128,0)}100%{box-shadow:0 0 0 0 rgba(74,222,128,0)}}
+      .lm-top .btn{background:#fff;color:var(--blue-d);padding:10px 18px;font-size:13.5px;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+      .lm-kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding:18px 22px 0}
+      .lm-kpi div{background:var(--soft);border:1px solid var(--line);border-radius:16px;padding:12px 14px}
+      .lm-kpi small{display:block;color:var(--muted);font-size:12px;font-weight:700}.lm-kpi b{font-size:26px;color:var(--ink)}.lm-kpi b.bump{animation:flash 1.2s;color:var(--blue)}
+      .lm-bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;padding:16px 22px}
+      .lm-bar input{flex:1;min-width:160px;font:inherit;font-size:14px;padding:10px 16px;border-radius:99px;border:1px solid var(--line);background:var(--soft);outline:none}
+      .lm-bar input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.14);background:#fff}
+      .lm-f{display:flex;gap:6px;background:var(--soft);border:1px solid var(--line);border-radius:99px;padding:3px}
+      .lm-f button{font:inherit;font-size:13px;font-weight:700;border:0;background:none;color:var(--muted);padding:7px 13px;border-radius:99px;cursor:pointer;white-space:nowrap}
+      .lm-f button.on{background:#fff;color:var(--blue);box-shadow:0 2px 8px rgba(11,27,63,.1)}
+      .lm-board{display:grid;grid-template-columns:repeat(5,minmax(228px,1fr));gap:14px;overflow-x:auto;padding:0 22px 22px}
+      .lm-col{background:var(--soft);border:1px solid var(--line);border-radius:18px;padding:10px;min-height:260px;transition:background .2s,border-color .2s}
+      .lm-col.over{background:#e3ecff;border-color:var(--blue)}
+      .lm-ch{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:800;color:var(--ink);padding:4px 6px 10px}
+      .lm-ch i{width:10px;height:10px;border-radius:50%;background:var(--c)}.lm-ch em{margin-inline-start:auto;font-style:normal;background:#fff;border:1px solid var(--line);border-radius:99px;padding:1px 9px;font-size:12px;color:var(--muted)}
+      .lm-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px;margin-bottom:9px;cursor:grab;box-shadow:0 3px 10px rgba(11,27,63,.05);transition:transform .18s,box-shadow .18s,border-color .18s;animation:pop .3s}
+      .lm-card:hover{transform:translateY(-2px);border-color:#bcd0ff;box-shadow:0 10px 24px rgba(37,99,235,.14)}
+      .lm-card.live{border-color:var(--blue);background:linear-gradient(180deg,#f3f7ff,#fff);cursor:pointer}
+      .lm-card.drag{opacity:.4}
+      .lm-r1{display:flex;justify-content:space-between;align-items:center;gap:8px;font-weight:800;color:var(--ink);font-size:14px}
+      .lm-r2{display:flex;justify-content:space-between;align-items:center;margin-top:8px;font-size:12px;color:var(--muted);font-weight:600}
+      .lm-av{width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#2563eb,#06b6d4);color:#fff;display:grid;place-items:center;font-size:11px;font-weight:800;flex:none}
+      .lm-tag{font-size:10px;background:var(--pink);color:#fff;border-radius:99px;padding:2px 8px;font-weight:800;margin-inline-start:6px;vertical-align:middle}
+      .lm-fu{margin-top:8px;font-size:11.5px;font-weight:700;color:#b45309;background:#fef3c7;border-radius:8px;padding:4px 8px;display:inline-block}
+      .lm-empty{border:1px dashed #c7d3ee;border-radius:12px;text-align:center;color:var(--muted);font-size:12.5px;padding:22px 8px}
+      .lm-list{padding:0 22px 22px}
+      .lm-list .tbl tr{cursor:pointer}.lm-list .tbl tbody tr:hover td{background:var(--soft)}
+      .lm-ov{position:fixed;inset:0;background:rgba(11,27,63,.45);backdrop-filter:blur(3px);z-index:80;display:none}
+      .lm-ov.on{display:block}
+      .lm-dr{position:fixed;inset-block:0;inset-inline-end:0;width:min(420px,100%);background:#fff;z-index:81;box-shadow:-20px 0 60px rgba(11,27,63,.25);transform:translateX(105%);transition:transform .3s;overflow-y:auto;padding:22px}
+      [dir=rtl] .lm-dr{transform:translateX(-105%)}.lm-dr.on{transform:none}
+      .lm-x{float:inline-end;border:0;background:var(--soft2);width:34px;height:34px;border-radius:50%;font-size:16px;cursor:pointer}
+      .lm-dr h3{font-size:22px;margin:4px 0 4px}.lm-dr .sub{color:var(--muted);font-size:13.5px;font-weight:600}
+      .lm-dr .grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0}
+      .lm-dr .grid2 div{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+      .lm-dr .grid2 small{display:block;color:var(--muted);font-size:11.5px;font-weight:700}.lm-dr .grid2 b{color:var(--ink);font-size:14px}
+      .lm-tl{list-style:none;margin:10px 0 18px;padding:0;border-inline-start:2px solid var(--soft2);padding-inline-start:16px}
+      .lm-tl li{position:relative;font-size:13.5px;font-weight:600;color:var(--ink);padding:6px 0}
+      .lm-tl li::before{content:"";position:absolute;inset-inline-start:-23px;top:11px;width:12px;height:12px;border-radius:50%;background:#16a34a;border:2px solid #fff}
+      .lm-tl li small{display:block;color:var(--muted);font-weight:600;font-size:11.5px}
+      .lm-act{display:flex;flex-direction:column;gap:9px}.lm-act .btn{padding:12px 16px;font-size:14px}
+      .lm-toast{position:fixed;inset-inline-start:50%;bottom:26px;transform:translateX(-50%) translateY(30px);background:var(--navy);color:#fff;padding:12px 20px;border-radius:14px;font-size:14px;font-weight:700;opacity:0;pointer-events:none;transition:all .3s;z-index:90;box-shadow:0 14px 34px rgba(0,0,0,.3)}
+      .lm-toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+      @media (max-width:760px){.lm-kpi{grid-template-columns:1fr 1fr}.lm-bar,.lm-kpi,.lm-board,.lm-list{padding-inline:14px}}
     </style>
   </head>
   <body>
@@ -782,7 +833,7 @@
           <div class="seg" role="group" aria-label="Region">
             <button type="button" data-reg="in" class="on" aria-pressed="true">🇮🇳 <span class="en">India demo</span><span class="ar">عرض الهند</span></button><button type="button" data-reg="ae" aria-pressed="false">🇦🇪 <span class="en">UAE demo</span><span class="ar">عرض الإمارات</span></button>
           </div>
-          <span class="upd"><span class="en">Sample data. Nothing is sent anywhere.</span><span class="ar">بيانات تجريبية. لا يتم إرسال أي شيء.</span></span>
+          <a class="chip" href="#leads">📊 <span class="en">Lead management ↓</span><span class="ar">إدارة العملاء ↓</span></a><span class="upd"><span class="en">Sample data. Nothing is sent anywhere.</span><span class="ar">بيانات تجريبية. لا يتم إرسال أي شيء.</span></span>
         </div>
       </div>
     </header>
@@ -865,6 +916,43 @@
           </div>
         </div>
       </section>
+
+      <section class="dm-wrap" id="leads">
+        <div class="sec-h">
+          <div class="eyebrow"><span class="en">Lead management system</span><span class="ar">نظام إدارة العملاء</span></div>
+          <h2><span class="en">Every lead. One <span class="grad">live pipeline.</span></span><span class="ar">كل العملاء. في <span class="grad">مسار مباشر واحد.</span></span></h2>
+          <p><span class="en">Drag leads between stages, click any card for the full AI timeline. Your chat above updates the board live.</span><span class="ar">اسحب العملاء بين المراحل، واضغط على أي بطاقة لعرض الجدول الزمني. محادثتك بالأعلى تحدّث اللوحة مباشرة.</span></p>
+        </div>
+        <div class="lm">
+          <div class="lm-top">
+            <div><h3><span class="live-dot"></span><span class="en">Visitsly Lead Manager</span><span class="ar">مدير عملاء Visitsly</span></h3><small><span class="en">AI captures, scores and follows up automatically</span><span class="ar">يستقبل ويقيّم ويتابع العملاء تلقائياً بالذكاء الاصطناعي</span></small></div>
+            <button class="btn" type="button" id="lmAdd">＋ <span class="en">Capture new lead</span><span class="ar">استقبال عميل جديد</span></button>
+          </div>
+          <div class="lm-kpi">
+            <div><small><span class="en">Total leads</span><span class="ar">إجمالي العملاء</span></small><b id="lk1">0</b></div>
+            <div><small><span class="en">🔥 Hot leads</span><span class="ar">🔥 عملاء ساخنون</span></small><b id="lk2">0</b></div>
+            <div><small><span class="en">Visits booked</span><span class="ar">معاينات محجوزة</span></small><b id="lk3">0</b></div>
+            <div><small><span class="en">Conversion</span><span class="ar">نسبة التحويل</span></small><b id="lk4">0%</b></div>
+          </div>
+          <div class="lm-bar">
+            <input id="lmQ" type="search" data-ph-en="Search leads…" data-ph-ar="ابحث عن عميل…" placeholder="Search leads…">
+            <div class="lm-f" id="lmF">
+              <button type="button" data-f="all" class="on"><span class="en">All</span><span class="ar">الكل</span></button>
+              <button type="button" data-f="hot">🔥 <span class="en">Hot</span><span class="ar">ساخن</span></button>
+              <button type="button" data-f="warm">🟡 <span class="en">Warm</span><span class="ar">دافئ</span></button>
+              <button type="button" data-f="cold">❄️ <span class="en">Cold</span><span class="ar">بارد</span></button>
+            </div>
+            <div class="lm-f" id="lmV">
+              <button type="button" data-v="board" class="on">▦ <span class="en">Board</span><span class="ar">لوحة</span></button>
+              <button type="button" data-v="list">☰ <span class="en">List</span><span class="ar">قائمة</span></button>
+            </div>
+          </div>
+          <div id="lmMain"></div>
+        </div>
+      </section>
+      <div class="lm-ov" id="lmOv"></div>
+      <aside class="lm-dr" id="lmDr" aria-live="polite"></aside>
+      <div class="lm-toast" id="lmT"></div>
 
       <section class="dm-wrap more">
         <div class="sec-h">
@@ -1323,7 +1411,7 @@
           BASE.forEach(function (b) { rows += "<tr><td>" + b[0] + "</td><td>" + T(b[1]) + '</td><td><span class="pill ' + b[3] + '">' + b[2] + "</span></td><td>" + T(b[4]) + "</td></tr>"; });
           $("crmBody").innerHTML = rows;
           function k(id, v) { var e = $(id); if (e.textContent != v) { e.textContent = v; e.classList.remove("bump"); void e.offsetWidth; e.classList.add("bump"); } }
-          k("k1", 128 + (S.started ? 1 : 0)); k("k2", 34 + (S.score >= 60 ? 1 : 0)); k("k3", 19 + (S.slot != null ? 1 : 0));
+          k("k1", 128 + (S.started ? 1 : 0)); k("k2", 34 + (S.score >= 60 ? 1 : 0)); k("k3", 19 + (S.slot != null ? 1 : 0)); if (window.LM) LM.sync({ score: S.score, slot: S.slot, started: S.started, bud: S.bud, reg: REG, vis: S.slot != null ? slotLabel(S.slot) : "" });
         }
 
         /* ---------- tabs ---------- */
@@ -1464,6 +1552,88 @@
         var last = root.lang;
         new MutationObserver(function () { if (root.lang !== last) { last = root.lang; sync(); reset(); } }).observe(root, { attributes: true, attributeFilter: ["lang"] });
         sync(); reset();
+      })();
+    </script>
+    <script>
+      (function () {
+        var root = document.documentElement, $ = function (i) { return document.getElementById(i); };
+        function AR() { return root.lang === "ar"; }
+        function T(p) { return AR() ? p[1] : p[0]; }
+        var ST = [["New", "جديد", "#38bdf8"], ["Chatting", "قيد المحادثة", "#6366f1"], ["Visit booked", "معاينة محجوزة", "#f59e0b"], ["Negotiation", "تفاوض", "#e11d48"], ["Won", "تم البيع", "#16a34a"]];
+        var SRC = { fb: ["Facebook Ad", "إعلان فيسبوك"], pf: ["Property Finder", "بروبرتي فايندر"], n9: ["99acres", "99acres"], web: ["Website", "الموقع"], wa: ["WhatsApp click", "نقرة واتساب"], ig: ["Instagram", "إنستجرام"] };
+        var L = [
+          { n: ["Rohit Sharma", "Ahmed R."], s: "fb", sc: 88, st: 3, b: ["₹1.3 Cr", "AED 1.5M"], a: "Amit", t: ["2h ago", "قبل ساعتين"], fu: ["Call today 5 PM", "اتصال اليوم 5 م"] },
+          { n: ["Neha Gupta", "Fatima K."], s: "n9", sc: 76, st: 2, b: ["₹1.2 Cr", "AED 1.4M"], a: "Sara", t: ["4h ago", "قبل 4 ساعات"], fu: ["Visit tomorrow 11 AM", "معاينة غداً 11 ص"] },
+          { n: ["Vikram Singh", "James T."], s: "web", sc: 64, st: 1, b: ["₹95 L", "AED 1.1M"], a: "Amit", t: ["5h ago", "قبل 5 ساعات"] },
+          { n: ["Anjali Verma", "Omar S."], s: "ig", sc: 52, st: 1, b: ["₹1.1 Cr", "AED 1.3M"], a: "Sara", t: ["1d ago", "قبل يوم"] },
+          { n: ["Karan Mehta", "Layla H."], s: "wa", sc: 30, st: 0, b: ["₹80 L", "AED 900K"], a: "Amit", t: ["10m ago", "قبل 10 دقائق"] },
+          { n: ["Pooja Nair", "Yusuf A."], s: "pf", sc: 92, st: 4, b: ["₹1.4 Cr", "AED 1.6M"], a: "Sara", t: ["2d ago", "قبل يومين"] },
+          { n: ["Sanjay Rao", "Sara M."], s: "fb", sc: 41, st: 0, b: ["₹90 L", "AED 1M"], a: "Amit", t: ["25m ago", "قبل 25 دقيقة"] }
+        ];
+        var POOL = [["Meera Joshi", "Khalid N."], ["Arjun Kapoor", "Noor A."], ["Isha Malhotra", "Hassan B."], ["Dev Patel", "Mariam Z."]], SK = ["fb", "ig", "wa", "web", "n9"];
+        var D = { score: 0, slot: null, started: false, reg: "in", vis: "" }, f = "all", q = "", view = "board", cur = null, ex = 0, drag = null;
+        function r() { return D.reg === "ae" ? 1 : 0; }
+        function dst() { return D.slot != null ? 2 : D.started ? 1 : 0; }
+        function all() {
+          var demo = { id: "demo", live: 1, n: [T(["Demo Lead", "عميل تجريبي"]), T(["Demo Lead", "عميل تجريبي"])], s: D.reg === "ae" ? "pf" : "fb", sc: D.score, st: dst(), b: [D.bud || "—", D.bud || "—"], a: "Amit", t: [T(["just now", "الآن"]), T(["just now", "الآن"])] };
+          L.forEach(function (x, i) { x.id = i; });
+          return [demo].concat(L);
+        }
+        function lv(s) { return s >= 60 ? "hot" : s >= 40 ? "int" : "normal"; }
+        function ok(x) { if (q && x.n[r()].toLowerCase().indexOf(q) < 0) return false; return f === "all" || (f === "hot" && x.sc >= 60) || (f === "warm" && x.sc >= 40 && x.sc < 60) || (f === "cold" && x.sc < 40); }
+        function card(x) {
+          return '<div class="lm-card' + (x.live ? " live" : "") + '" data-id="' + x.id + '"' + (x.live ? "" : ' draggable="true"') + '><div class="lm-r1"><span>' + x.n[r()] + (x.live ? '<span class="lm-tag">LIVE</span>' : "") + '</span><span class="pill ' + lv(x.sc) + '">' + x.sc + '</span></div><div class="lm-r2"><span>' + T(SRC[x.s]) + " · " + x.b[r()] + '</span><span class="lm-av" title="' + x.a + '">' + x.a[0] + "</span></div>" + (x.fu ? '<div class="lm-fu">⏰ ' + T(x.fu) + "</div>" : "") + "</div>";
+        }
+        function bump(id, v) { var e = $(id); if (e.textContent != v) { e.textContent = v; e.classList.remove("bump"); void e.offsetWidth; e.classList.add("bump"); } }
+        function render() {
+          var A = all(), vis = A.filter(ok);
+          bump("lk1", A.length); bump("lk2", A.filter(function (x) { return x.sc >= 60; }).length); bump("lk3", A.filter(function (x) { return x.st >= 2; }).length);
+          bump("lk4", Math.round(A.filter(function (x) { return x.st === 4; }).length / A.length * 100) + "%");
+          var h = "";
+          if (view === "board") {
+            h = '<div class="lm-board" id="lmBoard">' + ST.map(function (s, i) {
+              var c = vis.filter(function (x) { return x.st === i; });
+              return '<div class="lm-col" data-col="' + i + '"><div class="lm-ch" style="--c:' + s[2] + '"><i></i>' + T(s) + "<em>" + c.length + "</em></div>" + (c.length ? c.map(card).join("") : '<div class="lm-empty">' + T(["Drop leads here", "أفلت العملاء هنا"]) + "</div>") + "</div>";
+            }).join("") + "</div>";
+          } else {
+            h = '<div class="lm-list"><div class="tbl-w"><table class="tbl"><thead><tr><th>' + T(["Lead", "العميل"]) + "</th><th>" + T(["Source", "المصدر"]) + "</th><th>" + T(["Budget", "الميزانية"]) + "</th><th>" + T(["Stage", "المرحلة"]) + "</th><th>" + T(["Score", "التقييم"]) + "</th><th>" + T(["Agent", "الوكيل"]) + "</th></tr></thead><tbody>" +
+              vis.map(function (x) { return '<tr data-id="' + x.id + '"><td>' + x.n[r()] + (x.live ? '<span class="lm-tag">LIVE</span>' : "") + "</td><td>" + T(SRC[x.s]) + "</td><td>" + x.b[r()] + '</td><td><span class="pill ' + (x.st === 4 ? "ready" : x.st >= 2 ? "int" : "") + '">' + T(ST[x.st]) + '</span></td><td><span class="pill ' + lv(x.sc) + '">' + x.sc + "</span></td><td>" + x.a + "</td></tr>"; }).join("") + "</tbody></table></div></div>";
+          }
+          $("lmMain").innerHTML = h;
+          if (cur != null) drawer(cur, 1);
+        }
+        function find(id) { return all().filter(function (x) { return String(x.id) === String(id); })[0]; }
+        function toast(m) { var t = $("lmT"); t.textContent = m; t.classList.add("on"); clearTimeout(t._h); t._h = setTimeout(function () { t.classList.remove("on"); }, 2600); }
+        function drawer(id, keep) {
+          var x = find(id); if (!x) return; cur = id;
+          var ev = [[T(["Lead captured from ", "تم استقبال العميل من "]) + T(SRC[x.s]), T(["AI replied in 3 seconds", "رد المساعد خلال 3 ثوانٍ"])], [T(["AI chat started — budget & intent captured", "بدأت محادثة الذكاء — تم حفظ الميزانية والنية"]), T(["Score: ", "التقييم: "]) + x.sc], [T(["Site visit booked & location sent", "تم حجز المعاينة وإرسال الموقع"]), x.live && D.vis ? D.vis : T(["Reminders scheduled", "تم جدولة التذكيرات"])], [T(["Agent alerted on WhatsApp — negotiating", "تم تنبيه الوكيل — مرحلة التفاوض"]), x.a], [T(["Deal closed 🎉", "تم إغلاق الصفقة 🎉"]), T(["Booking amount received", "تم استلام مبلغ الحجز"])]];
+          var nx = x.st < 4 ? T(ST[x.st + 1]) : "";
+          $("lmDr").innerHTML = '<button class="lm-x" type="button" id="lmX" aria-label="Close">✕</button><div class="sub">' + T(ST[x.st]) + '</div><h3>' + x.n[r()] + '</h3><span class="pill ' + lv(x.sc) + '">' + T(["Score", "التقييم"]) + " " + x.sc + '</span><div class="grid2"><div><small>' + T(["Source", "المصدر"]) + "</small><b>" + T(SRC[x.s]) + "</b></div><div><small>" + T(["Budget", "الميزانية"]) + "</small><b>" + x.b[r()] + "</b></div><div><small>" + T(["Assigned agent", "الوكيل"]) + "</small><b>" + x.a + "</b></div><div><small>" + T(["Last activity", "آخر نشاط"]) + "</small><b>" + T(x.t) + "</b></div></div><b>" + T(["AI timeline", "الجدول الزمني"]) + '</b><ul class="lm-tl">' + ev.slice(0, x.st + 1).map(function (e) { return "<li>" + e[0] + "<small>" + e[1] + "</small></li>"; }).join("") + '</ul><div class="lm-act">' +
+            '<a class="btn btn-wa" target="_blank" rel="noopener" href="https://wa.me/919250119045?text=' + encodeURIComponent("Hi, I want a free demo of Visitsly") + '">💬 ' + T(["Message on WhatsApp", "راسل على واتساب"]) + "</a>" +
+            (x.live || x.st > 3 ? "" : '<button class="btn btn-primary" type="button" id="lmNx">→ ' + T(["Move to ", "انقل إلى "]) + nx + "</button>") + "</div>";
+          $("lmDr").classList.add("on"); $("lmOv").classList.add("on");
+          $("lmX").onclick = close; var b = $("lmNx"); if (b) b.onclick = function () { x.st++; x.sc = Math.min(100, x.sc + 8); toast("✅ " + x.n[r()] + " → " + T(ST[x.st])); render(); };
+        }
+        function close() { cur = null; $("lmDr").classList.remove("on"); $("lmOv").classList.remove("on"); }
+        $("lmOv").onclick = close;
+        document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
+        $("lmMain").addEventListener("click", function (e) { var c = e.target.closest("[data-id]"); if (c) drawer(c.getAttribute("data-id")); });
+        $("lmMain").addEventListener("dragstart", function (e) { var c = e.target.closest(".lm-card"); if (!c) return; drag = c.getAttribute("data-id"); c.classList.add("drag"); e.dataTransfer.setData("text/plain", drag); });
+        $("lmMain").addEventListener("dragend", function () { drag = null; render(); });
+        $("lmMain").addEventListener("dragover", function (e) { var c = e.target.closest(".lm-col"); if (c && drag != null) { e.preventDefault(); document.querySelectorAll(".lm-col").forEach(function (k) { k.classList.toggle("over", k === c); }); } });
+        $("lmMain").addEventListener("drop", function (e) { var c = e.target.closest(".lm-col"); if (!c || drag == null) return; e.preventDefault(); var x = find(drag), to = +c.getAttribute("data-col"); if (x && x.st !== to) { x.st = to; toast("✅ " + x.n[r()] + " → " + T(ST[to])); } drag = null; render(); });
+        $("lmQ").addEventListener("input", function () { q = this.value.trim().toLowerCase(); render(); });
+        $("lmF").addEventListener("click", function (e) { var b = e.target.closest("button"); if (!b) return; f = b.getAttribute("data-f"); document.querySelectorAll("#lmF button").forEach(function (k) { k.classList.toggle("on", k === b); }); render(); });
+        $("lmV").addEventListener("click", function (e) { var b = e.target.closest("button"); if (!b) return; view = b.getAttribute("data-v"); document.querySelectorAll("#lmV button").forEach(function (k) { k.classList.toggle("on", k === b); }); render(); });
+        $("lmAdd").onclick = function () {
+          var p = POOL[ex % POOL.length], s = SK[ex % SK.length]; ex++;
+          L.push({ n: p, s: s, sc: 20 + Math.floor(Math.random() * 25), st: 0, b: ["₹1 Cr", "AED 1.2M"], a: ex % 2 ? "Amit" : "Sara", t: [T(["just now", "الآن"]), T(["just now", "الآن"])] });
+          toast("🔔 " + T(["New lead captured — AI is replying: ", "عميل جديد — المساعد يرد: "]) + p[r()]); render();
+        };
+        window.LM = { sync: function (d) { D = d; render(); } };
+        var last = root.lang;
+        new MutationObserver(function () { if (root.lang !== last) { last = root.lang; $("lmQ").placeholder = $("lmQ").getAttribute(AR() ? "data-ph-ar" : "data-ph-en"); render(); } }).observe(root, { attributes: true, attributeFilter: ["lang"] });
+        render();
       })();
     </script>
   </body>
