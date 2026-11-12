@@ -1,0 +1,1752 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <script>
+      (function () {
+        try {
+          var p = localStorage.getItem("vsLang");
+          if (!p) {
+            var g = JSON.parse(localStorage.getItem("vsGeo") || "null");
+            if (
+              g &&
+              g.c &&
+              Date.now() - g.t < 6048e5 &&
+              /^(SA|AE|QA|KW|BH|OM|JO|LB|SY|IQ|YE|EG|LY|TN|DZ|MA|SD|PS|MR|DJ|SO|KM)$/.test(
+                g.c,
+              )
+            )
+              p = "ar";
+          }
+          if (/[?&]lang=ar\b/.test(location.search)) p = "ar";
+          if (p === "ar") {
+            document.documentElement.lang = "ar";
+            document.documentElement.dir = "rtl";
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Terms of Service — Visitsly</title>
+    <meta
+      name="description"
+      content="The terms that govern your use of Visitsly, the AI WhatsApp agent and visit-booking CRM for real estate, with specific terms for customers in India and the UAE."
+    />
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href="https://visitsly.com/terms.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Visitsly" />
+    <meta property="og:title" content="Terms of Service — Visitsly" />
+    <meta
+      property="og:description"
+      content="The terms that govern your use of Visitsly, the AI WhatsApp agent and visit-booking CRM for real estate, with specific terms for customers in India and the UAE."
+    />
+    <meta property="og:url" content="https://visitsly.com/terms.html" />
+    <meta name="theme-color" content="#2563eb" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%232563eb'/><text x='50' y='68' font-size='56' text-anchor='middle'>🏠</text></svg>"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --font: "Plus Jakarta Sans", system-ui, sans-serif;
+      }
+      :root {
+        --bg: #ffffff;
+        --soft: #f5f8ff;
+        --soft2: #eaf1ff;
+        --line: #e2e8f5;
+        --ink: #0b1b3f;
+        --text: #1e2a4a;
+        --muted: #5b6788;
+        --blue: #2563eb;
+        --blue-d: #1d4ed8;
+        --indigo: #4f46e5;
+        --cyan: #06b6d4;
+        --sky: #38bdf8;
+        --green: #16a34a;
+        --wa: #25d366;
+        --gold: #f59e0b;
+        --pink: #e11d48;
+        --navy: #0b1b3f;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        overflow-x: hidden;
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .wrap {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 0 22px;
+      }
+      section {
+        padding: 96px 0;
+        position: relative;
+      }
+      h1,
+      h2,
+      h3 {
+        line-height: 1.18;
+        margin: 0;
+        letter-spacing: -0.02em;
+        color: var(--ink);
+      }
+      [dir="rtl"] h1,
+      [dir="rtl"] h2,
+      [dir="rtl"] h3 {
+        letter-spacing: 0;
+        line-height: 1.35;
+      }
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 12.5px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--blue);
+        background: var(--soft2);
+        border: 1px solid #d3e1ff;
+        padding: 6px 14px;
+        border-radius: 99px;
+        margin-bottom: 16px;
+      }
+      [dir="rtl"] .eyebrow {
+        letter-spacing: 0;
+        font-size: 13.5px;
+      }
+      .sec-head {
+        text-align: center;
+        max-width: 780px;
+        margin: 0 auto 56px;
+      }
+      .sec-head h2 {
+        font-size: clamp(30px, 4.2vw, 46px);
+        font-weight: 800;
+      }
+      .sec-head p {
+        color: var(--muted);
+        font-size: 17.5px;
+        margin: 16px 0 0;
+      }
+      .grad {
+        background: linear-gradient(
+          92deg,
+          #2563eb 0%,
+          #4f46e5 45%,
+          #06b6d4 100%
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        font-weight: 700;
+        font-size: 15px;
+        padding: 15px 26px;
+        border-radius: 14px;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s,
+          background 0.2s;
+        border: 0;
+        font-family: inherit;
+        cursor: pointer;
+      }
+      .btn-primary {
+        background: linear-gradient(135deg, #2563eb, #4f46e5);
+        color: #fff;
+        box-shadow: 0 12px 30px rgba(37, 99, 235, 0.35);
+      }
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 16px 40px rgba(37, 99, 235, 0.45);
+      }
+      .btn-ghost {
+        background: #fff;
+        border: 1px solid var(--line);
+        color: var(--ink);
+        box-shadow: 0 4px 14px rgba(11, 27, 63, 0.06);
+      }
+      .btn-ghost:hover {
+        border-color: #bcd0ff;
+        background: var(--soft);
+      }
+      .btn-wa {
+        background: var(--wa);
+        color: #fff;
+        box-shadow: 0 12px 30px rgba(37, 211, 102, 0.35);
+      }
+
+      .topbar {
+        background: linear-gradient(90deg, #1d4ed8, #4f46e5, #0891b2);
+        color: #e8efff;
+        font-size: 13px;
+        text-align: center;
+        padding: 8px 16px;
+      }
+      .topbar b {
+        color: #fff;
+      }
+
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid var(--line);
+      }
+      .nav .wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 72px;
+        gap: 16px;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 22px;
+      }
+      .logo-mark {
+        width: 38px;
+        height: 38px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #2563eb, #06b6d4);
+        display: grid;
+        place-items: center;
+        font-size: 19px;
+        box-shadow: 0 6px 18px rgba(37, 99, 235, 0.3);
+      }
+      .lw {
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        color: var(--ink);
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+      .lw span {
+        color: var(--blue);
+      }
+      .nav-links {
+        display: flex;
+        gap: 28px;
+        font-size: 14.5px;
+        color: var(--muted);
+        font-weight: 600;
+      }
+      .nav-links a:hover {
+        color: var(--blue);
+      }
+      .nav-right {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+      .seg {
+        display: inline-flex;
+        background: var(--soft);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 3px;
+      }
+      .seg a,
+      .seg button {
+        font: inherit;
+        font-size: 13px;
+        font-weight: 700;
+        padding: 7px 14px;
+        border-radius: 9px;
+        color: var(--muted);
+        background: none;
+        border: 0;
+        cursor: pointer;
+      }
+      .seg .on {
+        background: #fff;
+        color: var(--blue);
+        box-shadow: 0 2px 8px rgba(11, 27, 63, 0.1);
+      }
+      .nav .btn {
+        padding: 11px 18px;
+        font-size: 14px;
+      }
+      .menu-btn {
+        display: none;
+        background: none;
+        border: 0;
+        color: var(--ink);
+        font-size: 26px;
+        cursor: pointer;
+      }
+
+      footer {
+        border-top: 1px solid var(--line);
+        padding: 56px 0 30px;
+        background: var(--soft);
+        margin-top: 96px;
+      }
+      .foot {
+        display: grid;
+        grid-template-columns: 1.6fr 1fr 1fr 1.3fr;
+        gap: 30px;
+      }
+      .foot p,
+      .foot a,
+      .foot li {
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .foot h4 {
+        font-size: 14px;
+        margin: 0 0 14px;
+        color: var(--ink);
+      }
+      .foot ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 9px;
+      }
+      .foot a:hover {
+        color: var(--blue);
+      }
+      .seo-text {
+        margin-top: 40px;
+        padding-top: 26px;
+        border-top: 1px solid var(--line);
+        color: #7a85a5;
+        font-size: 13px;
+        line-height: 1.8;
+      }
+      .seo-text h2 {
+        font-size: 14px;
+        color: var(--muted);
+        margin-bottom: 8px;
+        letter-spacing: 0;
+      }
+      .copy {
+        text-align: center;
+        color: var(--muted);
+        font-size: 12.5px;
+        margin-top: 26px;
+      }
+      .wa-float {
+        position: fixed;
+        inset-inline-end: 22px;
+        bottom: 22px;
+        z-index: 60;
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        background: #25d366;
+        display: grid;
+        place-items: center;
+        box-shadow: 0 10px 30px rgba(37, 211, 102, 0.45);
+        transition: transform 0.2s;
+      }
+      html[lang="ar"] {
+        --font:
+          "IBM Plex Sans Arabic", "Plus Jakarta Sans", system-ui, sans-serif;
+      }
+      html[lang="ar"] .en {
+        display: none !important;
+      }
+      html:not([lang="ar"]) .ar {
+        display: none !important;
+      }
+      .nav-right .seg {
+        margin-inline-end: 2px;
+      }
+      .nav-right .seg button {
+        padding: 7px 12px;
+      }
+      .hero-l {
+        padding: 56px 0 8px;
+        background: linear-gradient(180deg, #f3f7ff 0%, #fff 100%);
+      }
+      .hero-l .wrap,
+      .lw-wrap {
+        max-width: 900px;
+      }
+      .hero-l h1 {
+        font-size: clamp(32px, 5vw, 50px);
+        font-weight: 800;
+        margin: 6px 0 10px;
+      }
+      .upd {
+        color: var(--muted);
+        font-size: 14px;
+        font-weight: 600;
+      }
+      .lead {
+        font-size: 17px;
+        color: var(--text);
+        margin: 18px 0 0;
+      }
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 20px;
+      }
+      .chip {
+        display: inline-flex;
+        gap: 6px;
+        align-items: center;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 99px;
+        padding: 8px 16px;
+        font-size: 13.5px;
+        font-weight: 700;
+        color: var(--ink);
+        box-shadow: 0 4px 14px rgba(11, 27, 63, 0.05);
+      }
+      .chip:hover {
+        border-color: #bcd0ff;
+        background: var(--soft);
+      }
+      .lw-wrap {
+        margin: 0 auto;
+        padding: 10px 22px 0;
+      }
+      .toc {
+        background: var(--soft);
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        padding: 22px 26px;
+        margin: 26px 0 8px;
+      }
+      .toc b {
+        display: block;
+        color: var(--ink);
+        margin-bottom: 10px;
+      }
+      .toc ol {
+        margin: 0;
+        padding-inline-start: 22px;
+        columns: 2;
+        column-gap: 36px;
+        font-size: 14.5px;
+      }
+      .toc li {
+        break-inside: avoid;
+        padding: 3px 0;
+      }
+      .toc a {
+        color: var(--blue-d);
+        font-weight: 600;
+      }
+      .toc a:hover {
+        text-decoration: underline;
+      }
+      .lg {
+        padding: 34px 0 0;
+        scroll-margin-top: 90px;
+      }
+      .lg h2 {
+        font-size: clamp(21px, 2.6vw, 27px);
+        font-weight: 800;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 12px;
+      }
+      .lg .num {
+        flex: none;
+        width: 34px;
+        height: 34px;
+        border-radius: 10px;
+        background: var(--soft2);
+        color: var(--blue);
+        display: grid;
+        place-items: center;
+        font-size: 15px;
+        font-weight: 800;
+      }
+      .lg p,
+      .lg li {
+        font-size: 16px;
+        color: var(--text);
+      }
+      .lg p {
+        margin: 0 0 12px;
+      }
+      .lg ul {
+        margin: 0 0 12px;
+        padding-inline-start: 24px;
+      }
+      .lg li {
+        margin: 6px 0;
+      }
+      .lg a {
+        color: var(--blue-d);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+      .lg.region > div {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-inline-start: 5px solid var(--blue);
+        border-radius: 18px;
+        padding: 22px 24px;
+        box-shadow: 0 10px 30px rgba(11, 27, 63, 0.05);
+      }
+      .lg.region#uae > div {
+        border-inline-start-color: var(--cyan);
+      }
+      mark.ph {
+        background: #fff1b8;
+        color: #6b4e00;
+        padding: 0 5px;
+        border-radius: 5px;
+        font-weight: 700;
+      }
+      .xlink {
+        margin: 40px 0 0;
+        padding: 20px 24px;
+        border: 1px dashed #c8d6f5;
+        border-radius: 16px;
+        color: var(--muted);
+        font-size: 15px;
+      }
+      .xlink a {
+        color: var(--blue-d);
+        font-weight: 700;
+      }
+      @media (max-width: 860px) {
+        section {
+          padding: 0;
+        }
+        .toc ol {
+          columns: 1;
+        }
+        .lg.region > div {
+          padding: 18px;
+        }
+      }
+      @media print {
+        .nav,
+        .topbar,
+        .wa-float,
+        footer,
+        .chips {
+          display: none;
+        }
+      }
+
+      /* mobile nav + footer (shared with index.html) */
+      @media (max-width: 1000px){.nav-links{gap:18px}}
+      @media (max-width: 860px){
+        .nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:#fff;border-bottom:1px solid var(--line);padding:10px 22px}
+        .nav-links.open{display:flex}
+        .nav-links a{padding:12px 0}
+        .menu-btn{display:block}
+        .nav .btn{display:none}
+        .foot{grid-template-columns:1fr 1fr}
+      }
+      @media (max-width: 560px){.foot{grid-template-columns:1fr}.topbar{font-size:12px}}
+      .foot a[href^="tel:"]{unicode-bidi:isolate;direction:ltr;display:inline-block}
+    </style>
+  </head>
+  <body>
+    <div class="topbar">
+      <span class="en"
+        >🚀 <b>Visitsly</b> — the ultimate visit booking AI system for real
+        estate</span
+      ><span class="ar"
+        >🚀 <b>Visitsly</b> — نظام حجز المعاينات العقارية الأمثل بالذكاء
+        الاصطناعي</span
+      >
+    </div>
+    <nav class="nav" aria-label="Main">
+      <div class="wrap">
+        <a href="index.html" class="logo" aria-label="Visitsly"
+          ><div class="logo-mark">🏠</div>
+          <b class="lw">Visit<span>sly</span></b></a
+        >
+        <div class="nav-links" id="navLinks">
+          <a href="index.html#how-it-works"
+            ><span class="en">How it works</span
+            ><span class="ar">كيف يعمل</span></a
+          ><a href="index.html#features"
+            ><span class="en">Features</span><span class="ar">المزايا</span></a
+          ><a href="index.html#calculator"
+            ><span class="en">ROI</span><span class="ar">العائد</span></a
+          ><a href="index.html#pricing"
+            ><span class="en">Pricing</span><span class="ar">الأسعار</span></a
+          ><a href="index.html#faq"
+            ><span class="en">FAQ</span
+            ><span class="ar">الأسئلة الشائعة</span></a
+          ><a href="contact.html"
+            ><span class="en">Contact</span><span class="ar">تواصل معنا</span></a
+          >
+        </div>
+        <div class="nav-right">
+          <div
+            class="seg"
+            role="group"
+            aria-label="Language / اللغة"
+            id="langSeg"
+          >
+            <button
+              type="button"
+              data-lang="en"
+              lang="en"
+              class="on"
+              aria-pressed="true"
+            >
+              EN</button
+            ><button
+              type="button"
+              data-lang="ar"
+              lang="ar"
+              aria-pressed="false"
+            >
+              العربية
+            </button>
+          </div>
+          <a
+            class="btn btn-primary"
+            data-wa
+            href="https://wa.me/919250119045?text=Hi%2C%20I%20want%20a%20free%20demo%20of%20Visitsly"
+            target="_blank"
+            rel="noopener"
+            ><span class="en">Book free demo</span
+            ><span class="ar">احجز عرضاً مجانياً</span></a
+          >
+          <button
+            class="menu-btn"
+            aria-label="Menu"
+            onclick="
+              document.getElementById('navLinks').classList.toggle('open')
+            "
+          >
+            ☰
+          </button>
+        </div>
+      </div>
+    </nav>
+    <header class="hero-l">
+      <div class="wrap">
+        <div class="eyebrow">
+          <span class="en">Legal</span><span class="ar">قانوني</span>
+        </div>
+        <h1>
+          <span class="en">Terms of Service</span
+          ><span class="ar">شروط الخدمة</span>
+        </h1>
+        <div class="upd">
+          <span class="en">Last updated: 12 November 2026</span
+          ><span class="ar">آخر تحديث: 12 نوفمبر 2026</span>
+        </div>
+        <p class="lead">
+          <span class="en"
+            >These Terms of Service (“Terms”) are an agreement between you (or
+            the business you represent) and Visitsly, a product of Deific
+            Digital (“Visitsly”, “we”, “us”). By creating an account, paying for
+            a plan or using the Visitsly website or platform (the “Service”),
+            you accept these Terms. If you do not agree, do not use the Service.
+            Country-specific terms for India and the UAE are in section
+            15.</span
+          ><span class="ar"
+            >تُعدّ شروط الخدمة هذه («الشروط») اتفاقاً بينك (أو الجهة التي
+            تمثّلها) وبين Visitsly، وهي منتج من Deific Digital («Visitsly» أو
+            «نحن»). بإنشائك حساباً أو دفعك ثمن باقة أو استخدامك موقع Visitsly أو
+            منصتها («الخدمة») فإنك توافق على هذه الشروط. وإن لم توافق فلا تستخدم
+            الخدمة. وتجد الشروط الخاصة بالهند والإمارات في البند 15.</span
+          >
+        </p>
+        <div class="chips">
+          <a class="chip" href="#regions"
+            >🇮🇳 🇦🇪 <span class="en">India &amp; UAE terms</span
+            ><span class="ar">شروط الهند والإمارات</span></a
+          >
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="lw-wrap">
+        <nav class="toc" aria-label="Contents">
+          <b
+            ><span class="en">Contents</span
+            ><span class="ar">المحتويات</span></b
+          >
+          <ol>
+            <li>
+              <a href="#service"
+                ><span class="en">The Service</span
+                ><span class="ar">الخدمة</span></a
+              >
+            </li>
+            <li>
+              <a href="#accounts"
+                ><span class="en">Eligibility and accounts</span
+                ><span class="ar">الأهلية والحسابات</span></a
+              >
+            </li>
+            <li>
+              <a href="#fees"
+                ><span class="en">Plans, fees and taxes</span
+                ><span class="ar">الباقات والرسوم والضرائب</span></a
+              >
+            </li>
+            <li>
+              <a href="#whatsapp"
+                ><span class="en">WhatsApp and messaging compliance</span
+                ><span class="ar">الامتثال لقواعد واتساب والمراسلات</span></a
+              >
+            </li>
+            <li>
+              <a href="#data"
+                ><span class="en">Your data and responsibilities</span
+                ><span class="ar">بياناتك ومسؤولياتك</span></a
+              >
+            </li>
+            <li>
+              <a href="#ai"
+                ><span class="en">AI features</span
+                ><span class="ar">ميزات الذكاء الاصطناعي</span></a
+              >
+            </li>
+            <li>
+              <a href="#calling"
+                ><span class="en">AI Calling add-on</span
+                ><span class="ar">إضافة الاتصال بالذكاء الاصطناعي</span></a
+              >
+            </li>
+            <li>
+              <a href="#use"
+                ><span class="en">Acceptable use</span
+                ><span class="ar">الاستخدام المقبول</span></a
+              >
+            </li>
+            <li>
+              <a href="#ip"
+                ><span class="en">Intellectual property</span
+                ><span class="ar">الملكية الفكرية</span></a
+              >
+            </li>
+            <li>
+              <a href="#third"
+                ><span class="en">Third-party services</span
+                ><span class="ar">خدمات الأطراف الثالثة</span></a
+              >
+            </li>
+            <li>
+              <a href="#term"
+                ><span class="en">Term and termination</span
+                ><span class="ar">المدة والإنهاء</span></a
+              >
+            </li>
+            <li>
+              <a href="#warranty"
+                ><span class="en">Disclaimers</span
+                ><span class="ar">إخلاء المسؤولية</span></a
+              >
+            </li>
+            <li>
+              <a href="#liability"
+                ><span class="en">Limitation of liability</span
+                ><span class="ar">حدود المسؤولية</span></a
+              >
+            </li>
+            <li>
+              <a href="#indemnity"
+                ><span class="en">Indemnity</span
+                ><span class="ar">التعويض</span></a
+              >
+            </li>
+            <li>
+              <a href="#regions"
+                ><span class="en">🇮🇳 India and 🇦🇪 UAE: specific terms</span
+                ><span class="ar">🇮🇳 الهند و🇦🇪 الإمارات: شروط خاصة</span></a
+              >
+            </li>
+            <li>
+              <a href="#general"
+                ><span class="en">General</span
+                ><span class="ar">أحكام عامة</span></a
+              >
+            </li>
+            <li>
+              <a href="#contact"
+                ><span class="en">Contact us</span
+                ><span class="ar">تواصل معنا</span></a
+              >
+            </li>
+          </ol>
+        </nav>
+        <section id="service" class="lg">
+          <h2>
+            <span class="num">1</span
+            ><span
+              ><span class="en">The Service</span
+              ><span class="ar">الخدمة</span></span
+            >
+          </h2>
+          <div class="en">
+            <p>
+              Visitsly is an AI WhatsApp agent and CRM that captures property
+              leads, replies to them on WhatsApp, qualifies and scores them,
+              books site visits, sends reminders and alerts your agents.
+              Features depend on your plan and add-ons. We may improve or change
+              features, and will not materially reduce the core Service during a
+              paid term without notice.
+            </p>
+          </div>
+          <div class="ar">
+            <p>
+              Visitsly وكيل واتساب ذكي ونظام CRM يجمع بيانات العملاء المحتملين
+              للعقارات ويردّ عليهم عبر واتساب ويؤهّلهم ويقيّمهم ويحجز المعاينات
+              ويرسل التذكيرات والتنبيهات لوكلائك. وتعتمد المزايا على باقتك
+              وإضافاتك. وقد نطوّر المزايا أو نغيّرها، ولن نقلّص الخدمة الأساسية
+              جوهرياً خلال مدة مدفوعة دون إشعار.
+            </p>
+          </div>
+        </section>
+        <section id="accounts" class="lg">
+          <h2>
+            <span class="num">2</span
+            ><span
+              ><span class="en">Eligibility and accounts</span
+              ><span class="ar">الأهلية والحسابات</span></span
+            >
+          </h2>
+          <div class="en">
+            <p>
+              You must be at least 18 and authorised to bind your business. Keep
+              your login details secure; you are responsible for all activity
+              under your account and for the people you add as users. Give us
+              accurate information and tell us promptly of any unauthorised use.
+            </p>
+          </div>
+          <div class="ar">
+            <p>
+              يجب أن يكون عمرك 18 عاماً على الأقل وأن تكون مخوّلاً بإلزام نشاطك
+              التجاري. حافظ على سرية بيانات دخولك؛ فأنت مسؤول عن كل نشاط يتم عبر
+              حسابك وعن الأشخاص الذين تضيفهم كمستخدمين. قدّم لنا معلومات صحيحة
+              وأبلغنا فوراً بأي استخدام غير مصرّح به.
+            </p>
+          </div>
+        </section>
+        <section id="fees" class="lg">
+          <h2>
+            <span class="num">3</span
+            ><span
+              ><span class="en">Plans, fees and taxes</span
+              ><span class="ar">الباقات والرسوم والضرائب</span></span
+            >
+          </h2>
+          <div class="en">
+            <ul>
+              <li>
+                <b>Plans and add-ons.</b> Fees are as shown on our pricing page
+                or in your order, in INR (India) or AED (UAE). One-time setup
+                fees are charged separately where stated.
+              </li>
+              <li>
+                <b>Billing.</b> Plans renew monthly or yearly (yearly plans save
+                two months) until cancelled. You can cancel before the next
+                renewal date; cancellation takes effect at the end of the paid
+                period.
+              </li>
+              <li>
+                <b>Taxes.</b> Prices exclude GST (India) and VAT (UAE), which
+                are added where applicable.
+              </li>
+              <li>
+                <b>WhatsApp (Meta) charges.</b> Conversation charges set by Meta
+                are separate from your plan and are paid from your Visitsly
+                wallet. Unused wallet balance is handled as stated in your
+                order.
+              </li>
+              <li>
+                <b>Price changes.</b> We will give at least 30 days’ notice
+                before changing prices for an existing term.
+              </li>
+              <li>
+                <b>Refunds.</b> Fees, including setup fees, are non-refundable
+                except where these Terms, your order or the law say otherwise.
+              </li>
+              <li>
+                <b>Late payment.</b> We may suspend the Service for overdue
+                amounts after notice.
+              </li>
+            </ul>
+          </div>
+          <div class="ar">
+            <ul>
+              <li>
+                <b>الباقات والإضافات.</b> الرسوم وفق ما هو معروض في صفحة الأسعار
+                أو في طلبك، بالروبية الهندية (الهند) أو الدرهم الإماراتي
+                (الإمارات). وتُحتسب رسوم الإعداد لمرة واحدة بشكل منفصل حيث يُذكر
+                ذلك.
+              </li>
+              <li>
+                <b>الفوترة.</b> تتجدد الباقات شهرياً أو سنوياً (الباقات السنوية
+                توفّر شهرين) حتى الإلغاء. ويمكنك الإلغاء قبل موعد التجديد
+                التالي، ويسري الإلغاء في نهاية المدة المدفوعة.
+              </li>
+              <li>
+                <b>الضرائب.</b> الأسعار لا تشمل ضريبة GST (الهند) وضريبة القيمة
+                المضافة (الإمارات)، وتُضاف عند انطباقها.
+              </li>
+              <li>
+                <b>رسوم واتساب (Meta).</b> رسوم المحادثات التي تحدّدها Meta
+                منفصلة عن باقتك وتُدفع من محفظتك داخل Visitsly. ويُعامَل الرصيد
+                غير المستخدم وفق ما هو مذكور في طلبك.
+              </li>
+              <li>
+                <b>تغيير الأسعار.</b> سنمنحك إشعاراً لا يقل عن 30 يوماً قبل
+                تغيير الأسعار لمدة قائمة.
+              </li>
+              <li>
+                <b>الاسترداد.</b> الرسوم، بما فيها رسوم الإعداد، غير قابلة
+                للاسترداد إلا حيث تنصّ هذه الشروط أو طلبك أو القانون على خلاف
+                ذلك.
+              </li>
+              <li>
+                <b>التأخر في السداد.</b> يجوز لنا تعليق الخدمة عند وجود مبالغ
+                متأخرة بعد إشعارك.
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section id="whatsapp" class="lg">
+          <h2>
+            <span class="num">4</span
+            ><span
+              ><span class="en">WhatsApp and messaging compliance</span
+              ><span class="ar">الامتثال لقواعد واتساب والمراسلات</span></span
+            >
+          </h2>
+          <div class="en">
+            <p>
+              Visitsly works through the official WhatsApp Business Platform.
+              You must follow Meta’s WhatsApp Business Terms and Messaging
+              Policy, and you are responsible for getting valid opt-in from
+              every person you message, honouring opt-outs, and not sending spam
+              or misleading content. Meta may limit or suspend your number or
+              messaging; we are not responsible for decisions made by Meta or
+              other third-party platforms.
+            </p>
+          </div>
+          <div class="ar">
+            <p>
+              تعمل Visitsly عبر منصة واتساب للأعمال الرسمية. يجب عليك الالتزام
+              بشروط واتساب للأعمال وسياسة المراسلة لدى Meta، وأنت المسؤول عن
+              الحصول على موافقة صحيحة (opt-in) من كل شخص تراسله، واحترام طلبات
+              إلغاء الاشتراك، وعدم إرسال رسائل مزعجة أو مضلّلة. وقد تقيّد Meta
+              رقمك أو مراسلاتك أو تعلّقها، ولسنا مسؤولين عن قرارات Meta أو أي
+              منصة خارجية أخرى.
+            </p>
+          </div>
+        </section>
+        <section id="data" class="lg">
+          <h2>
+            <span class="num">5</span
+            ><span
+              ><span class="en">Your data and responsibilities</span
+              ><span class="ar">بياناتك ومسؤولياتك</span></span
+            >
+          </h2>
+          <div class="en">
+            <ul>
+              <li>
+                <b>Your data.</b> You own the lead and project data you put into
+                Visitsly (“Customer Data”) and give us the right to process it
+                to provide the Service. Our
+                <a href="privacy.html">Privacy Policy</a> explains how we handle
+                personal data; you are the controller / data fiduciary of the
+                lead data and we act as your processor.
+              </li>
+              <li>
+                <b>Lawful use.</b> You must have a lawful basis and any required
+                consent to upload leads and contact them, and you must give
+                leads the notices that the law requires.
+              </li>
+              <li>
+                <b>Accuracy.</b> The AI answers from the project, price and
+                availability information you provide. Keep it accurate and up to
+                date.
+              </li>
+              <li>
+                <b>Real estate rules.</b> You are responsible for complying with
+                real estate laws that apply to you, such as RERA in India and
+                RERA / DLD rules in the UAE, including advertising permits and
+                disclosure requirements.
+              </li>
+            </ul>
+          </div>
+          <div class="ar">
+            <ul>
+              <li>
+                <b>بياناتك.</b> أنت تملك بيانات العملاء والمشاريع التي تدخلها في
+                Visitsly («بيانات العميل») وتمنحنا حق معالجتها لتقديم الخدمة.
+                وتوضّح <a href="privacy.html">سياسة الخصوصية</a> كيف نتعامل مع
+                البيانات الشخصية؛ وأنت المتحكّم / مسؤول البيانات بالنسبة لبيانات
+                العملاء المحتملين ونحن معالِج لها نيابةً عنك.
+              </li>
+              <li>
+                <b>الاستخدام المشروع.</b> يجب أن تكون لديك أساس قانوني وأي
+                موافقة لازمة لرفع بيانات العملاء المحتملين والتواصل معهم، وأن
+                تقدّم لهم الإشعارات التي يشترطها القانون.
+              </li>
+              <li>
+                <b>الدقة.</b> يجيب الذكاء الاصطناعي من معلومات المشروع والأسعار
+                والتوافر التي تقدّمها، فحافظ على دقتها وتحديثها.
+              </li>
+              <li>
+                <b>قواعد العقارات.</b> أنت المسؤول عن الامتثال لقوانين العقارات
+                المطبّقة عليك، مثل RERA في الهند وأنظمة RERA / دائرة الأراضي
+                والأملاك في الإمارات، بما في ذلك تصاريح الإعلان ومتطلبات
+                الإفصاح.
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section id="ai" class="lg">
+          <h2>
+            <span class="num">6</span
+            ><span
+              ><span class="en">AI features</span
+              ><span class="ar">ميزات الذكاء الاصطناعي</span></span
+            >
+          </h2>
+          <div class="en">
+            <p>
+              AI output, including replies, lead scores and summaries, is
+              generated automatically and may be incomplete or wrong. It is a
+              tool to support your team, not professional, legal, financial or
+              investment advice. You are responsible for reviewing conversations
+              and for statements made to leads under your name. We do not
+              guarantee any number of leads, visits, bookings or deals.
+            </p>
+          </div>
+          <div class="ar">
+            <p>
+              مخرجات الذكاء الاصطناعي، ومنها الردود وتقييمات العملاء والملخصات،
+              تُولَّد آلياً وقد تكون ناقصة أو خاطئة. وهي أداة لدعم فريقك وليست
+              مشورة مهنية أو قانونية أو مالية أو استثمارية. وأنت مسؤول عن مراجعة
+              المحادثات وعن أي تصريحات تُقدَّم للعملاء المحتملين باسمك. ولا نضمن
+              أي عدد من العملاء المحتملين أو المعاينات أو الحجوزات أو الصفقات.
+            </p>
+          </div>
+        </section>
+        <section id="calling" class="lg">
+          <h2>
+            <span class="num">7</span
+            ><span
+              ><span class="en">AI Calling add-on</span
+              ><span class="ar">إضافة الاتصال بالذكاء الاصطناعي</span></span
+            >
+          </h2>
+          <div class="en">
+            <p>
+              If you use AI Calling, you are responsible for complying with
+              telecom and calling rules that apply to you (such as TRAI
+              regulations in India and TDRA rules in the UAE), for not calling
+              people who have opted out or registered as do-not-disturb where
+              the rules require, and for telling people when a call is
+              AI-assisted or recorded and getting any consent required to
+              record.
+            </p>
+          </div>
+          <div class="ar">
+            <p>
+              إذا استخدمت الاتصال بالذكاء الاصطناعي فأنت مسؤول عن الامتثال
+              لقواعد الاتصالات والمكالمات المطبّقة عليك (مثل لوائح TRAI في الهند
+              وقواعد الهيئة العامة لتنظيم قطاع الاتصالات TDRA في الإمارات)، وعدم
+              الاتصال بمن ألغوا الاشتراك أو سجّلوا في قوائم عدم الإزعاج حيث
+              تشترط القواعد ذلك، وإبلاغ الأشخاص بأن المكالمة بمساعدة الذكاء
+              الاصطناعي أو مسجّلة والحصول على أي موافقة لازمة للتسجيل.
+            </p>
+          </div>
+        </section>
+        <section id="use" class="lg">
+          <h2>
+            <span class="num">8</span
+            ><span
+              ><span class="en">Acceptable use</span
+              ><span class="ar">الاستخدام المقبول</span></span
+            >
+          </h2>
+          <div class="en">
+            <p>
+              You must not use the Service to break the law; send spam, scams or
+              deceptive property offers; infringe others’ rights; upload
+              malware; attempt to access other customers’ data; reverse engineer
+              the Service; resell it without our written consent; or use it to
+              build a competing product. We may suspend access that puts the
+              Service, other customers or third parties at risk.
+            </p>
+          </div>
+          <div class="ar">
+            <p>
+              يُحظر استخدام الخدمة لمخالفة القانون، أو إرسال رسائل مزعجة أو
+              احتيالية أو عروض عقارية مضلّلة، أو التعدّي على حقوق الغير، أو رفع
+              برمجيات خبيثة، أو محاولة الوصول إلى بيانات عملاء آخرين، أو الهندسة
+              العكسية للخدمة، أو إعادة بيعها دون موافقتنا الخطية، أو استخدامها
+              لبناء منتج منافس. ويجوز لنا تعليق الوصول الذي يعرّض الخدمة أو
+              العملاء الآخرين أو الغير للخطر.
+            </p>
+          </div>
+        </section>
+        <section id="ip" class="lg">
+          <h2>
+            <span class="num">9</span
+            ><span
+              ><span class="en">Intellectual property</span
+              ><span class="ar">الملكية الفكرية</span></span
+            >
+          </h2>
+          <div class="en">
+            <p>
+              Visitsly, its software, design, brand and documentation belong to
+              us and our licensors. We grant you a limited, non-exclusive,
+              non-transferable right to use the Service during your term.
+              Feedback you give us may be used by us without obligation to you.
+            </p>
+          </div>
+          <div class="ar">
+            <p>
+              تعود ملكية Visitsly وبرمجياتها وتصميمها وعلامتها التجارية ووثائقها
+              لنا ولمرخّصينا. ونمنحك حقاً محدوداً غير حصري وغير قابل للتحويل
+              لاستخدام الخدمة خلال مدتك. ويجوز لنا استخدام الملاحظات التي
+              تقدّمها دون أي التزام تجاهك.
+            </p>
+          </div>
+        </section>
+        <section id="third" class="lg">
+          <h2>
+            <span class="num">10</span
+            ><span
+              ><span class="en">Third-party services</span
+              ><span class="ar">خدمات الأطراف الثالثة</span></span
+            >
+          </h2>
+          <div class="en">
+            <p>
+              The Service connects to third-party platforms such as Meta,
+              property portals and ad platforms. Their availability and terms
+              are outside our control, and your use of them is subject to their
+              terms.
+            </p>
+          </div>
+          <div class="ar">
+            <p>
+              تتصل الخدمة بمنصات خارجية مثل Meta والبوابات العقارية ومنصات
+              الإعلانات. وتوافرها وشروطها خارج سيطرتنا، ويخضع استخدامك لها
+              لشروطها.
+            </p>
+          </div>
+        </section>
+        <section id="term" class="lg">
+          <h2>
+            <span class="num">11</span
+            ><span
+              ><span class="en">Term and termination</span
+              ><span class="ar">المدة والإنهاء</span></span
+            >
+          </h2>
+          <div class="en">
+            <p>
+              These Terms apply while you use the Service. You may cancel at any
+              time as described in section 3. We may suspend or end your access
+              if you materially breach these Terms and do not fix the breach
+              within a reasonable period after notice, or immediately for
+              unlawful or harmful use. After termination you can export your
+              Customer Data for a reasonable period, after which we delete it as
+              described in our Privacy Policy. Sections that by nature should
+              survive (payment, liability, indemnity, governing law) continue to
+              apply.
+            </p>
+          </div>
+          <div class="ar">
+            <p>
+              تسري هذه الشروط طوال استخدامك للخدمة. ويمكنك الإلغاء في أي وقت وفق
+              ما هو موضّح في البند 3. ويجوز لنا تعليق وصولك أو إنهاؤه إذا أخللت
+              إخلالاً جوهرياً بهذه الشروط ولم تعالجه خلال مدة معقولة بعد
+              الإشعار، أو فوراً عند الاستخدام غير المشروع أو الضار. وبعد الإنهاء
+              يمكنك تصدير بيانات العميل خلال مدة معقولة، ثم نحذفها وفق ما ورد في
+              سياسة الخصوصية. وتستمر البنود التي بطبيعتها يجب أن تبقى سارية
+              (الدفع والمسؤولية والتعويض والقانون الواجب التطبيق).
+            </p>
+          </div>
+        </section>
+        <section id="warranty" class="lg">
+          <h2>
+            <span class="num">12</span
+            ><span
+              ><span class="en">Disclaimers</span
+              ><span class="ar">إخلاء المسؤولية</span></span
+            >
+          </h2>
+          <div class="en">
+            <p>
+              To the extent permitted by law, the Service is provided “as is”
+              and “as available”. We do not promise that it will be
+              uninterrupted or error-free, or that messages will always be
+              delivered, as delivery depends on Meta and telecom networks.
+            </p>
+          </div>
+          <div class="ar">
+            <p>
+              بالقدر الذي يسمح به القانون، تُقدَّم الخدمة «كما هي» و«حسب
+              التوافر». ولا نعد بأنها ستعمل دون انقطاع أو أخطاء، ولا بأن الرسائل
+              ستصل دائماً، إذ يعتمد التسليم على Meta وشبكات الاتصالات.
+            </p>
+          </div>
+        </section>
+        <section id="liability" class="lg">
+          <h2>
+            <span class="num">13</span
+            ><span
+              ><span class="en">Limitation of liability</span
+              ><span class="ar">حدود المسؤولية</span></span
+            >
+          </h2>
+          <div class="en">
+            <p>
+              To the extent permitted by law, we are not liable for indirect,
+              incidental or consequential loss, or for loss of profit, revenue,
+              leads or goodwill. Our total liability for any claim relating to
+              the Service is limited to the fees you paid us in the 12 months
+              before the claim arose. Nothing in these Terms limits liability
+              that cannot be limited under applicable law, including for fraud
+              or wilful misconduct.
+            </p>
+          </div>
+          <div class="ar">
+            <p>
+              بالقدر الذي يسمح به القانون، لا نتحمّل المسؤولية عن الخسائر غير
+              المباشرة أو العرضية أو التبعية، ولا عن خسارة الأرباح أو الإيرادات
+              أو العملاء المحتملين أو السمعة. ويقتصر إجمالي مسؤوليتنا عن أي
+              مطالبة تتعلق بالخدمة على الرسوم التي دفعتها لنا خلال الأشهر الاثني
+              عشر السابقة لنشوء المطالبة. ولا يقيّد أي نص في هذه الشروط مسؤولية
+              لا يجوز تقييدها بموجب القانون المعمول به، ومنها الاحتيال أو الخطأ
+              العمدي.
+            </p>
+          </div>
+        </section>
+        <section id="indemnity" class="lg">
+          <h2>
+            <span class="num">14</span
+            ><span
+              ><span class="en">Indemnity</span
+              ><span class="ar">التعويض</span></span
+            >
+          </h2>
+          <div class="en">
+            <p>
+              You will defend and compensate us against claims, losses and costs
+              arising from Customer Data you upload, your messages and calls to
+              leads, your breach of these Terms, or your violation of law,
+              except to the extent caused by us.
+            </p>
+          </div>
+          <div class="ar">
+            <p>
+              تلتزم بالدفاع عنا وتعويضنا عن المطالبات والخسائر والتكاليف الناشئة
+              عن بيانات العميل التي ترفعها، ورسائلك ومكالماتك للعملاء المحتملين،
+              وإخلالك بهذه الشروط، ومخالفتك للقانون، إلا بالقدر الذي نتسبب فيه
+              نحن.
+            </p>
+          </div>
+        </section>
+        <section id="regions" class="lg">
+          <h2>
+            <span class="num">15</span
+            ><span
+              ><span class="en">🇮🇳 India and 🇦🇪 UAE: specific terms</span
+              ><span class="ar">🇮🇳 الهند و🇦🇪 الإمارات: شروط خاصة</span></span
+            >
+          </h2>
+          <div class="en">
+            <p><b>🇮🇳 Customers in India</b></p>
+            <ul>
+              <li>
+                Fees are in INR and exclusive of GST; we issue GST invoices.
+                Provide your GSTIN where applicable.
+              </li>
+              <li>
+                These Terms are governed by the laws of India. Disputes are
+                first discussed in good faith; if unresolved within 30 days they
+                are subject to the courts at Kanpur,
+                India, <i>or</i> to arbitration under the Arbitration and
+                Conciliation Act, 1996 seated at
+                
+              </li>
+              <li>
+                Personal data is handled as described in our Privacy Policy
+                under the IT Act, 2000 and, as it comes into force, the DPDP
+                Act, 2023 and DPDP Rules, 2025.
+              </li>
+            </ul>
+            <p><b>🇦🇪 Customers in the UAE</b></p>
+            <ul>
+              <li>
+                Fees are in AED and exclusive of 5% VAT; we issue tax invoices.
+                Provide your Tax Registration Number (TRN) where applicable.
+              </li>
+              <li>
+                These Terms are governed by the laws of the Emirate of Dubai and
+                the federal laws of the UAE. The courts of Dubai have
+                jurisdiction, unless the parties agree in writing to
+                arbitration.
+              </li>
+              <li>
+                Personal data is handled as described in our Privacy Policy
+                under Federal Decree-Law No. 45 of 2021 (PDPL).
+              </li>
+              <li>
+                The English version of these Terms prevails if it differs from
+                the Arabic translation.
+              </li>
+            </ul>
+          </div>
+          <div class="ar">
+            <p><b>🇮🇳 العملاء في الهند</b></p>
+            <ul>
+              <li>
+                الرسوم بالروبية الهندية ولا تشمل ضريبة GST؛ ونصدر فواتير GST.
+                قدّم رقم GSTIN الخاص بك حيث ينطبق.
+              </li>
+              <li>
+                تخضع هذه الشروط لقوانين الهند. وتُبحث الخلافات أولاً بحسن نية؛
+                وإن لم تُحلّ خلال 30 يوماً فتخضع لمحاكم
+                <mark class="ph">[المدينة]</mark> في الهند، <i>أو</i> للتحكيم
+                وفق قانون التحكيم والتوفيق لعام 1996 ومقره
+                <mark class="ph">[المدينة]</mark> (يُختار أحدهما).
+              </li>
+              <li>
+                تُعالج البيانات الشخصية وفق ما ورد في سياسة الخصوصية بموجب قانون
+                تقنية المعلومات لعام 2000، وعند سريانه قانون DPDP لعام 2023
+                ولوائحه لعام 2025.
+              </li>
+            </ul>
+            <p><b>🇦🇪 العملاء في الإمارات</b></p>
+            <ul>
+              <li>
+                الرسوم بالدرهم الإماراتي ولا تشمل ضريبة القيمة المضافة بنسبة 5%؛
+                ونصدر فواتير ضريبية. قدّم رقم التسجيل الضريبي (TRN) حيث ينطبق.
+              </li>
+              <li>
+                تخضع هذه الشروط لقوانين إمارة دبي والقوانين الاتحادية لدولة
+                الإمارات. وتختص محاكم دبي بالنظر في النزاعات، ما لم يتفق الطرفان
+                كتابةً على التحكيم.
+              </li>
+              <li>
+                تُعالج البيانات الشخصية وفق ما ورد في سياسة الخصوصية بموجب
+                المرسوم بقانون اتحادي رقم 45 لسنة 2021 (PDPL).
+              </li>
+              <li>
+                في حال وجود اختلاف بين النسخة الإنجليزية من هذه الشروط والترجمة
+                العربية، تسود النسخة الإنجليزية.
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section id="general" class="lg">
+          <h2>
+            <span class="num">16</span
+            ><span
+              ><span class="en">General</span
+              ><span class="ar">أحكام عامة</span></span
+            >
+          </h2>
+          <div class="en">
+            <p>
+              These Terms, your order and our Privacy Policy are the entire
+              agreement between us on the Service. If a provision is
+              unenforceable, the rest stays in effect. You may not assign these
+              Terms without our consent. Neither party is liable for delay
+              caused by events beyond its reasonable control. We may update
+              these Terms; for material changes we will give you notice, and
+              continued use after the effective date means you accept them.
+              Notices may be sent by email or in the product.
+            </p>
+          </div>
+          <div class="ar">
+            <p>
+              تمثّل هذه الشروط وطلبك وسياسة الخصوصية كامل الاتفاق بيننا بشأن
+              الخدمة. وإذا تعذّر إنفاذ أي حكم فتبقى بقية الأحكام سارية. ولا يجوز
+              لك التنازل عن هذه الشروط دون موافقتنا. ولا يتحمل أي طرف مسؤولية
+              التأخير الناتج عن أحداث خارجة عن سيطرته المعقولة. ويجوز لنا تحديث
+              هذه الشروط؛ وللتغييرات الجوهرية سنخطرك، ويعني استمرارك في
+              الاستخدام بعد تاريخ السريان قبولك لها. ويجوز إرسال الإشعارات
+              بالبريد الإلكتروني أو داخل المنتج.
+            </p>
+          </div>
+        </section>
+        <section id="contact" class="lg">
+          <h2>
+            <span class="num">17</span
+            ><span
+              ><span class="en">Contact us</span
+              ><span class="ar">تواصل معنا</span></span
+            >
+          </h2>
+          <div class="en">
+            <p>
+              Visitsly, a product of Deific Digital ·
+              <a href="mailto:hello@deificdigital.com"
+                >hello@deificdigital.com</a
+              >
+              · UAE:
+              <a href="mailto:uae@deificdigital.com">uae@deificdigital.com</a> ·
+              WhatsApp
+              <a href="https://wa.me/919250119045">+91 92501 19045</a> ·
+              Registered office: <a href="https://www.google.co.in/maps/search/+8th+Floor,+STPI,+A1%2F4+UPSIDA+Building,+Lakhanpur,+Kanpur,+Uttar+Pradesh+208024,+India/@26.4974825,80.2753464,779m/data=!3m2!1e3!4b1?entry=ttu&g_ep=EgoyMDI2MTEwOS4wIKXMDSoASAFQAw%3D%3D">8th Floor, STPI, A1/4 UPSIDA Building, Lakhanpur, Kanpur, Uttar Pradesh 208024, India</a> 
+   
+            </p>
+          </div>
+          <div class="ar">
+            <p>
+              Visitsly، منتج من Deific Digital ·
+              <a href="mailto:hello@deificdigital.com"
+                >hello@deificdigital.com</a
+              >
+              · الإمارات:
+              <a href="mailto:uae@deificdigital.com">uae@deificdigital.com</a> ·
+              واتساب
+              <a href="https://wa.me/919250119045" dir="ltr">+91 92501 19045</a>
+              · المقر المسجّل: <mark class="ph">[العنوان المسجّل]</mark>
+            </p>
+          </div>
+        </section>
+
+        <div class="xlink">
+          <span class="en"
+            >Read our <a href="privacy.html">Privacy Policy</a>.</span
+          ><span class="ar"
+            >اقرأ <a href="privacy.html">سياسة الخصوصية</a> الخاصة بنا.</span
+          >
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="wrap">
+        <div class="foot">
+          <div>
+            <a href="index.html" class="logo"
+              ><div class="logo-mark">🏠</div>
+              <b class="lw">Visit<span>sly</span></b></a
+            >
+            <p style="margin-top: 14px; max-width: 330px">
+              <span class="en"
+                >The ultimate visit booking AI system for real estate. A product
+                by Deific Digital.</span
+              ><span class="ar"
+                >نظام حجز المعاينات العقارية الأمثل بالذكاء الاصطناعي. أحد
+                منتجات Deific Digital.</span
+              >
+            </p>
+          </div>
+          <div>
+            <h4>
+              <span class="en">Product</span><span class="ar">المنتج</span>
+            </h4>
+            <ul>
+              <li>
+                <a href="index.html#how-it-works"
+                  ><span class="en">How it works</span
+                  ><span class="ar">كيف يعمل</span></a
+                >
+              </li>
+              <li>
+                <a href="index.html#features"
+                  ><span class="en">Features</span
+                  ><span class="ar">المزايا</span></a
+                >
+              </li>
+              <li>
+                <a href="index.html#calculator"
+                  ><span class="en">ROI</span><span class="ar">العائد</span></a
+                >
+              </li>
+              <li>
+                <a href="index.html#pricing"
+                  ><span class="en">Pricing</span
+                  ><span class="ar">الأسعار</span></a
+                >
+              </li>
+              <li>
+                <a href="index.html#faq"
+                  ><span class="en">FAQ</span
+                  ><span class="ar">الأسئلة الشائعة</span></a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4><span class="en">More</span><span class="ar">المزيد</span></h4>
+            <ul>
+              <li><a href="#" data-setlang="en" lang="en">English</a></li>
+              <li><a href="#" data-setlang="ar" lang="ar">العربية</a></li>
+              <li>
+                <a
+                  href="https://www.deificdigital.com"
+                  target="_blank"
+                  rel="noopener"
+                  >Deific Digital</a
+                >
+              </li>
+              <li>
+                <a href="privacy.html"
+                  ><span class="en">Privacy Policy</span
+                  ><span class="ar">سياسة الخصوصية</span></a
+                >
+              </li>
+              <li>
+                <a href="terms.html"
+                  ><span class="en">Terms of Service</span
+                  ><span class="ar">شروط الخدمة</span></a
+                >
+              </li>
+              <li>
+                <a href="contact.html"
+                  ><span class="en">Contact Us</span
+                  ><span class="ar">تواصل معنا</span></a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4>
+              <span class="en">Contact</span><span class="ar">تواصل معنا</span>
+            </h4>
+            <ul>
+              <li>
+                <a
+                  href="https://wa.me/919250119045"
+                  target="_blank"
+                  rel="noopener"
+                  >WhatsApp: +91 92501 19045</a
+                >
+              </li>
+              <li><a href="tel:+918750200899">+91 87502 00899</a></li>
+              <li>
+                <a href="mailto:hello@deificdigital.com"
+                  >hello@deificdigital.com</a
+                >
+              </li>
+              <li>
+                <a href="mailto:uae@deificdigital.com"
+                  >uae@deificdigital.com (UAE)</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="copy">
+          © <span id="yr">2026</span> Visitsly · Deific Digital.
+          <span class="en">All rights reserved.</span
+          ><span class="ar">جميع الحقوق محفوظة.</span>
+        </div>
+      </div>
+    </footer>
+    <a
+      class="wa-float"
+      data-wa
+      href="https://wa.me/919250119045?text=Hi%2C%20I%20want%20a%20free%20demo%20of%20Visitsly"
+      target="_blank"
+      rel="noopener"
+      aria-label="WhatsApp"
+      ><svg width="30" height="30" viewBox="0 0 24 24" fill="#fff">
+        <path
+          d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.3c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2 1.3 2.3 1.4.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"
+        /></svg
+    ></a>
+    <script>
+      (function () {
+        var TT = {
+            en: "Terms of Service — Visitsly",
+            ar: "شروط الخدمة — Visitsly",
+          },
+          WA = {
+            en: "https://wa.me/919250119045?text=Hi%2C%20I%20want%20a%20free%20demo%20of%20Visitsly",
+            ar: "https://wa.me/919250119045?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%B9%D8%B1%D8%B6%D8%A7%D9%8B%20%D9%85%D8%AC%D8%A7%D9%86%D9%8A%D8%A7%D9%8B%20%D9%84%D9%86%D8%B8%D8%A7%D9%85%20Visitsly",
+          };
+        var AR_CC =
+          /^(SA|AE|QA|KW|BH|OM|JO|LB|SY|IQ|YE|EG|LY|TN|DZ|MA|SD|PS|MR|DJ|SO|KM)$/;
+        var AR_TZ =
+          /^(Asia\/(Dubai|Riyadh|Qatar|Kuwait|Bahrain|Muscat|Baghdad|Amman|Beirut|Damascus|Aden|Gaza|Hebron)|Africa\/(Cairo|Tripoli|Tunis|Algiers|Casablanca|El_Aaiun|Khartoum|Djibouti|Mogadishu|Nouakchott)|Indian\/Comoro)$/;
+        var GEO = [
+          [
+            "https://api.country.is/",
+            function (j) {
+              return j && j.country;
+            },
+          ],
+          [
+            "https://get.geojs.io/v1/ip/country.json",
+            function (j) {
+              return j && j.country;
+            },
+          ],
+          [
+            "https://ipapi.co/json/",
+            function (j) {
+              return j && j.country_code;
+            },
+          ],
+        ];
+        var picked = false;
+        function setLang(l, save) {
+          if (l !== "ar") l = "en";
+          var d = document.documentElement;
+          d.lang = l;
+          d.dir = l === "ar" ? "rtl" : "ltr";
+          document.title = TT[l];
+          document.querySelectorAll("[data-lang]").forEach(function (b) {
+            var on = b.getAttribute("data-lang") === l;
+            b.classList.toggle("on", on);
+            b.setAttribute("aria-pressed", on);
+          });
+          document.querySelectorAll("[data-wa]").forEach(function (a) {
+            a.href = WA[l];
+          });
+          document.getElementById("yr").textContent = new Date().getFullYear();
+          if (save) {
+            picked = true;
+            try {
+              localStorage.setItem("vsLang", l);
+            } catch (e) {}
+          }
+        }
+        document.addEventListener("click", function (e) {
+          var b =
+            e.target.closest && e.target.closest("[data-lang],[data-setlang]");
+          if (!b) return;
+          e.preventDefault();
+          setLang(
+            b.getAttribute("data-lang") || b.getAttribute("data-setlang"),
+            true,
+          );
+        });
+        document.querySelectorAll("#navLinks a").forEach(function (a) {
+          a.addEventListener("click", function () {
+            document.getElementById("navLinks").classList.remove("open");
+          });
+        });
+        function getJSON(u, ms) {
+          return new Promise(function (res, rej) {
+            var c = window.AbortController ? new AbortController() : null,
+              t = setTimeout(function () {
+                if (c) c.abort();
+                rej();
+              }, ms);
+            fetch(u, { signal: c ? c.signal : undefined, cache: "no-store" })
+              .then(function (r) {
+                if (!r.ok) throw 0;
+                return r.json();
+              })
+              .then(
+                function (j) {
+                  clearTimeout(t);
+                  res(j);
+                },
+                function (e) {
+                  clearTimeout(t);
+                  rej(e);
+                },
+              );
+          });
+        }
+        function tz() {
+          var z = "";
+          try {
+            z = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
+          } catch (e) {}
+          return AR_TZ.test(z) ? "XA" : "";
+        }
+        function detect(cb) {
+          try {
+            var g = JSON.parse(localStorage.getItem("vsGeo") || "null");
+            if (g && g.c && Date.now() - g.t < 6048e5) {
+              cb(g.c);
+              return;
+            }
+          } catch (e) {}
+          var i = 0;
+          (function next() {
+            if (i >= GEO.length) {
+              cb(tz());
+              return;
+            }
+            var s = GEO[i++];
+            getJSON(s[0], 2500).then(function (j) {
+              var c = s[1](j);
+              if (c && /^[A-Za-z]{2}$/.test(c)) {
+                c = c.toUpperCase();
+                try {
+                  localStorage.setItem(
+                    "vsGeo",
+                    JSON.stringify({ c: c, t: Date.now() }),
+                  );
+                } catch (e) {}
+                cb(c);
+              } else next();
+            }, next);
+          })();
+        }
+        var saved = null,
+          q = location.search.match(/[?&]lang=(ar|en)\b/);
+        try {
+          saved = localStorage.getItem("vsLang");
+        } catch (e) {}
+        if (q) {
+          saved = q[1];
+          try {
+            localStorage.setItem("vsLang", saved);
+          } catch (e) {}
+        }
+        if (saved === "ar" || saved === "en") {
+          setLang(saved, false);
+        } else {
+          setLang(document.documentElement.lang === "ar" ? "ar" : "en", false);
+          detect(function (c) {
+            var p = null;
+            try {
+              p = localStorage.getItem("vsLang");
+            } catch (e) {}
+            if (!picked && !p && (AR_CC.test(c) || c === "XA"))
+              setLang("ar", false);
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>
