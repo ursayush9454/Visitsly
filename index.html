@@ -2513,9 +2513,48 @@
       .pdemo{display:block;text-align:center;margin-top:12px;font-weight:800;font-size:14.5px;color:var(--blue-d)}
       .price.pop .pdemo{color:#fff}
       .pdemo:hover{color:var(--blue);text-decoration:underline}
+
+
+      /* ===== scroll-lock hint + fit-to-screen ===== */
+      .vs-anim{scroll-margin-top:96px;transform-origin:top center}
+      .vs-lock{position:fixed;left:50%;bottom:22px;transform:translate(-50%,16px);z-index:60;opacity:0;pointer-events:none;
+        background:#0b1b3f;color:#fff;font-size:13.5px;font-weight:700;padding:11px 20px 15px;border-radius:99px;
+        box-shadow:0 14px 34px rgba(11,27,63,.35);transition:opacity .35s,transform .35s;white-space:nowrap;overflow:hidden}
+      .vs-lock.on{opacity:1;transform:translate(-50%,0)}
+      .vs-lock::after{content:"";position:absolute;left:0;bottom:0;height:4px;width:0;background:linear-gradient(90deg,#2563eb,#06b6d4)}
+      .vs-lock.on::after{width:100%;transition:width 12.8s linear}
+      .h-caps{text-transform:uppercase;letter-spacing:.01em}
+      @media (max-width:480px){.vs-lock{font-size:12px;padding:10px 16px 14px;bottom:16px}}
+
+      /* ===== responsive scale: small laptops down, big screens up ===== */
+      section{padding:clamp(56px,6.5vw,96px) 0}
+      .sec-head{margin-bottom:clamp(32px,4.2vw,56px)}
+      .hero{padding:clamp(44px,6vw,76px) 0 clamp(40px,5vw,60px)}
+      .hero-top{margin-bottom:clamp(32px,4.5vw,54px)}
+      @media (min-width:1021px) and (max-width:1440px){html{zoom:.93}}
+      @media (min-width:1021px) and (max-width:1200px){html{zoom:.88}}
+      @media (min-width:1700px){html{zoom:1.15}}
+      @media (min-width:2000px){html{zoom:1.35}}
+      @media (min-width:2560px){html{zoom:1.7}}
+      @media (min-width:3200px){html{zoom:2.1}}
+      @media (max-width:600px){.vs-table{font-size:13px}.vs-table th,.vs-table td{padding:12px 8px}.vs-table th{font-size:12.5px}}
+      /* nav + section CTAs */
+      .nav-links a.nav-m{display:none}
+      .nav .btn.nav-live{padding:10px 16px;font-size:14px;white-space:nowrap}
+      .sec-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:44px}
+      @media (max-width:1000px){.nav .btn.nav-live{display:none}}
+      @media (max-width:860px){
+        .nav-links a.nav-m{display:block;font-weight:700;color:var(--blue)}
+        .sec-cta{margin-top:32px}
+        .sec-cta .btn{flex:1 1 220px;justify-content:center}
+      }
+    
+      /* keep anchors / auto-scroll clear of the sticky navbar */
+      html{scroll-padding-top:96px}
+      section[id],.lg[id],[id].vs-anim,.vs-anim{scroll-margin-top:96px}
     </style>
   </head>
-  <body>
+  <body id="top">
     <div class="topbar" data-i="1">
       🚀 <b>New:</b> AI voice calling add-on — confirm visits even when leads
       don't reply on WhatsApp
@@ -2527,11 +2566,14 @@
           <b class="lw">Visit<span>sly</span></b></a
         >
         <div class="nav-links" id="navLinks">
-          <a data-i="2" href="#how-it-works">How it works</a
+          <a data-i="400" href="#top">Home</a
+          ><a data-i="2" href="#how-it-works">How it works</a
           ><a data-i="3" href="#features">Features</a
           ><a data-i="4" href="#calculator">ROI</a
           ><a data-i="5" href="#pricing">Pricing</a
-          ><a data-i="298" href="contact.html">Contact</a>
+          ><a data-i="298" href="contact.html">Contact</a
+          ><a class="nav-m" data-i="302" href="demo.html">Live Demo</a
+          ><a class="nav-m" data-i="7" href="https://visitsly.com/signup">Book free demo</a>
         </div>
         <div class="nav-right">
           <div
@@ -2558,12 +2600,11 @@
               العربية
             </button>
           </div>
+          <a class="btn btn-ghost nav-live" data-i="402" href="demo.html">▶ Live demo</a>
           <a
             class="btn btn-primary"
             data-i="7"
-            href="https://wa.me/919250119045?text=Hi%2C%20I%20want%20a%20free%20demo%20of%20Visitsly"
-            rel="noopener"
-            target="_blank"
+            href="https://visitsly.com/signup"
             >Book free demo</a
           >
           <button
@@ -2600,9 +2641,7 @@
               <a
                 class="btn btn-primary"
                 data-i="11"
-                href="https://wa.me/919250119045?text=Hi%2C%20I%20want%20a%20free%20demo%20of%20Visitsly"
-                rel="noopener"
-                target="_blank"
+                href="https://visitsly.com/signup"
                 >💬 Book a free live demo</a
               >
               <a class="btn btn-ghost" data-i="300" href="demo.html"
@@ -2783,6 +2822,7 @@
               ><span data-i="55">manual follow-up calls</span>
             </div>
           </div>
+
         </div>
       </section>
       <section style="padding-top: 0">
@@ -2846,6 +2886,7 @@
               </ul>
             </div>
           </div>
+
         </div>
       </section>
       <section id="how-it-works" style="padding-top: 0">
@@ -2898,6 +2939,11 @@
                 Your agent gets the hot lead with full context — and closes.
               </p>
             </div>
+          </div>
+
+          <div class="sec-cta rv">
+            <a class="btn btn-primary" data-i="11" href="https://visitsly.com/signup">💬 Book a free live demo</a>
+            <a class="btn btn-ghost" data-i="300" href="demo.html">▶ Try live demo</a>
           </div>
         </div>
       </section>
@@ -2991,6 +3037,7 @@
               <span class="tagx" data-i="105">ADD-ON</span>
             </div>
           </div>
+
         </div>
       </section>
       <section style="padding-top: 0">
@@ -3065,6 +3112,7 @@
               </div>
             </div>
           </div>
+
         </div>
       </section>
       <section style="padding-top: 0">
@@ -3149,6 +3197,7 @@
           <div class="note" data-i="122">
             Sample data shown for illustration.
           </div>
+
         </div>
       </section>
       <section id="calculator" style="padding-top: 0">
@@ -3256,13 +3305,18 @@
               >
             </div>
           </div>
+
+          <div class="sec-cta rv">
+            <a class="btn btn-primary" data-i="11" href="https://visitsly.com/signup">💬 Book a free live demo</a>
+            <a class="btn btn-ghost" data-i="300" href="demo.html">▶ Try live demo</a>
+          </div>
         </div>
       </section>
       <section style="padding-top: 0">
         <div class="wrap">
           <div class="sec-head rv">
             <div class="eyebrow" data-i="138">Compare</div>
-            <h2 data-i="139">
+            <h2 class="h-caps" data-i="139">
               Visitsly vs <span class="grad">the old way</span>
             </h2>
           </div>
@@ -3308,6 +3362,12 @@
                   <td class="n">✕</td>
                 </tr>
                 <tr>
+                  <td data-i="403">Call confirmation</td>
+                  <td class="us y" data-i="405">✓</td>
+                  <td class="n" data-i="406">✕</td>
+                  <td class="n" data-i="406">✕</td>
+                </tr>
+                <tr>
                   <td data-i="151">Full chat history + AI summary</td>
                   <td class="us y">✓</td>
                   <td class="n">✕</td>
@@ -3319,9 +3379,16 @@
                   <td class="n">✕</td>
                   <td class="y">✓</td>
                 </tr>
+                <tr>
+                  <td data-i="404">Manual talk + AI talk</td>
+                  <td class="us y" data-i="405">✓</td>
+                  <td class="n" data-i="406">✕ </td>
+                  <td class="n" data-i="406">✕</td>
+                </tr>
               </tbody>
             </table>
           </div>
+
         </div>
       </section>
       <section style="padding-top: 0">
@@ -3361,6 +3428,11 @@
                 Answer overseas buyers instantly, across time zones.
               </p>
             </div>
+          </div>
+
+          <div class="sec-cta rv">
+            <a class="btn btn-primary" data-i="11" href="https://visitsly.com/signup">💬 Book a free live demo</a>
+            <a class="btn btn-ghost" data-i="300" href="demo.html">▶ Try live demo</a>
           </div>
         </div>
       </section>
@@ -3608,6 +3680,7 @@
               charges are separate and paid through your Visitsly wallet.</span
             >
           </div>
+
         </div>
       </section>
       <section id="faq" style="padding-top: 0">
@@ -3695,6 +3768,7 @@
               </p>
             </details>
           </div>
+
         </div>
       </section>
       <section style="padding-top: 0; padding-bottom: 0">
@@ -3713,6 +3787,8 @@
                 rel="noopener"
                 target="_blank"
                 >💬 Book a free demo on WhatsApp</a
+              ><a class="btn btn-ghost" data-i="300" href="demo.html"
+                >▶ Try live demo</a
               ><a
                 class="btn btn-ghost"
                 href="mailto:hello@deificdigital.com?subject=Visitsly%20demo"
@@ -3811,6 +3887,7 @@
         </div>
       </div>
     </footer>
+    <div class="vs-lock" data-i="401" id="vsLock" role="status" aria-live="polite">Watch the full demo to continue</div>
     <a
       aria-label="WhatsApp"
       class="wa-float"
@@ -4296,13 +4373,20 @@
         294: "3 أشهر: الإعداد + باقة المطوّر برو + الإعلانات",
         295: "جميع الأسعار لا تشمل ضريبة GST. الباقات السنوية توفّر شهرين. رسوم محادثات واتساب (Meta) منفصلة وتُدفع من محفظتك داخل Visitsly.",
         296: "جميع الأسعار لا تشمل ضريبة القيمة المضافة (VAT). رسوم محادثات واتساب (Meta) منفصلة وتُدفع من محفظتك داخل Visitsly.",
+        400: "الرئيسية",
+        401: "شاهد العرض كاملاً للمتابعة",
+        402: "▶ عرض مباشر",
+        403: "تأكيد المعاينة بمكالمة",
+        404: "محادثة يدوية + محادثة بالذكاء الاصطناعي",
+        405: "✓ نعم",
+        406: "✕ لا",
       };
       var AR_ATTR = {
         7: {
-          href: "https://wa.me/919250119045?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%B9%D8%B1%D8%B6%D8%A7%D9%8B%20%D9%85%D8%AC%D8%A7%D9%86%D9%8A%D8%A7%D9%8B%20%D9%84%D9%86%D8%B8%D8%A7%D9%85%20Visitsly",
+          href: "https://visitsly.com/signup",
         },
         11: {
-          href: "https://wa.me/919250119045?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%B9%D8%B1%D8%B6%D8%A7%D9%8B%20%D9%85%D8%AC%D8%A7%D9%86%D9%8A%D8%A7%D9%8B%20%D9%84%D9%86%D8%B8%D8%A7%D9%85%20Visitsly",
+          href: "https://visitsly.com/signup",
         },
         118: {
           style:
@@ -4718,6 +4802,7 @@
           at(12000, function () {
             steps[3].classList.add("is-done");
           });
+          at(12800, unlock);
           at(16500, run);
         }
         window.vsAnimRestart = function () {
@@ -4725,18 +4810,124 @@
           root.classList.toggle("vs-rtl", LANG === "ar");
           if (started) run();
         };
-        var started = false;
+        /* ---- first view: user must watch the whole story before scrolling on ---- */
+        var started = false,
+          locked = false,
+          lockY = Infinity,
+          skipLock = !!location.hash,
+          lockHint = $("vsLock"),
+          navEl = document.querySelector(".nav"),
+          wasAbove = root.getBoundingClientRect().top > 0;
+        function unlock() {
+          locked = false;
+          lockY = Infinity;
+          if (lockHint) lockHint.classList.remove("on");
+        }
+        function fit() {
+          root.style.transform = "";
+          root.style.marginBottom = "";
+          var h = root.getBoundingClientRect().height,
+            avail = window.innerHeight - navEl.getBoundingClientRect().height - 84,
+            s = Math.max(0.5, Math.min(1, avail / h));
+          if (s < 1) {
+            root.style.transform = "scale(" + s + ")";
+            root.style.marginBottom = (s - 1) * root.offsetHeight + "px";
+          }
+        }
+        function begin() {
+          if (started) return;
+          started = true;
+          fit();
+          if (skipLock) {
+            run();
+            return;
+          }
+          locked = true;
+          lockY = Infinity;
+          if (lockHint) {
+            lockHint.classList.remove("on");
+            void lockHint.offsetWidth;
+            lockHint.classList.add("on");
+          }
+          var r = root.getBoundingClientRect(),
+            nh = navEl.getBoundingClientRect().height;
+          if (r.top < nh + 8 || r.bottom > window.innerHeight)
+            window.scrollTo({
+              top: Math.max(0, window.scrollY + r.top - nh - 16),
+              behavior: "smooth",
+            });
+          setTimeout(function () {
+            if (locked) lockY = window.scrollY;
+          }, 900);
+          setTimeout(unlock, 16000); /* safety net */
+          run();
+        }
+        window.addEventListener(
+          "wheel",
+          function (e) {
+            if (locked && e.deltaY > 0) e.preventDefault();
+          },
+          { passive: false },
+        );
+        var ty = 0;
+        window.addEventListener(
+          "touchstart",
+          function (e) {
+            ty = e.touches[0].clientY;
+          },
+          { passive: true },
+        );
+        window.addEventListener(
+          "touchmove",
+          function (e) {
+            var y = e.touches[0].clientY;
+            if (locked && y < ty && e.cancelable) e.preventDefault();
+            ty = y;
+          },
+          { passive: false },
+        );
+        window.addEventListener("keydown", function (e) {
+          if (!locked) return;
+          var k = e.key;
+          if (
+            k === "ArrowDown" ||
+            k === "PageDown" ||
+            k === "End" ||
+            ((k === " " || k === "Spacebar") && !e.shiftKey)
+          )
+            e.preventDefault();
+        });
+        window.addEventListener(
+          "scroll",
+          function () {
+            if (locked && window.scrollY > lockY + 1) {
+              window.scrollTo({ top: lockY, behavior: "instant" });
+              return;
+            }
+            if (!started) {
+              var top = root.getBoundingClientRect().top;
+              if (top < 0 && wasAbove) begin();
+              wasAbove = top > 0;
+            }
+          },
+          { passive: true },
+        );
+        /* menu / anchor jumps should never get stuck behind the lock */
+        document.addEventListener("click", function (e) {
+          var a = e.target.closest && e.target.closest('a[href^="#"]');
+          if (a && !started) skipLock = true;
+        });
+        window.addEventListener("resize", fit);
+        window.addEventListener("load", fit);
+        fit();
         if ("IntersectionObserver" in window) {
           new IntersectionObserver(
-            function (e) {
-              if (e[0].isIntersecting && !started) {
-                started = true;
-                run();
-              }
+            function (en) {
+              if (en[0].isIntersecting && !started) begin();
             },
-            { threshold: 0.01 },
+            { threshold: 0.25 },
           ).observe(root);
-        } else run();
+        } else begin();
       })();
     </script>
   </body>

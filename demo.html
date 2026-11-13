@@ -680,7 +680,7 @@
       .cres{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
       .cres div{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:10px;text-align:center;animation:pop .4s}
       .cres b{display:block;font-size:20px;color:var(--ink)}.cres small{font-size:12px;color:var(--muted);font-weight:700}
-      .call{margin-top:14px;display:flex;flex-direction:column;gap:8px;min-height:60px}
+      .call{margin-top:14px;display:flex;flex-direction:column;gap:8px;min-height:60px;max-height:380px;overflow-y:auto}
       .call div{max-width:92%;padding:9px 13px;border-radius:14px;font-size:14px;animation:pop .3s}
       .call .ai{align-self:flex-start;background:var(--soft2);color:var(--ink)}.call .ld{align-self:flex-end;background:#f1f3f9;color:var(--ink)}
       .call .ok{align-self:center;background:#dcfce7;color:#15803d;font-weight:800}
@@ -695,6 +695,20 @@
       .nav-links{align-items:center}
       .nav-links a.nav-demo{color:#fff;background:linear-gradient(135deg,#2563eb,#4f46e5);padding:6px 14px;border-radius:99px;box-shadow:0 6px 16px rgba(37,99,235,.3)}
       .nav-links a.nav-demo:hover{color:#fff;transform:translateY(-1px)}
+
+      /* responsive scale: small laptops down, big screens up */
+      @media (min-width:1021px) and (max-width:1440px){html{zoom:.93}}
+      @media (min-width:1021px) and (max-width:1200px){html{zoom:.88}}
+      @media (min-width:1700px){html{zoom:1.15}}
+      @media (min-width:2000px){html{zoom:1.35}}
+      @media (min-width:2560px){html{zoom:1.7}}
+      @media (min-width:3200px){html{zoom:2.1}}
+
+      .nav-links a.nav-m{display:none}
+      .nav .btn.nav-live{padding:10px 16px;font-size:14px;white-space:nowrap}
+      .sec-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:44px 0 56px}
+      @media (max-width:1000px){.nav .btn.nav-live{display:none}}
+      @media (max-width:860px){.nav-links a.nav-m{display:block;font-weight:700;color:var(--blue)}.sec-cta .btn{flex:1 1 220px;justify-content:center}}
       @media (max-width:860px){.nav-links a.nav-demo{padding:8px 16px;margin:8px 0;align-self:flex-start}}
 
       /* ---------- lead management system ---------- */
@@ -747,17 +761,10 @@
       .lm-toast{position:fixed;inset-inline-start:50%;bottom:26px;transform:translateX(-50%) translateY(30px);background:var(--navy);color:#fff;padding:12px 20px;border-radius:14px;font-size:14px;font-weight:700;opacity:0;pointer-events:none;transition:all .3s;z-index:90;box-shadow:0 14px 34px rgba(0,0,0,.3)}
       .lm-toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
       @media (max-width:760px){.lm-kpi{grid-template-columns:1fr 1fr}.lm-bar,.lm-kpi,.lm-board,.lm-list{padding-inline:14px}}
-
-      .call{max-height:420px;overflow-y:auto;scroll-behavior:smooth}
-      .call .ch{display:flex;align-items:center;gap:10px;position:sticky;top:0;z-index:2;background:linear-gradient(135deg,#1d4ed8,#4f46e5 60%,#0891b2);color:#fff;border-radius:14px;padding:10px 12px;max-width:none;animation:none}
-      .call .cav{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.2);display:grid;place-items:center;font-size:17px;flex:none}
-      .call .cinfo{flex:1;min-width:0;line-height:1.3}.call .cinfo b{display:block;font-size:14px;color:#fff;margin:0}.call .cinfo small{font-size:12px;opacity:.9}
-      .call .ctm{font-size:13px;font-weight:800;font-variant-numeric:tabular-nums}
-      .call .wave{display:flex;align-items:center;gap:3px;height:22px}.call .wave i{width:3px;height:6px;border-radius:3px;background:#fff;opacity:.6}
-      .call .wave.on i{animation:wv .8s ease-in-out infinite}.call .wave.on i:nth-child(2){animation-delay:.1s}.call .wave.on i:nth-child(3){animation-delay:.2s}.call .wave.on i:nth-child(4){animation-delay:.3s}.call .wave.on i:nth-child(5){animation-delay:.4s}
-      @keyframes wv{0%,100%{height:6px}50%{height:20px}}
-      .call .cbody{display:flex;flex-direction:column;gap:8px}
-      .call .sm{align-self:stretch;max-width:none;background:var(--soft);border:1px dashed #bcd0ff;color:var(--ink);font-size:13px;font-weight:600}
+    
+      /* keep anchors / auto-scroll clear of the sticky navbar */
+      html{scroll-padding-top:96px}
+      section[id],.lg[id],[id].vs-anim,.vs-anim{scroll-margin-top:96px}
     </style>
   </head>
   <body>
@@ -777,7 +784,8 @@
           <b class="lw">Visit<span>sly</span></b></a
         >
         <div class="nav-links" id="navLinks">
-          <a href="index.html#how-it-works"
+          <a href="index.html"><span class="en">Home</span><span class="ar">الرئيسية</span></a
+          ><a href="index.html#how-it-works"
             ><span class="en">How it works</span
             ><span class="ar">كيف يعمل</span></a
           ><a href="index.html#features"
@@ -788,7 +796,8 @@
             ><span class="en">Pricing</span><span class="ar">الأسعار</span></a
           ><a href="contact.html"
             ><span class="en">Contact</span><span class="ar">تواصل معنا</span></a
-          >
+          ><a class="nav-m" href="demo.html"><span class="en">Live Demo</span><span class="ar">عرض مباشر</span></a
+          ><a class="nav-m" href="https://visitsly.com/signup"><span class="en">Book free demo</span><span class="ar">احجز عرضاً مجانياً</span></a>
         </div>
         <div class="nav-right">
           <div
@@ -814,12 +823,10 @@
               العربية
             </button>
           </div>
+          <a class="btn btn-ghost nav-live" href="demo.html"><span class="en">▶ Live demo</span><span class="ar">▶ عرض مباشر</span></a>
           <a
             class="btn btn-primary"
-            data-wa
-            href="https://wa.me/919250119045?text=Hi%2C%20I%20want%20a%20free%20demo%20of%20Visitsly"
-            target="_blank"
-            rel="noopener"
+            href="https://visitsly.com/signup"
             ><span class="en">Book free demo</span
             ><span class="ar">احجز عرضاً مجانياً</span></a
           >
@@ -1543,54 +1550,31 @@
         /* ---------- voice call ---------- */
         var callT = [];
         $("vGo").onclick = function () {
-          callT.forEach(function (t) { clearTimeout(t); clearInterval(t); }); callT = [];
-          var box = $("call"), v = V(), ae = REG === "ae";
-          var bud = ae ? T(["AED 1.4M", "1.4 مليون درهم"]) : T(["₹1.2 Cr", "1.2 كرور روبية"]);
-          var s0 = slotLabel(0), s1 = slotLabel(1);
-          box.innerHTML = '<div class="ch"><div class="cav">📞</div><div class="cinfo"><b>' + T(["Demo Lead", "عميل تجريبي"]) + '</b><small id="cWho">' + T(["Calling…", "جارٍ الاتصال…"]) + '</small></div><span class="wave" id="cWave"><i></i><i></i><i></i><i></i><i></i></span><span class="ctm" id="cTm">00:00</span></div><div class="cbody" id="cBody"></div>';
-          var body = $("cBody"), who = $("cWho"), wave = $("cWave"), sec = 0;
-          var iv = setInterval(function () { sec++; var e = $("cTm"); if (e) e.textContent = "00:" + (sec < 10 ? "0" : "") + (sec % 60 < 10 && sec >= 60 ? "" : "") + sec; }, 1000); callT.push(iv);
+          callT.forEach(clearTimeout); callT = []; var box = $("call"), v = V(); box.innerHTML = "";
           var L = [
-            ["ai", ["Hello, am I speaking with the person who enquired about " + v.proj[0] + "? This is Maya from Visitsly.", "مرحباً، هل أتحدث مع صاحب الاستفسار عن " + v.proj[1] + "؟ معك مايا من Visitsly."]],
-            ["ld", ["Yes, speaking.", "نعم، معك."]],
-            ["ai", ["Thanks for picking up! You messaged us on WhatsApp about a " + v.unit[0] + " but we didn't finish the chat. Do you have two minutes?", "شكراً على الرد! راسلتنا على واتساب بخصوص " + v.unit[1] + " ولم نكمل المحادثة. هل لديك دقيقتان؟"]],
-            ["ld", ["Yeah, go ahead.", "نعم، تفضل."]],
-            ["ai", ["Great. So I can show you the right options, what budget are you looking at?", "ممتاز. لأعرض عليك الخيارات المناسبة، ما هي ميزانيتك تقريباً؟"]],
-            ["ld", ["Around " + bud + ".", "حوالي " + bud + "."]],
-            ["ai", ["Perfect, that fits well. " + v.unit[0] + " units start at " + v.price[0] + ". Are you planning to buy soon, or still exploring?", "ممتاز، هذا مناسب. تبدأ وحدات " + v.unit[1] + " " + v.price[1] + ". هل تخطط للشراء قريباً أم ما زلت تستكشف؟"]],
-            ["ld", ["Probably in the next month or two.", "على الأغلب خلال شهر أو شهرين."]],
-            ["ai", ["Good timing, only a few units are left on the higher floors. The payment plan is " + v.plan[0] + ".", "توقيت ممتاز، لم يتبقَّ سوى عدد قليل من الوحدات في الطوابق العليا. خطة الدفع: " + v.plan[1] + "."]],
-            ["ld", ["Hmm, can I get a home loan for this?", "همم، هل يمكنني الحصول على قرض عقاري؟"]],
-            ["ai", ["Yes, leading banks offer home loans here, and our team helps with the paperwork so it stays simple.", "نعم، تقدم البنوك الكبرى قروضاً عقارية، ويساعدك فريقنا في الأوراق ليكون الأمر سهلاً."]],
-            ["ld", ["Okay. Honestly I'd like to see the place before deciding.", "حسناً. بصراحة أفضّل رؤية المكان قبل أن أقرر."]],
-            ["ai", ["Absolutely, that's the best way. I have " + s0 + " or " + s1 + ". Which works for you?", "بالتأكيد، هذه أفضل طريقة. لدي " + s0 + " أو " + s1 + ". أيهما يناسبك؟"]],
-            ["ld", ["The first one works for me.", "الموعد الأول يناسبني."]],
-            ["ai", ["Booked for " + s0 + ". I'm sending the location pin and details on WhatsApp right now, and I'll remind you the day before.", "تم الحجز يوم " + s0 + ". أرسل الآن موقع الخريطة والتفاصيل على واتساب، وسأذكّرك قبل يوم."]],
-            ["ld", ["Great, thank you.", "رائع، شكراً لك."]],
-            ["ai", ["My pleasure! Our agent Amit will meet you at the site. Have a lovely day!", "على الرحب! سيستقبلك الوكيل أمين في الموقع. أتمنى لك يوماً سعيداً!"]],
-            ["ok", ["✅ Visit confirmed · WhatsApp pin sent · Reminders scheduled", "✅ تم تأكيد المعاينة · أُرسل الموقع · جُدولت التذكيرات"]],
-            ["sm", ["📝 AI summary saved to CRM — Budget: " + bud + " · Timeline: 1–2 months · Asked about: loan, payment plan · Lead moved to Visit booked", "📝 حُفظ ملخص الذكاء في CRM — الميزانية: " + bud + " · الجدول: شهر إلى شهرين · سأل عن: القرض وخطة الدفع · انتقل العميل إلى معاينة محجوزة"]]
+            ["ai", T(["Hello! This is the Visitsly assistant calling about " + v.proj[0] + ". You asked about a " + v.unit[0] + " earlier — do you have a minute?", "مرحباً! أنا مساعد Visitsly أتصل بخصوص " + v.proj[1] + ". سألت سابقاً عن " + v.unit[1] + " — هل لديك دقيقة؟"])],
+            ["ld", T(["Yes, tell me.", "نعم، تفضل."])],
+            ["ai", T(["Great. I can see you were looking at the " + v.unit[0] + ", around " + v.size[0] + ". Is that the size you want, or should we compare other options?", "ممتاز. أرى أنك كنت تبحث عن " + v.unit[1] + " بمساحة " + v.size[1] + ". هل هذه المساحة مناسبة لك أم تفضّل مقارنة خيارات أخرى؟"])],
+            ["ld", T(["This size is fine. What's the price?", "المساحة مناسبة. كم السعر؟"])],
+            ["ai", T(["Prices are " + v.price[0] + ". The project is " + v.loc[0] + ", and possession is " + v.poss[0] + ".", "الأسعار " + v.price[1] + ". المشروع " + v.loc[1] + "، والتسليم في " + v.poss[1] + "."])],
+            ["ld", T(["Okay. And what's the payment plan?", "جيد. وما هي خطة الدفع؟"])],
+            ["ai", T(["The plan is " + v.plan[0] + ". Does that work for your budget?", "خطة الدفع: " + v.plan[1] + ". هل هذا مناسب لميزانيتك؟"])],
+            ["ld", T(["Yes, that works. Can I see the property in person?", "نعم، مناسب. هل يمكنني زيارة الموقع؟"])],
+            ["ai", T(["Great. Would Saturday at 11 AM work for a site visit?", "ممتاز. هل يناسبك السبت الساعة 11 صباحاً للمعاينة؟"])],
+            ["ld", T(["Saturday is fine, but 11 is a bit early. Can we do 12 PM?", "السبت مناسب، لكن الساعة 11 مبكرة قليلاً. هل يمكن الساعة 12 ظهراً؟"])],
+            ["ai", T(["Sure, 12 PM is available. I'll book Saturday at 12 PM and send the address on WhatsApp. Anything else you'd like to know?", "بالتأكيد، الساعة 12 ظهراً متاحة. سأحجز لك يوم السبت الساعة 12 ظهراً وأرسل لك العنوان عبر واتساب. هل تريد معرفة أي شيء آخر؟"])],
+            ["ld", T(["No, that's all. Thank you.", "لا، هذا كل شيء. شكراً لك."])],
+            ["ai", T(["Thank you! See you on Saturday. Have a great day.", "شكراً لك! نراك يوم السبت. أتمنى لك يوماً سعيداً."])],
+            ["ok", T(["✅ Visit confirmed · WhatsApp reminder sent", "✅ تم تأكيد المعاينة · أُرسل تذكير واتساب"])]
           ];
-          var at = 1600;
-          callT.push(setTimeout(function () { who.textContent = T(["Connected · Maya (AI)", "متصل · مايا (ذكاء اصطناعي)"]); }, 1600));
-          L.forEach(function (l, i) {
-            var txt = T(l[1]), dur = 900 + txt.length * 32;
-            callT.push(setTimeout(function () {
-              if (l[0] === "ai" || l[0] === "ld") { who.textContent = l[0] === "ai" ? T(["🤖 Maya is speaking…", "🤖 مايا تتحدث…"]) : T(["👤 Lead is speaking…", "👤 العميل يتحدث…"]); wave.classList.add("on"); }
-              var d = document.createElement("div"); d.className = l[0];
-              d.innerHTML = (l[0] === "ai" ? "<b>🤖 Maya · AI</b>" : l[0] === "ld" ? "<b>" + T(["Lead", "العميل"]) + "</b>" : "") + txt;
-              body.appendChild(d); $("call").scrollTop = $("call").scrollHeight;
-              if (l[0] === "ok") { wave.classList.remove("on"); who.textContent = T(["Call ended", "انتهت المكالمة"]); clearInterval(iv); }
-            }, at));
-            at += dur;
-          });
+          L.forEach(function (l, i) { callT.push(setTimeout(function () { var d = document.createElement("div"); d.className = l[0]; d.innerHTML = (l[0] === "ai" ? "<b>🤖 AI</b>" : l[0] === "ld" ? "<b>" + T(["Lead", "العميل"]) + "</b>" : "") + l[1]; box.appendChild(d); box.scrollTop = box.scrollHeight; }, i * 1600)); });
         };
 
         /* ---------- i18n sync ---------- */
         function sync() {
           document.querySelectorAll("[data-ph-en]").forEach(function (e) { e.placeholder = e.getAttribute(AR() ? "data-ph-ar" : "data-ph-en"); });
           document.querySelectorAll("option[data-en]").forEach(function (o) { o.textContent = o.getAttribute(AR() ? "data-ar" : "data-en"); });
-          $("cRes").innerHTML = ""; $("cBar").style.width = "0"; $("call").innerHTML = ""; callT.forEach(function (t) { clearTimeout(t); clearInterval(t); });
+          $("cRes").innerHTML = ""; $("cBar").style.width = "0"; $("call").innerHTML = ""; callT.forEach(clearTimeout);
         }
         var last = root.lang;
         new MutationObserver(function () { if (root.lang !== last) { last = root.lang; sync(); reset(); } }).observe(root, { attributes: true, attributeFilter: ["lang"] });

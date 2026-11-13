@@ -581,7 +581,25 @@
       .nav-links{align-items:center}
       .nav-links a.nav-demo{color:#fff;background:linear-gradient(135deg,#2563eb,#4f46e5);padding:6px 14px;border-radius:99px;box-shadow:0 6px 16px rgba(37,99,235,.3)}
       .nav-links a.nav-demo:hover{color:#fff;transform:translateY(-1px)}
+
+      /* responsive scale: small laptops down, big screens up */
+      @media (min-width:1021px) and (max-width:1440px){html{zoom:.93}}
+      @media (min-width:1021px) and (max-width:1200px){html{zoom:.88}}
+      @media (min-width:1700px){html{zoom:1.15}}
+      @media (min-width:2000px){html{zoom:1.35}}
+      @media (min-width:2560px){html{zoom:1.7}}
+      @media (min-width:3200px){html{zoom:2.1}}
+
+      .nav-links a.nav-m{display:none}
+      .nav .btn.nav-live{padding:10px 16px;font-size:14px;white-space:nowrap}
+      .sec-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:44px 0 56px}
+      @media (max-width:1000px){.nav .btn.nav-live{display:none}}
+      @media (max-width:860px){.nav-links a.nav-m{display:block;font-weight:700;color:var(--blue)}.sec-cta .btn{flex:1 1 220px;justify-content:center}}
       @media (max-width:860px){.nav-links a.nav-demo{padding:8px 16px;margin:8px 0;align-self:flex-start}}
+    
+      /* keep anchors / auto-scroll clear of the sticky navbar */
+      html{scroll-padding-top:96px}
+      section[id],.lg[id],[id].vs-anim,.vs-anim{scroll-margin-top:96px}
     </style>
   </head>
   <body>
@@ -601,7 +619,8 @@
           <b class="lw">Visit<span>sly</span></b></a
         >
         <div class="nav-links" id="navLinks">
-          <a href="index.html#how-it-works"
+          <a href="index.html"><span class="en">Home</span><span class="ar">الرئيسية</span></a
+          ><a href="index.html#how-it-works"
             ><span class="en">How it works</span
             ><span class="ar">كيف يعمل</span></a
           ><a href="index.html#features"
@@ -612,7 +631,8 @@
             ><span class="en">Pricing</span><span class="ar">الأسعار</span></a
           ><a href="contact.html"
             ><span class="en">Contact</span><span class="ar">تواصل معنا</span></a
-          >
+          ><a class="nav-m" href="demo.html"><span class="en">Live Demo</span><span class="ar">عرض مباشر</span></a
+          ><a class="nav-m" href="https://visitsly.com/signup"><span class="en">Book free demo</span><span class="ar">احجز عرضاً مجانياً</span></a>
         </div>
         <div class="nav-right">
           <div
@@ -638,12 +658,10 @@
               العربية
             </button>
           </div>
+          <a class="btn btn-ghost nav-live" href="demo.html"><span class="en">▶ Live demo</span><span class="ar">▶ عرض مباشر</span></a>
           <a
             class="btn btn-primary"
-            data-wa
-            href="https://wa.me/919250119045?text=Hi%2C%20I%20want%20a%20free%20demo%20of%20Visitsly"
-            target="_blank"
-            rel="noopener"
+            href="https://visitsly.com/signup"
             ><span class="en">Book free demo</span
             ><span class="ar">احجز عرضاً مجانياً</span></a
           >
@@ -1456,6 +1474,13 @@
           >
         </div>
       </div>
+
+    <div class="wrap">
+      <div class="sec-cta">
+        <a class="btn btn-primary" data-wa href="https://wa.me/919250119045?text=Hi%2C%20I%20want%20a%20free%20demo%20of%20Visitsly" target="_blank" rel="noopener">💬 <span class="en">Book a free live demo</span><span class="ar">احجز عرضاً مباشراً مجاناً</span></a>
+        <a class="btn btn-ghost" href="demo.html"><span class="en">▶ Try live demo</span><span class="ar">▶ جرّب العرض المباشر</span></a>
+      </div>
+    </div>
     </main>
     <footer>
       <div class="wrap">
