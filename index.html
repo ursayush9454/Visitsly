@@ -2504,55 +2504,207 @@
       .nav-right .seg button {
         padding: 7px 12px;
       }
-      .foot a[href^="tel:"]{unicode-bidi:isolate;direction:ltr;display:inline-block}
+      .foot a[href^="tel:"] {
+        unicode-bidi: isolate;
+        direction: ltr;
+        display: inline-block;
+      }
 
-      .nav-links{align-items:center}
-      .nav-links a.nav-demo{color:#fff;background:linear-gradient(135deg,#2563eb,#4f46e5);padding:6px 14px;border-radius:99px;box-shadow:0 6px 16px rgba(37,99,235,.3)}
-      .nav-links a.nav-demo:hover{color:#fff;transform:translateY(-1px)}
-      @media (max-width:860px){.nav-links a.nav-demo{padding:8px 16px;margin:8px 0;align-self:flex-start}}
-      .pdemo{display:block;text-align:center;margin-top:12px;font-weight:800;font-size:14.5px;color:var(--blue-d)}
-      .price.pop .pdemo{color:#fff}
-      .pdemo:hover{color:var(--blue);text-decoration:underline}
-
+      .nav-links {
+        align-items: center;
+      }
+      .nav-links a.nav-demo {
+        color: #fff;
+        background: linear-gradient(135deg, #2563eb, #4f46e5);
+        padding: 6px 14px;
+        border-radius: 99px;
+        box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3);
+      }
+      .nav-links a.nav-demo:hover {
+        color: #fff;
+        transform: translateY(-1px);
+      }
+      @media (max-width: 860px) {
+        .nav-links a.nav-demo {
+          padding: 8px 16px;
+          margin: 8px 0;
+          align-self: flex-start;
+        }
+      }
+      .pdemo {
+        display: block;
+        text-align: center;
+        margin-top: 12px;
+        font-weight: 800;
+        font-size: 14.5px;
+        color: var(--blue-d);
+      }
+      .price.pop .pdemo {
+        color: #fff;
+      }
+      .pdemo:hover {
+        color: var(--blue);
+        text-decoration: underline;
+      }
 
       /* ===== scroll-lock hint + fit-to-screen ===== */
-      .vs-anim{scroll-margin-top:96px;transform-origin:top center}
-      .vs-lock{position:fixed;left:50%;bottom:22px;transform:translate(-50%,16px);z-index:60;opacity:0;pointer-events:none;
-        background:#0b1b3f;color:#fff;font-size:13.5px;font-weight:700;padding:11px 20px 15px;border-radius:99px;
-        box-shadow:0 14px 34px rgba(11,27,63,.35);transition:opacity .35s,transform .35s;white-space:nowrap;overflow:hidden}
-      .vs-lock.on{opacity:1;transform:translate(-50%,0)}
-      .vs-lock::after{content:"";position:absolute;left:0;bottom:0;height:4px;width:0;background:linear-gradient(90deg,#2563eb,#06b6d4)}
-      .vs-lock.on::after{width:100%;transition:width 12.8s linear}
-      .h-caps{text-transform:uppercase;letter-spacing:.01em}
-      @media (max-width:480px){.vs-lock{font-size:12px;padding:10px 16px 14px;bottom:16px}}
+      .vs-anim {
+        scroll-margin-top: 96px;
+        transform-origin: top center;
+      }
+      .vs-lock {
+        position: fixed;
+        left: 50%;
+        bottom: 22px;
+        transform: translate(-50%, 16px);
+        z-index: 60;
+        opacity: 0;
+        pointer-events: none;
+        background: #0b1b3f;
+        color: #fff;
+        font-size: 13.5px;
+        font-weight: 700;
+        padding: 11px 20px 15px;
+        border-radius: 99px;
+        box-shadow: 0 14px 34px rgba(11, 27, 63, 0.35);
+        transition:
+          opacity 0.35s,
+          transform 0.35s;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+      .vs-lock.on {
+        opacity: 1;
+        transform: translate(-50%, 0);
+      }
+      .vs-lock::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 4px;
+        width: 0;
+        background: linear-gradient(90deg, #2563eb, #06b6d4);
+      }
+      .vs-lock.on::after {
+        width: 100%;
+        transition: width 12.8s linear;
+      }
+      .h-caps {
+        text-transform: uppercase;
+        letter-spacing: 0.01em;
+      }
+      @media (max-width: 480px) {
+        .vs-lock {
+          font-size: 12px;
+          padding: 10px 16px 14px;
+          bottom: 16px;
+        }
+      }
 
       /* ===== responsive scale: small laptops down, big screens up ===== */
-      section{padding:clamp(56px,6.5vw,96px) 0}
-      .sec-head{margin-bottom:clamp(32px,4.2vw,56px)}
-      .hero{padding:clamp(44px,6vw,76px) 0 clamp(40px,5vw,60px)}
-      .hero-top{margin-bottom:clamp(32px,4.5vw,54px)}
-      @media (min-width:1021px) and (max-width:1440px){html{zoom:.93}}
-      @media (min-width:1021px) and (max-width:1200px){html{zoom:.88}}
-      @media (min-width:1700px){html{zoom:1.15}}
-      @media (min-width:2000px){html{zoom:1.35}}
-      @media (min-width:2560px){html{zoom:1.7}}
-      @media (min-width:3200px){html{zoom:2.1}}
-      @media (max-width:600px){.vs-table{font-size:13px}.vs-table th,.vs-table td{padding:12px 8px}.vs-table th{font-size:12.5px}}
-      /* nav + section CTAs */
-      .nav-links a.nav-m{display:none}
-      .nav .btn.nav-live{padding:10px 16px;font-size:14px;white-space:nowrap}
-      .sec-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:44px}
-      @media (max-width:1000px){.nav .btn.nav-live{display:none}}
-      @media (max-width:860px){
-        .nav-links a.nav-m{display:block;font-weight:700;color:var(--blue)}
-        .sec-cta{margin-top:32px}
-        .sec-cta .btn{flex:1 1 220px;justify-content:center}
+      section {
+        padding: clamp(56px, 6.5vw, 96px) 0;
       }
-    
+      .sec-head {
+        margin-bottom: clamp(32px, 4.2vw, 56px);
+      }
+      .hero {
+        padding: clamp(44px, 6vw, 76px) 0 clamp(40px, 5vw, 60px);
+      }
+      .hero-top {
+        margin-bottom: clamp(32px, 4.5vw, 54px);
+      }
+      @media (min-width: 1021px) and (max-width: 1440px) {
+        html {
+          zoom: 0.93;
+        }
+      }
+      @media (min-width: 1021px) and (max-width: 1200px) {
+        html {
+          zoom: 0.88;
+        }
+      }
+      @media (min-width: 1700px) {
+        html {
+          zoom: 1.15;
+        }
+      }
+      @media (min-width: 2000px) {
+        html {
+          zoom: 1.35;
+        }
+      }
+      @media (min-width: 2560px) {
+        html {
+          zoom: 1.7;
+        }
+      }
+      @media (min-width: 3200px) {
+        html {
+          zoom: 2.1;
+        }
+      }
+      @media (max-width: 600px) {
+        .vs-table {
+          font-size: 13px;
+        }
+        .vs-table th,
+        .vs-table td {
+          padding: 12px 8px;
+        }
+        .vs-table th {
+          font-size: 12.5px;
+        }
+      }
+      /* nav + section CTAs */
+      .nav-links a.nav-m {
+        display: none;
+      }
+      .nav .btn.nav-live {
+        padding: 10px 16px;
+        font-size: 14px;
+        white-space: nowrap;
+      }
+      .sec-cta {
+        display: flex;
+        gap: 14px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 44px;
+      }
+      @media (max-width: 1000px) {
+        .nav .btn.nav-live {
+          display: none;
+        }
+      }
+      @media (max-width: 860px) {
+        .nav-links a.nav-m {
+          display: block;
+          font-weight: 700;
+          color: var(--blue);
+        }
+        .sec-cta {
+          margin-top: 32px;
+        }
+        .sec-cta .btn {
+          flex: 1 1 220px;
+          justify-content: center;
+        }
+      }
+
       /* keep anchors / auto-scroll clear of the sticky navbar */
-      html{scroll-padding-top:96px}
-      section[id],.lg[id],[id].vs-anim,.vs-anim{scroll-margin-top:96px}
+      html {
+        scroll-padding-top: 96px;
+      }
+      section[id],
+      .lg[id],
+      [id].vs-anim,
+      .vs-anim {
+        scroll-margin-top: 96px;
+      }
     </style>
+    <link rel="stylesheet" href="assets/css/saas.css" />
   </head>
   <body id="top">
     <div class="topbar" data-i="1">
@@ -2573,7 +2725,9 @@
           ><a data-i="5" href="#pricing">Pricing</a
           ><a data-i="298" href="contact.html">Contact</a
           ><a class="nav-m" data-i="302" href="demo.html">Live Demo</a
-          ><a class="nav-m" data-i="7" href="https://visitsly.com/signup">Book free demo</a>
+          ><a class="nav-m" data-i="7" href="https://visitsly.com/login"
+            >Book free demo</a
+          >
         </div>
         <div class="nav-right">
           <div
@@ -2600,11 +2754,13 @@
               العربية
             </button>
           </div>
-          <a class="btn btn-ghost nav-live" data-i="402" href="demo.html">▶ Live demo</a>
+          <a class="btn btn-ghost nav-live" data-i="402" href="demo.html"
+            >▶ Live demo</a
+          >
           <a
             class="btn btn-primary"
             data-i="7"
-            href="https://visitsly.com/signup"
+            href="https://visitsly.com/login"
             >Book free demo</a
           >
           <button
@@ -2641,7 +2797,7 @@
               <a
                 class="btn btn-primary"
                 data-i="11"
-                href="https://visitsly.com/signup"
+                href="https://visitsly.com/login"
                 >💬 Book a free live demo</a
               >
               <a class="btn btn-ghost" data-i="300" href="demo.html"
@@ -2822,7 +2978,6 @@
               ><span data-i="55">manual follow-up calls</span>
             </div>
           </div>
-
         </div>
       </section>
       <section style="padding-top: 0">
@@ -2886,7 +3041,6 @@
               </ul>
             </div>
           </div>
-
         </div>
       </section>
       <section id="how-it-works" style="padding-top: 0">
@@ -2942,8 +3096,15 @@
           </div>
 
           <div class="sec-cta rv">
-            <a class="btn btn-primary" data-i="11" href="https://visitsly.com/signup">💬 Book a free live demo</a>
-            <a class="btn btn-ghost" data-i="300" href="demo.html">▶ Try live demo</a>
+            <a
+              class="btn btn-primary"
+              data-i="11"
+              href="https://visitsly.com/login"
+              >💬 Book a free live demo</a
+            >
+            <a class="btn btn-ghost" data-i="300" href="demo.html"
+              >▶ Try live demo</a
+            >
           </div>
         </div>
       </section>
@@ -3037,7 +3198,6 @@
               <span class="tagx" data-i="105">ADD-ON</span>
             </div>
           </div>
-
         </div>
       </section>
       <section style="padding-top: 0">
@@ -3112,7 +3272,6 @@
               </div>
             </div>
           </div>
-
         </div>
       </section>
       <section style="padding-top: 0">
@@ -3197,7 +3356,6 @@
           <div class="note" data-i="122">
             Sample data shown for illustration.
           </div>
-
         </div>
       </section>
       <section id="calculator" style="padding-top: 0">
@@ -3307,8 +3465,15 @@
           </div>
 
           <div class="sec-cta rv">
-            <a class="btn btn-primary" data-i="11" href="https://visitsly.com/signup">💬 Book a free live demo</a>
-            <a class="btn btn-ghost" data-i="300" href="demo.html">▶ Try live demo</a>
+            <a
+              class="btn btn-primary"
+              data-i="11"
+              href="https://visitsly.com/login"
+              >💬 Book a free live demo</a
+            >
+            <a class="btn btn-ghost" data-i="300" href="demo.html"
+              >▶ Try live demo</a
+            >
           </div>
         </div>
       </section>
@@ -3382,13 +3547,12 @@
                 <tr>
                   <td data-i="404">Manual talk + AI talk</td>
                   <td class="us y" data-i="405">✓</td>
-                  <td class="n" data-i="406">✕ </td>
+                  <td class="n" data-i="406">✕</td>
                   <td class="n" data-i="406">✕</td>
                 </tr>
               </tbody>
             </table>
           </div>
-
         </div>
       </section>
       <section style="padding-top: 0">
@@ -3431,8 +3595,84 @@
           </div>
 
           <div class="sec-cta rv">
-            <a class="btn btn-primary" data-i="11" href="https://visitsly.com/signup">💬 Book a free live demo</a>
-            <a class="btn btn-ghost" data-i="300" href="demo.html">▶ Try live demo</a>
+            <a
+              class="btn btn-primary"
+              data-i="11"
+              href="https://visitsly.com/login"
+              >💬 Book a free live demo</a
+            >
+            <a class="btn btn-ghost" data-i="300" href="demo.html"
+              >▶ Try live demo</a
+            >
+          </div>
+        </div>
+      </section>
+      <section id="regions" style="padding-top: 0">
+        <div class="wrap">
+          <div class="sec-head rv">
+            <div class="eyebrow" data-i="500">Built for UAE &amp; India</div>
+            <h2 data-i="501">
+              One platform, <span class="grad">two real estate markets</span>
+            </h2>
+            <p data-i="502">
+              Local portals, local currency, local language and local compliance
+              — configured for you on day one.
+            </p>
+          </div>
+          <div class="geo">
+            <div class="geo-c geo-ae rv">
+              <h3 data-i="503">🇦🇪 United Arab Emirates</h3>
+              <p data-i="504">
+                For Dubai, Abu Dhabi and Northern Emirates developers and
+                brokerages.
+              </p>
+              <ul>
+                <li data-i="505">
+                  Bayut, Property Finder &amp; Dubizzle leads auto-captured
+                </li>
+                <li data-i="506">
+                  Arabic + English WhatsApp conversations with full RTL support
+                </li>
+                <li data-i="507">
+                  Prices in AED, off-plan payment plans &amp; Gulf Standard Time
+                  reminders
+                </li>
+                <li data-i="508">
+                  Built to work with RERA / DLD-regulated sales workflows
+                </li>
+              </ul>
+              <div class="geo-tags">
+                <span>AED</span><span>+971</span><span>GST (UTC+4)</span
+                ><span>Arabic · English</span>
+              </div>
+            </div>
+            <div class="geo-c geo-in rv">
+              <h3 data-i="509">🇮🇳 India</h3>
+              <p data-i="510">
+                For builders, channel partners and agencies across metros and
+                tier-2 cities.
+              </p>
+              <ul>
+                <li data-i="511">
+                  99acres, MagicBricks &amp; Housing.com leads auto-captured
+                </li>
+                <li data-i="512">
+                  Pricing in INR (₹) with Lakh/Crore formatting and GST
+                  invoicing
+                </li>
+                <li data-i="513">
+                  RERA-registered project details shared inside the chat
+                </li>
+                <li data-i="514">
+                  Works with the number your team already uses on WhatsApp
+                  Business
+                </li>
+              </ul>
+              <div class="geo-tags">
+                <span>₹ INR</span><span>+91</span><span>IST (UTC+5:30)</span
+                ><span>English · Hinglish</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -3680,7 +3920,6 @@
               charges are separate and paid through your Visitsly wallet.</span
             >
           </div>
-
         </div>
       </section>
       <section id="faq" style="padding-top: 0">
@@ -3768,7 +4007,6 @@
               </p>
             </details>
           </div>
-
         </div>
       </section>
       <section style="padding-top: 0; padding-bottom: 0">
@@ -3887,7 +4125,15 @@
         </div>
       </div>
     </footer>
-    <div class="vs-lock" data-i="401" id="vsLock" role="status" aria-live="polite">Watch the full demo to continue</div>
+    <div
+      class="vs-lock"
+      data-i="401"
+      id="vsLock"
+      role="status"
+      aria-live="polite"
+    >
+      Watch the full demo to continue
+    </div>
     <a
       aria-label="WhatsApp"
       class="wa-float"
@@ -4381,12 +4627,30 @@
         405: "✓ نعم",
         406: "✕ لا",
       };
+      Object.assign(AR_TEXT, {
+        500: "مصمم للإمارات والهند",
+        501: 'منصة واحدة، <span class="grad">سوقان عقاريان</span>',
+        502: "بوابات محلية وعملة محلية ولغة محلية وامتثال محلي — يتم إعدادها لك من اليوم الأول.",
+        503: "🇦🇪 الإمارات العربية المتحدة",
+        504: "للمطورين والوسطاء في دبي وأبوظبي والإمارات الشمالية.",
+        505: "التقاط العملاء تلقائياً من بيوت وبروبرتي فايندر ودوبيزل",
+        506: "محادثات واتساب بالعربية والإنجليزية مع دعم كامل للكتابة من اليمين لليسار",
+        507: "الأسعار بالدرهم وخطط الدفع للمشاريع قيد الإنشاء وتذكيرات بتوقيت الخليج",
+        508: "متوافق مع إجراءات البيع الخاضعة لـ RERA وDLD",
+        509: "🇮🇳 الهند",
+        510: "للمطورين والوكلاء في المدن الكبرى والمدن الصغيرة في الهند.",
+        511: "التقاط العملاء تلقائياً من 99acres وMagicBricks وHousing.com",
+        512: "الأسعار بالروبية مع تنسيق اللاك/الكرور وفواتير GST",
+        513: "مشاركة تفاصيل المشروع المسجل في RERA داخل المحادثة",
+        514: "يعمل مع رقم واتساب للأعمال الذي يستخدمه فريقك حالياً",
+        515: "الإمارات والهند",
+      });
       var AR_ATTR = {
         7: {
-          href: "https://visitsly.com/signup",
+          href: "https://visitsly.com/login",
         },
         11: {
-          href: "https://visitsly.com/signup",
+          href: "https://visitsly.com/login",
         },
         118: {
           style:
@@ -4827,7 +5091,8 @@
           root.style.transform = "";
           root.style.marginBottom = "";
           var h = root.getBoundingClientRect().height,
-            avail = window.innerHeight - navEl.getBoundingClientRect().height - 84,
+            avail =
+              window.innerHeight - navEl.getBoundingClientRect().height - 84,
             s = Math.max(0.5, Math.min(1, avail / h));
           if (s < 1) {
             root.style.transform = "scale(" + s + ")";
