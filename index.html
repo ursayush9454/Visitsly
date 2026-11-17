@@ -5220,6 +5220,30 @@ html { scroll-snap-type: none !important; }
           track.style.height = H * (SCROLL + 1) + "px"; force = true;
         }
         window.vsAnimRestart = function () { A = ANIM[LANG]; root.classList.toggle("vx-rtl", LANG === "ar"); build(); force = true; };
+        /* ---- frame snapping: scrolling always settles on a complete scene ---- */
+        var STOPS = [0, 15, 30, 48, 66, 80, 100], snapT = null, tries = 0, settledY = window.scrollY, snapTimer;
+        window.vsProgress = function () { readTarget(); return target * 100; };
+        function snapEnd() {
+          readTarget();
+          var pp = target * 100, i, t = null, near = false;
+          if (pp <= 0.05 || pp >= 99.95) { snapT = null; settledY = window.scrollY; return; }
+          for (i = 0; i < STOPS.length; i++) if (Math.abs(STOPS[i] - pp) < 0.6) near = true;
+          if (snapT == null) {
+            if (near) { settledY = window.scrollY; return; }
+            if (window.scrollY >= settledY) { for (i = 0; i < STOPS.length; i++) if (STOPS[i] > pp) { t = STOPS[i]; break; } }
+            else { for (i = 0; i < STOPS.length; i++) if (STOPS[i] < pp) t = STOPS[i]; }
+            if (t == null) { settledY = window.scrollY; return; }
+            snapT = t; tries = 0;
+          }
+          if (Math.abs(pp - snapT) < 0.5 || tries >= 4) { snapT = null; settledY = window.scrollY; return; }
+          tries++;
+          var range = track.getBoundingClientRect().height - pin.getBoundingClientRect().height;
+          window.scrollBy({ top: ((snapT - pp) / 100) * range, behavior: "smooth" });
+        }
+        window.addEventListener("scroll", function () { clearTimeout(snapTimer); snapTimer = setTimeout(snapEnd, 140); }, { passive: true });
+        ["wheel", "touchstart", "keydown", "mousedown"].forEach(function (ev) {
+          window.addEventListener(ev, function () { snapT = null; }, { passive: true });
+        });
         window.addEventListener("resize", fit); window.addEventListener("load", fit);
         root.classList.toggle("vx-rtl", LANG === "ar");
         build(); fit(); readTarget(); cur = target; loop();
