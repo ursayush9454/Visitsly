@@ -2705,8 +2705,280 @@
       }
     </style>
     <link rel="stylesheet" href="assets/css/saas.css" />
+    <style id="vs-premium">
+/* =====================================================================
+   Premium layer v2 — spacing, motion, full-screen hero stage
+   ===================================================================== */
+:root { --ease: cubic-bezier(0.22, 1, 0.36, 1); --spring: cubic-bezier(0.34, 1.45, 0.64, 1); }
+
+/* ---- section breathing room (beats the inline padding-top:0) ---- */
+section { padding-block: clamp(72px, 8vw, 120px) !important; }
+section[style*="padding-top"] { padding-top: clamp(28px, 3.5vw, 56px) !important; }
+section[style*="padding-bottom: 0"] { padding-bottom: 0 !important; }
+.sec-head { margin-bottom: clamp(40px, 5vw, 72px) !important; }
+.score-box { padding: clamp(32px, 5vw, 64px) !important; gap: clamp(28px, 4vw, 56px) !important; }
+.compare { gap: clamp(20px, 2.5vw, 32px) !important; }
+.cmp { padding: clamp(26px, 3vw, 40px) !important; }
+.prices { gap: clamp(18px, 2vw, 28px) !important; }
+.price { padding: 40px 30px 36px !important; }
+.price .btn { margin-top: auto; }
+.addons { padding: clamp(28px, 4vw, 48px) !important; }
+.price-note { margin-top: 36px !important; }
+.faq details { padding-block: 6px; }
+
+/* ---- scroll progress + smoother reveals ---- */
+.vs-progress { position: fixed; inset: 0 0 auto 0; height: 3px; z-index: 100; pointer-events: none;
+  background: linear-gradient(90deg, #2563eb, #06b6d4, #7c3aed); transform-origin: 0 50%; transform: scaleX(0); }
+[dir="rtl"] .vs-progress { transform-origin: 100% 50%; }
+.rv { transition: opacity 0.9s var(--ease), transform 0.9s var(--ease) !important; }
+
+/* ---- hero: one orchestrated entrance ---- */
+@keyframes vsUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+.hero-top > * { animation: vsUp 0.9s var(--ease) both; }
+.hero-top > :nth-child(1) { animation-delay: 0.05s; }
+.hero-top > :nth-child(2) { animation-delay: 0.15s; }
+.hero-top > :nth-child(3) { animation-delay: 0.28s; }
+.hero-top > :nth-child(4) { animation-delay: 0.4s; }
+.hero-top > :nth-child(5) { animation-delay: 0.52s; }
+@keyframes vsShimmer { to { background-position: 200% center; } }
+.hero h1 .grad { background: linear-gradient(100deg, #2563eb, #06b6d4, #7c3aed, #2563eb) 0 / 200% auto;
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  animation: vsShimmer 7s linear infinite; }
+.hero { padding-bottom: 0 !important; }
+.hero-top { margin-bottom: 0 !important; }
+.btn-primary { position: relative; overflow: hidden; }
+.btn-primary::after { content: ""; position: absolute; inset: 0 auto 0 -60%; width: 40%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+  transform: skewX(-20deg); transition: left 0.7s var(--ease); }
+.btn-primary:hover::after { left: 130%; }
+
+/* ---- full-screen animation stage ---- */
+.vs-full { position: relative; isolation: isolate; overflow: hidden; display: flex; align-items: center;
+  margin-top: clamp(36px, 5vw, 72px); padding: clamp(36px, 5vw, 64px) 0 clamp(40px, 5vw, 72px);
+  border-radius: clamp(28px, 4vw, 56px) clamp(28px, 4vw, 56px) 0 0;
+  background: radial-gradient(120% 90% at 50% 0%, #12255c 0%, #0a1536 48%, #050b1f 100%); }
+.vs-full-in { width: 100%; position: relative; z-index: 2; }
+.vs-full-grid { position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background-image: linear-gradient(rgba(147, 180, 255, 0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(147, 180, 255, 0.07) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: radial-gradient(ellipse at 50% 45%, #000 20%, transparent 75%);
+  mask-image: radial-gradient(ellipse at 50% 45%, #000 20%, transparent 75%); }
+.vs-aurora { position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+.vs-aurora i { position: absolute; border-radius: 50%; filter: blur(110px); opacity: 0.55; animation: vsDrift 16s ease-in-out infinite; }
+.vs-aurora i:nth-child(1) { width: 560px; height: 560px; background: #2563eb; top: -160px; left: -120px; }
+.vs-aurora i:nth-child(2) { width: 520px; height: 520px; background: #06b6d4; bottom: -200px; right: -100px; animation-delay: -5s; opacity: 0.4; }
+.vs-aurora i:nth-child(3) { width: 420px; height: 420px; background: #7c3aed; top: 30%; left: 55%; animation-delay: -10s; opacity: 0.35; }
+@keyframes vsDrift { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(60px, 40px) scale(1.12); } }
+.vs-kicker { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 0 auto 22px;
+  text-align: center; color: #cfe0ff; font-weight: 700; font-size: clamp(15px, 1.7vw, 20px); letter-spacing: 0.01em; }
+.vs-kicker::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: #22c55e;
+  box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); animation: vsLive 1.8s infinite; flex: none; }
+@keyframes vsLive { 70% { box-shadow: 0 0 0 12px rgba(34, 197, 94, 0); } 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); } }
+.vs-full .vs-anim { max-width: 1120px; border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12), 0 50px 140px -20px rgba(37, 99, 235, 0.55), 0 30px 60px -30px rgba(0, 0, 0, 0.6); }
+@keyframes vsFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+.vs-phone { animation: vsFloat 7s ease-in-out infinite; }
+
+/* ---- smoother animation internals ---- */
+.vs-card { transition: opacity 0.6s var(--ease), transform 0.95s var(--spring) !important; transform: translateY(22px) scale(0.9); will-change: transform, opacity; }
+.vs-card.show { transform: none; }
+.vs-msg { animation: vsPop 0.6s var(--ease) both !important; }
+.vs-step { transition: transform 0.6s var(--ease), background 0.5s, border-color 0.5s, box-shadow 0.5s, opacity 0.5s !important; }
+.vs-line-fill { transition: height 1.1s var(--ease), width 1.1s var(--ease) !important; }
+.vs-dim { transition: opacity 0.8s var(--ease) !important; }
+.vs-lock { display: none !important; }
+
+/* ---- pricing polish ---- */
+.price.pop { overflow: visible; }
+.price.pop::before { content: ""; position: absolute; inset: -2px; border-radius: inherit; z-index: -1;
+  background: linear-gradient(135deg, #2563eb, #06b6d4, #7c3aed); filter: blur(22px); opacity: 0.35; transition: opacity 0.4s; }
+.price.pop:hover::before { opacity: 0.6; }
+
+@media (max-width: 860px) {
+  .vs-full { border-radius: 28px 28px 0 0; }
+  .vs-full .vs-anim { border-radius: 24px; }
+  .price { padding: 34px 24px 30px !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-top > *, .vs-phone, .vs-aurora i, .hero h1 .grad { animation: none !important; }
+}
+
+/* =====================================================================
+   v3 — brand-new FULL-SCREEN hero story (replaces the half-screen card)
+   ===================================================================== */
+.vs-full { align-items: stretch; padding: clamp(20px, 3vh, 36px) 0 clamp(20px, 3vh, 36px); margin-top: clamp(28px, 4vh, 52px); scroll-snap-align: start; scroll-margin-top: 80px; }
+html { scroll-snap-type: y proximity; }
+.vs-full-in { max-width: 1480px !important; display: flex; flex-direction: column; height: 100%; }
+.vs-kicker { margin-bottom: clamp(10px, 2vh, 20px); flex: none; }
+.vx { flex: 1; min-height: 0; position: relative; display: grid; grid-template-rows: auto 1fr auto; gap: clamp(14px, 2.4vh, 28px); color: #e8efff; }
+
+/* stage tracker */
+.vx-steps { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.vx-line { position: absolute; left: 12.5%; right: 12.5%; top: 26px; height: 3px; background: rgba(255, 255, 255, 0.12); border-radius: 3px; }
+.vx-line-fill { display: block; height: 100%; width: var(--w, 0%); border-radius: 3px; background: linear-gradient(90deg, #2563eb, #06b6d4); box-shadow: 0 0 18px #06b6d4; transition: width 1.2s var(--ease); }
+.vx-step { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px; opacity: 0.45; transition: opacity 0.6s, transform 0.7s var(--ease); }
+.vx-ico { width: 54px; height: 54px; border-radius: 18px; display: grid; place-items: center; font-size: 24px; background: #0c1a44; border: 1px solid rgba(255, 255, 255, 0.16); transition: all 0.6s var(--ease); }
+.vx-step h4 { margin: 0; font-size: clamp(14px, 1.3vw, 18px); color: #fff; }
+.vx-step p { margin: 2px 0 0; font-size: clamp(11.5px, 1vw, 13.5px); color: #9fb3e6; max-width: 240px; }
+.vx-step.is-active, .vx-step.is-done { opacity: 1; }
+.vx-step.is-active { transform: translateY(-3px); }
+.vx-step.is-active .vx-ico { background: linear-gradient(135deg, #2563eb, #06b6d4); border-color: transparent; box-shadow: 0 0 0 6px rgba(37, 99, 235, 0.25), 0 0 40px rgba(6, 182, 212, 0.6); transform: scale(1.12); }
+.vx-step.is-done .vx-ico { background: #0f3a63; border-color: #22c55e; }
+
+/* main */
+.vx-main { display: grid; grid-template-columns: 1.3fr 1fr; gap: clamp(16px, 2.2vw, 32px); min-height: 0; }
+.vx-chatbox, .vx-card { background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.14); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); border-radius: 26px; box-shadow: 0 30px 80px -30px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.12); }
+.vx-chatbox { display: flex; flex-direction: column; min-height: 0; overflow: hidden; }
+.vx-chead { display: flex; align-items: center; gap: 14px; padding: 16px 22px; background: linear-gradient(90deg, rgba(18, 140, 126, 0.55), rgba(18, 140, 126, 0.2)); border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+.vx-av { width: 44px; height: 44px; border-radius: 50%; background: #fff; display: grid; place-items: center; font-size: 22px; }
+.vx-chead b { display: block; font-size: 17px; color: #fff; }
+.vx-chead small { color: #86efac; font-size: 12.5px; }
+.vx-3s { margin-inline-start: auto; font-size: 13px; color: #cfe0ff; background: rgba(255, 255, 255, 0.1); padding: 6px 14px; border-radius: 99px; }
+.vx-3s b { display: inline; font-size: 13px; color: #67e8f9; }
+.vx-3s em { font-style: normal; }
+.vx-chat { flex: 1; min-height: 0; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; gap: 12px; padding: 20px 22px; }
+.vx-msg { max-width: 78%; padding: 12px 16px 22px; border-radius: 18px; font-size: clamp(14px, 1.35vw, 18px); line-height: 1.5; position: relative; animation: vxIn 0.7s var(--ease) both; }
+.vx-user { align-self: flex-end; background: #e8f0ff; color: #0b1b3f; border-bottom-right-radius: 5px; }
+.vx-bot { align-self: flex-start; background: linear-gradient(135deg, #2563eb, #4f46e5); color: #fff; border-bottom-left-radius: 5px; box-shadow: 0 12px 30px -10px rgba(37, 99, 235, 0.7); }
+.vx-tag { display: block; font-size: 11.5px; font-weight: 700; color: #a5f3fc; margin-bottom: 3px; }
+.vx-time { position: absolute; inset-inline-end: 12px; bottom: 5px; font-size: 10.5px; opacity: 0.6; }
+.vx-typing { align-self: flex-start; display: flex; gap: 5px; padding: 14px 18px; border-radius: 18px; background: rgba(255, 255, 255, 0.12); }
+.vx-typing i { width: 8px; height: 8px; border-radius: 50%; background: #9fb3e6; animation: vxDot 1.1s infinite; }
+.vx-typing i:nth-child(2) { animation-delay: 0.15s; } .vx-typing i:nth-child(3) { animation-delay: 0.3s; }
+@keyframes vxDot { 0%, 60%, 100% { transform: translateY(0); opacity: 0.4; } 30% { transform: translateY(-6px); opacity: 1; } }
+@keyframes vxIn { from { opacity: 0; transform: translateY(18px) scale(0.94); } to { opacity: 1; transform: none; } }
+
+/* side cards (fixed slots, no layout jump) */
+.vx-side { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1.5fr 1fr; gap: clamp(12px, 1.6vw, 20px); min-height: 0; }
+.vx-card { padding: clamp(14px, 1.8vw, 24px); display: flex; align-items: center; gap: 16px; opacity: 0; transform: translateY(26px) scale(0.92); transition: opacity 0.6s var(--ease), transform 0.95s var(--spring); }
+.vx-card.show { opacity: 1; transform: none; }
+.vx-card small { display: block; color: #9fb3e6; font-size: clamp(11.5px, 1vw, 13.5px); }
+.vx-card b { display: block; color: #fff; font-size: clamp(14px, 1.3vw, 18px); }
+.vx-toast, .vx-agent { grid-column: 1 / -1; }
+.vx-bell, .vx-aav { width: 46px; height: 46px; border-radius: 14px; display: grid; place-items: center; font-size: 22px; flex: none; background: linear-gradient(135deg, #f59e0b, #fb7185); color: #fff; font-weight: 800; }
+.vx-aav { background: linear-gradient(135deg, #7c3aed, #2563eb); }
+.vx-score { flex-direction: column; justify-content: center; text-align: center; gap: 10px; }
+.vx-ring { --p: 0; --c: #f59e0b; width: clamp(92px, 9vw, 132px); aspect-ratio: 1; border-radius: 50%; display: grid; place-items: center;
+  background: conic-gradient(var(--c) calc(var(--p) * 1%), rgba(255, 255, 255, 0.12) 0); box-shadow: 0 0 40px -6px var(--c); position: relative; }
+.vx-ring::before { content: ""; position: absolute; inset: 9px; border-radius: 50%; background: #0b1740; }
+.vx-ring span { position: relative; font-size: clamp(26px, 3vw, 40px); font-weight: 800; color: #fff; }
+.vx-cal { flex-direction: column; align-items: flex-start; justify-content: center; }
+.vx-date { display: flex; align-items: center; gap: 14px; margin-top: 8px; }
+.vx-day { width: 58px; text-align: center; border-radius: 14px; background: #fff; color: #0b1b3f; font-weight: 800; font-size: 24px; line-height: 1; padding-bottom: 8px; overflow: hidden; }
+.vx-day small { display: block; background: #2563eb; color: #fff; font-size: 11px; padding: 4px 0; margin-bottom: 6px; }
+
+.vx-foot { display: flex; justify-content: center; gap: clamp(10px, 2vw, 24px); }
+.vx-foot div { text-align: center; padding: 10px 26px; border-radius: 16px; background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.12); }
+.vx-foot b { display: block; font-size: clamp(16px, 1.6vw, 22px); color: #67e8f9; }
+.vx-foot small { color: #9fb3e6; font-size: 12px; }
+
+/* deal closed takeover — fills the whole stage */
+.vx-deal { position: absolute; inset: -6px; z-index: 5; border-radius: 28px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px;
+  background: radial-gradient(circle at 50% 40%, rgba(37, 99, 235, 0.92), rgba(8, 18, 54, 0.97) 70%); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  opacity: 0; visibility: hidden; transform: scale(1.04); transition: opacity 0.8s var(--ease), transform 1s var(--ease), visibility 0s 0.8s; overflow: hidden; }
+.vx-deal.show { opacity: 1; visibility: visible; transform: none; transition-delay: 0s; }
+.vx-big { font-size: clamp(64px, 11vh, 120px); animation: vxPulse 1.6s ease-in-out infinite; }
+.vx-deal h3 { margin: 6px 0 0; font-size: clamp(38px, 7vw, 92px); line-height: 1.05; letter-spacing: -0.03em; color: #fff; }
+.vx-deal p { margin: 14px 0 22px; font-size: clamp(16px, 2vw, 26px); color: #cfe0ff; }
+.vx-amt { padding: 12px 28px; border-radius: 99px; font-weight: 800; font-size: clamp(14px, 1.5vw, 20px); background: #fff; color: #1d4ed8; box-shadow: 0 0 60px rgba(103, 232, 249, 0.6); }
+@keyframes vxPulse { 50% { transform: scale(1.12) rotate(-6deg); } }
+.vx-conf { position: absolute; top: -14px; width: 10px; height: 16px; border-radius: 2px; animation: vxFall linear both; }
+@keyframes vxFall { to { transform: translate(var(--dx), 120vh) rotate(720deg); } }
+
+.vx-rtl .vx-chatbox, .vx-rtl .vx-card, .vx-rtl .vx-steps, .vx-rtl .vx-deal { direction: rtl; }
+.vx-rtl .vx-user { border-bottom-right-radius: 18px; border-bottom-left-radius: 5px; }
+.vx-rtl .vx-bot { border-bottom-left-radius: 18px; border-bottom-right-radius: 5px; }
+
+@media (max-width: 900px) {
+  html { scroll-snap-type: none; }
+  .vx-main { grid-template-columns: 1fr; grid-template-rows: 1.3fr 1fr; }
+  .vx-step p, .vx-3s, .vx-foot { display: none; }
+  .vx-ico { width: 44px; height: 44px; font-size: 20px; border-radius: 14px; }
+  .vx-line { top: 22px; }
+  .vx-side { grid-template-rows: auto auto auto; }
+  .vx-ring { width: 84px; }
+}
+@media (prefers-reduced-motion: reduce) { .vx-big, .vx-conf, .vx-typing i { animation: none !important; } }
+.vx { grid-template-rows: auto minmax(0, 1fr) auto; }
+.vx-main > * { min-height: 0; }
+.vx-side { grid-template-rows: minmax(0, 0.8fr) minmax(0, 1.5fr) minmax(0, 0.8fr); }
+.vx-card { padding: clamp(10px, 1.4vw, 20px); }
+.vx-score { gap: 6px; }
+@media (max-height: 880px) { .vx-step p { display: none; } .vx-ring { width: clamp(84px, 8vw, 112px); } }
+
+/* =====================================================================
+   v4 — scroll-scrubbed film (pinned), navy + champagne-gold palette
+   ===================================================================== */
+html { scroll-snap-type: none !important; }
+.hero { overflow: clip !important; }
+.vs-full { display: block !important; background: none !important; overflow: visible !important; padding: 0 !important; border-radius: 0 !important; scroll-snap-align: none; }
+.vs-pin { --gold: #f5c86a; --gold2: #ffe2a3; --iris: #7c8cff; --sky: #38bdf8; --em: #34d399;
+  position: sticky; top: 80px; overflow: hidden; isolation: isolate; display: flex; align-items: stretch;
+  padding: clamp(18px, 3vh, 32px) 0 clamp(40px, 5vh, 56px); border-radius: clamp(22px, 3vw, 44px);
+  background: radial-gradient(120% 85% at 50% -10%, #1c2672 0%, #0b1033 48%, #04061a 100%);
+  box-shadow: 0 40px 120px -30px rgba(40, 52, 160, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.1); }
+.vs-aurora i { will-change: transform; }
+.vs-aurora i:nth-child(1) { background: #4f46e5; opacity: 0.5; animation: none; }
+.vs-aurora i:nth-child(2) { background: #0ea5e9; opacity: 0.28; animation: none; }
+.vs-aurora i:nth-child(3) { background: #f5c86a; opacity: 0.2; animation: none; }
+.vs-full-grid { background-image: linear-gradient(rgba(160, 175, 255, 0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(160, 175, 255, 0.06) 1px, transparent 1px); }
+.vs-kicker { color: #e6ebff; }
+.vs-kicker::before { background: var(--em); }
+
+/* scrubbed elements: no CSS transitions (JS drives every frame) */
+.vx-card { transition: none !important; will-change: transform, opacity; }
+.vx-msg { animation: none !important; will-change: transform, opacity; }
+.vx-chatbox { will-change: transform; transform-origin: 50% 50%; }
+.vx-deal { transition: none !important; }
+.vx-conf { animation: none !important; top: 0; }
+
+/* glass + gradient hairline borders */
+.vx-chatbox, .vx-card { background: linear-gradient(160deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.03)); border: 1px solid rgba(190, 200, 255, 0.18); box-shadow: 0 30px 80px -30px rgba(0, 0, 0, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.16); }
+.vx-chead { background: linear-gradient(90deg, rgba(52, 211, 153, 0.22), rgba(124, 140, 255, 0.1)); }
+.vx-chead small { color: var(--em); }
+.vx-3s b { color: var(--gold2); }
+.vx-user { background: #eef2ff; }
+.vx-bot { background: linear-gradient(135deg, #4f46e5, #7c3aed); box-shadow: 0 14px 34px -10px rgba(124, 58, 237, 0.75); }
+.vx-tag { color: var(--gold2); }
+.vx-chat { -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 14%); mask-image: linear-gradient(180deg, transparent 0, #000 14%); }
+
+/* tracker */
+.vx-line-fill { background: linear-gradient(90deg, #7c8cff, #38bdf8 55%, #f5c86a); box-shadow: 0 0 20px rgba(124, 140, 255, 0.8); transition: none !important; }
+.vx-ico { background: #0f1648; border-color: rgba(190, 200, 255, 0.2); }
+.vx-step.is-active .vx-ico { background: linear-gradient(135deg, #6366f1, #38bdf8); box-shadow: 0 0 0 6px rgba(99, 102, 241, 0.25), 0 0 44px rgba(56, 189, 248, 0.55); }
+.vx-step.is-done .vx-ico { background: #151d5a; border-color: var(--gold); box-shadow: 0 0 18px rgba(245, 200, 106, 0.35); }
+.vx-step p { color: #a9b6ee; }
+
+/* cards */
+.vx-bell { background: linear-gradient(135deg, #f5c86a, #f59e0b); color: #3a2600; }
+.vx-aav { background: linear-gradient(135deg, #7c3aed, #4f46e5); }
+.vx-ring::before { background: #0a1138; }
+.vx-ring { box-shadow: 0 0 46px -6px var(--c); }
+.vx-day small { background: #4f46e5; }
+.vx-foot b { color: var(--gold2); }
+.vx-foot div { background: linear-gradient(160deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02)); border-color: rgba(190, 200, 255, 0.16); }
+
+/* deal takeover */
+.vx-deal { background: radial-gradient(circle at 50% 38%, rgba(61, 74, 210, 0.96), rgba(6, 9, 36, 0.98) 72%); }
+.vx-deal h3 { background: linear-gradient(180deg, #fff 30%, var(--gold2)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.vx-deal p { color: #d3dcff; }
+.vx-amt { background: linear-gradient(135deg, #f5c86a, #ffe2a3); color: #3a2600; box-shadow: 0 0 70px rgba(245, 200, 106, 0.55); }
+
+/* scroll hint + progress */
+.vs-hint { position: absolute; inset-inline-end: clamp(14px, 2vw, 26px); bottom: 12px; z-index: 6; display: flex; align-items: center; gap: 12px;
+  padding: 8px 16px; border-radius: 99px; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(190, 200, 255, 0.2);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); color: #dfe6ff; font-size: 12.5px; font-weight: 700; }
+.vs-hint i { width: clamp(70px, 9vw, 130px); height: 4px; border-radius: 4px; background: rgba(255, 255, 255, 0.14); overflow: hidden; }
+.vs-hint b { display: block; height: 100%; width: 0; background: linear-gradient(90deg, #7c8cff, #f5c86a); }
+.vs-pin.vs-done .vs-hint { background: linear-gradient(135deg, #f5c86a, #ffe2a3); color: #3a2600; }
+@media (max-width: 900px) { .vs-pin { padding-bottom: 46px; } .vs-hint { font-size: 11.5px; padding: 6px 12px; } }
+.vs-hint { inset-inline-end: auto; inset-inline-start: clamp(14px, 2vw, 26px); }
+
+    </style>
   </head>
   <body id="top">
+    <div class="vs-progress" id="vsProg"></div>
     <div class="topbar" data-i="1">
       🚀 <b>New:</b> AI voice calling add-on — confirm visits even when leads
       don't reply on WhatsApp
@@ -2814,130 +3086,38 @@
               ><span data-i="16">ISO 27001 certified company</span>
             </div>
           </div>
-          <div class="vs-anim" id="vsAnim">
-            <div class="vs-grid">
-              <div class="vs-steps">
-                <div class="vs-line"><div class="vs-line-fill"></div></div>
-                <div class="vs-step">
-                  <div class="vs-ico">📩</div>
-                  <div>
-                    <h4 data-i="17">New inquiry</h4>
-                    <p data-i="18">From ads, website or property portals</p>
-                  </div>
-                </div>
-                <div class="vs-step">
-                  <div class="vs-ico">🤖</div>
-                  <div>
-                    <h4 data-i="19">AI bot attends</h4>
-                    <p data-i="20">
-                      Replies on WhatsApp in seconds and scores the lead
-                    </p>
-                  </div>
-                </div>
-                <div class="vs-step">
-                  <div class="vs-ico">📅</div>
-                  <div>
-                    <h4 data-i="21">Visit booked</h4>
-                    <p data-i="22">
-                      Slot fixed, reminder sent, your agent alerted
-                    </p>
-                  </div>
-                </div>
-                <div class="vs-step">
-                  <div class="vs-ico">🎉</div>
-                  <div>
-                    <h4 data-i="23">Deal closed</h4>
-                    <p data-i="24">Your team meets a ready buyer and closes</p>
-                  </div>
-                </div>
-                <div class="vs-auto">
-                  <span data-i="25">Manual work: <b>0</b></span
-                  ><span data-i="26">First reply: <b>3 sec</b></span
-                  ><span data-i="27">Available: <b>24×7</b></span>
-                </div>
+        </div>
+        <div class="vs-full" id="vsFull">
+          <div class="vs-pin" id="vsPin">
+          <div class="vs-aurora"><i></i><i></i><i></i></div>
+          <div class="vs-full-grid"></div>
+          <div class="wrap vs-full-in">
+            <div class="vs-kicker" id="vsKicker" data-i="900">Watch a lead turn into a deal — live</div>
+          <div class="vx" id="vsAnim">
+            <div class="vx-steps">
+              <div class="vx-line"><i class="vx-line-fill"></i></div>
+              <div class="vx-step"><span class="vx-ico">📩</span><div><h4 data-i="17">New inquiry</h4><p data-i="18">From ads, website or property portals</p></div></div>
+              <div class="vx-step"><span class="vx-ico">🤖</span><div><h4 data-i="19">AI bot attends</h4><p data-i="20">Replies on WhatsApp in seconds and scores the lead</p></div></div>
+              <div class="vx-step"><span class="vx-ico">📅</span><div><h4 data-i="21">Visit booked</h4><p data-i="22">Slot fixed, reminder sent, your agent alerted</p></div></div>
+              <div class="vx-step"><span class="vx-ico">🎉</span><div><h4 data-i="23">Deal closed</h4><p data-i="24">Your team meets a ready buyer and closes</p></div></div>
+            </div>
+            <div class="vx-main">
+              <div class="vx-chatbox">
+                <div class="vx-chead"><span class="vx-av">🏠</span><div><b data-i="28">Visitsly AI Assistant</b><small data-i="29">online</small></div><span class="vx-3s"><b data-i="43">3 sec</b> <em data-i="44">first reply</em></span></div>
+                <div class="vx-chat"></div>
               </div>
-              <div class="vs-stage">
-                <div class="vs-phone">
-                  <div class="vs-phead">
-                    <div class="vs-avatar">🏠</div>
-                    <div>
-                      <b data-i="28">Visitsly AI Assistant</b
-                      ><small data-i="29">online</small>
-                    </div>
-                  </div>
-                  <div class="vs-chat"></div>
-                  <div class="vs-pinput">
-                    <div></div>
-                    <span></span>
-                  </div>
-                </div>
-                <div class="vs-card vs-toast" data-c="toast">
-                  <div class="vs-bell">🔔</div>
-                  <div>
-                    <div class="vs-v" data-i="30" style="font-size: 13px">
-                      New lead: Rahul S.
-                    </div>
-                    <span class="vs-src" data-i="31"
-                      >Facebook Ad · 2:14 AM</span
-                    >
-                  </div>
-                </div>
-                <div class="vs-card vs-score" data-c="score">
-                  <div class="vs-ring"><span>0</span></div>
-                  <div>
-                    <div class="vs-k" data-i="32">Lead score</div>
-                    <span class="vs-badge"></span>
-                  </div>
-                </div>
-                <div class="vs-card vs-cal" data-c="cal">
-                  <div class="vs-k" data-i="33">Visit booked</div>
-                  <div class="vs-date">
-                    <div class="vs-day" data-i="34"><small>SAT</small>15</div>
-                    <div>
-                      <div class="vs-v" data-i="35">11:00 AM</div>
-                      <span
-                        data-i="36"
-                        style="color: var(--muted); font-size: 11px"
-                        >Reminder ✓ · Location ✓</span
-                      >
-                    </div>
-                  </div>
-                </div>
-                <div class="vs-card vs-agent" data-c="agent">
-                  <div class="vs-av" data-i="37">A</div>
-                  <div>
-                    <div class="vs-k" data-i="38">Agent alerted</div>
-                    <div class="vs-v" data-i="39" style="font-size: 12.5px">
-                      Amit got the hot lead 🔥
-                    </div>
-                  </div>
-                </div>
-                <div class="vs-dim"></div>
-                <div class="vs-card vs-deal" data-c="deal">
-                  <div class="vs-big">🎉</div>
-                  <h3 data-i="40">Deal Closed!</h3>
-                  <p data-i="41">
-                    Inquiry → Visit → Booking<br />zero manual follow-up
-                  </p>
-                  <div class="vs-amt" data-i="42">
-                    Booking amount received ✓
-                  </div>
-                </div>
+              <div class="vx-side">
+                <div class="vx-card vx-toast" data-c="toast"><span class="vx-bell">🔔</span><div><b data-i="30">New lead: Rahul S.</b><small data-i="31">Facebook Ad · 2:14 AM</small></div></div>
+                <div class="vx-card vx-score" data-c="score"><div class="vx-ring"><span>0</span></div><div><small data-i="32">Lead score</small><b class="vx-badge"></b></div></div>
+                <div class="vx-card vx-cal" data-c="cal"><small data-i="33">Visit booked</small><div class="vx-date"><div class="vx-day" data-i="34"><small>SAT</small>15</div><div><b data-i="35">11:00 AM</b><small data-i="36">Reminder ✓ · Location ✓</small></div></div></div>
+                <div class="vx-card vx-agent" data-c="agent"><span class="vx-aav" data-i="37">A</span><div><small data-i="38">Agent alerted</small><b data-i="39">Amit got the hot lead 🔥</b></div></div>
               </div>
             </div>
-            <div class="vs-foot">
-              <div>
-                <b data-i="43">3 sec</b><small data-i="44">first reply</small>
-              </div>
-              <div>
-                <b data-i="45">24×7</b
-                ><small data-i="46">never misses a lead</small>
-              </div>
-              <div>
-                <b data-i="47">Auto</b
-                ><small data-i="48">visits &amp; reminders</small>
-              </div>
-            </div>
+            <div class="vx-foot"><div><b data-i="45">24×7</b><small data-i="46">never misses a lead</small></div><div><b data-i="47">Auto</b><small data-i="48">visits &amp; reminders</small></div><div><b data-i="25">0</b><small data-i="26">manual follow-ups</small></div></div>
+            <div class="vx-deal"><div class="vx-big">🎉</div><h3 data-i="40">Deal Closed!</h3><p data-i="41">Inquiry → Visit → Booking<br />zero manual follow-up</p><div class="vx-amt" data-i="42">Booking amount received ✓</div></div>
+          </div>
+          </div>
+          <div class="vs-hint" id="vsHint"><span id="vsHintTxt">Scroll to watch the story</span><i><b id="vsHintFill"></b></i></div>
           </div>
         </div>
       </header>
@@ -3715,12 +3895,6 @@
               <div class="amt rg-ae" data-i="212">
                 AED 499<small>/month</small>
               </div>
-              <div>
-                <span class="setup-pill rg-in" data-i="213">Setup: ₹5,000</span
-                ><span class="setup-pill rg-ae" data-i="214"
-                  >Setup: AED 1,000</span
-                >
-              </div>
               <ul class="rg-in">
                 <li data-i="215">1 login</li>
                 <li data-i="216">1,000 AI chats / month</li>
@@ -3758,12 +3932,6 @@
               <div class="amt rg-ae" data-i="231">
                 AED 999<small>/month</small>
               </div>
-              <div>
-                <span class="setup-pill rg-in" data-i="232">Setup: ₹10,000</span
-                ><span class="setup-pill rg-ae" data-i="233"
-                  >Setup: AED 2,400</span
-                >
-              </div>
               <ul class="rg-in">
                 <li data-i="234">5 logins</li>
                 <li data-i="235">3,000 AI chats / month</li>
@@ -3799,12 +3967,6 @@
               </div>
               <div class="amt rg-ae" data-i="249">
                 AED 1,999<small>/month</small>
-              </div>
-              <div>
-                <span class="setup-pill rg-in" data-i="250">Setup: ₹25,000</span
-                ><span class="setup-pill rg-ae" data-i="251"
-                  >Setup: AED 5,000</span
-                >
               </div>
               <ul class="rg-in">
                 <li data-i="252">10 logins</li>
@@ -3843,13 +4005,6 @@
               <div class="yr rg-in" data-i="268">Custom pricing</div>
               <div class="amt rg-ae" data-i="269">
                 AED 3,999+<small>/month</small>
-              </div>
-              <div>
-                <span class="setup-pill rg-in" data-i="270"
-                  >Setup: ₹50,000 – 1,50,000</span
-                ><span class="setup-pill rg-ae" data-i="271"
-                  >Setup: AED 10,000 – 30,000</span
-                >
               </div>
               <ul class="rg-in">
                 <li data-i="272">Unlimited logins</li>
@@ -4321,6 +4476,7 @@
       /* ---------- language: English / Arabic (toggle + IP detection) ---------- */
       var AR_TEXT = {
         1: "🚀 <b>جديد:</b> إضافة الاتصال الصوتي بالذكاء الاصطناعي — لتأكيد المعاينات حتى عندما لا يرد العميل على واتساب",
+        900: "شاهد كيف يتحول العميل المحتمل إلى صفقة — مباشرةً",
         2: "كيف يعمل",
         3: "المزايا",
         4: "العائد",
@@ -4726,6 +4882,7 @@
           },
         ],
       ];
+      var preArReg = null;
       var ORIG = new Map(),
         picked = false;
       function setMeta(sel, v) {
@@ -4776,6 +4933,15 @@
         if (y) y.textContent = new Date().getFullYear();
         var va = $("vsAnim");
         if (va) va.classList.toggle("vs-rtl", lang === "ar");
+        if (lang === "ar") {
+          if (REG !== "ae") {
+            preArReg = REG;
+            setRegion("ae", false);
+          }
+        } else if (preArReg) {
+          setRegion(preArReg, false);
+          preArReg = null;
+        }
         calc();
         if (window.vsAnimRestart) window.vsAnimRestart();
         if (save) {
@@ -4906,293 +5072,157 @@
         });
       })();
 
+      (function () {
+        var b = $("vsProg"), t = false;
+        function u() {
+          t = false;
+          var h = document.documentElement.scrollHeight - window.innerHeight;
+          b.style.transform = "scaleX(" + (h > 0 ? Math.min(1, window.scrollY / h) : 0) + ")";
+        }
+        window.addEventListener("scroll", function () { if (!t) { t = true; requestAnimationFrame(u); } }, { passive: true });
+      })();
       /* ---------- hero animation ---------- */
       (function () {
-        var root = $("vsAnim");
-        if (!root) return;
-        var q = function (s) {
-          return root.querySelector(s);
-        };
-        var chat = q(".vs-chat"),
-          steps = root.querySelectorAll(".vs-step"),
-          fill = q(".vs-line-fill"),
-          ring = q(".vs-ring"),
-          ringNum = q(".vs-ring span"),
-          badge = q(".vs-badge");
-        var timers = [],
-          cur = 0,
-          raf,
-          typingEl = null,
-          A = ANIM[LANG];
-        function at(t, fn) {
-          timers.push(setTimeout(fn, t));
-        }
-        function card(n, on) {
-          q('[data-c="' + n + '"]').classList.toggle("show", on !== false);
-        }
-        function step(n) {
-          steps.forEach(function (s, i) {
-            s.classList.toggle("is-done", i < n - 1);
-            s.classList.toggle("is-active", i === n - 1);
+        var track = $("vsFull"), pin = $("vsPin"), root = $("vsAnim");
+        if (!track || !root) return;
+        var nav = document.querySelector(".nav"), SCROLL = 5;
+        var q = function (x) { return root.querySelector(x); };
+        var chat = q(".vx-chat"), steps = root.querySelectorAll(".vx-step"), fill = q(".vx-line-fill"),
+          ring = q(".vx-ring"), ringNum = q(".vx-ring span"), badge = q(".vx-badge"), deal = q(".vx-deal"),
+          box = q(".vx-chatbox"), aur = pin.querySelectorAll(".vs-aurora i"),
+          hintTxt = $("vsHintTxt"), hintFill = $("vsHintFill");
+        var cards = { toast: q('[data-c="toast"]'), score: q('[data-c="score"]'), cal: q('[data-c="cal"]'), agent: q('[data-c="agent"]') };
+        var HINT = { en: ["Scroll to watch the story", "Keep scrolling", "Continue"], ar: ["مرّر لمشاهدة القصة", "تابع التمرير", "تابع"] };
+        var A = ANIM[LANG], msgs = [], typing, conf = [], cur = 0, target = 0, force = true, lastP = -1;
+        /* [start, end] of each message on the 0-100 "film strip" */
+        var M = [[8, 15], [16, 30], [30, 36], [36, 48], [48, 54], [54, 66]];
+        var SC = [[19, 0], [30, 35], [36, 35], [48, 72], [66, 72], [76, 88]];
+        function clamp(x, a, b) { return Math.max(a, Math.min(b, x)); }
+        function ease(x) { return 1 - Math.pow(1 - x, 3); }
+        function build() {
+          chat.innerHTML = ""; msgs = [];
+          A.chat.forEach(function (m) {
+            var d = document.createElement("div");
+            d.className = "vx-msg vx-" + m[0]; d.style.display = "none"; d._n = -1;
+            chat.appendChild(d); msgs.push(d);
           });
-          var p = n <= 1 ? 0 : ((n - 1) / 3) * 100;
-          fill.style.height = p + "%";
-          fill.style.setProperty("--vs-w", p + "%");
-        }
-        function typing(on) {
-          if (on) {
-            typingEl = document.createElement("div");
-            typingEl.className = "vs-typing";
-            typingEl.innerHTML = "<i></i><i></i><i></i>";
-            chat.appendChild(typingEl);
-            chat.scrollTop = chat.scrollHeight;
-          } else if (typingEl) {
-            typingEl.remove();
-            typingEl = null;
+          typing = document.createElement("div");
+          typing.className = "vx-typing"; typing.style.display = "none";
+          typing.innerHTML = "<i></i><i></i><i></i>"; chat.appendChild(typing);
+          if (!conf.length) {
+            for (var i = 0; i < 56; i++) {
+              var c = document.createElement("span"); c.className = "vx-conf";
+              var cols = ["#F5C86A", "#FFE2A3", "#7C8CFF", "#38BDF8", "#34D399", "#fff"];
+              c.style.background = cols[i % cols.length]; c.style.left = Math.random() * 100 + "%";
+              c._dx = Math.random() * 260 - 130; c._sp = 0.7 + Math.random() * 0.8; c._r = 360 + Math.random() * 720;
+              deal.appendChild(c); conf.push(c);
+            }
           }
         }
-        function msg(i) {
-          typing(false);
-          var m = A.chat[i],
-            d = document.createElement("div");
-          d.className = "vs-msg vs-" + m[0];
-          d.innerHTML =
-            (m[0] === "bot"
-              ? '<span class="vs-tag">' + A.tag + "</span>"
-              : "") +
-            m[1] +
-            '<span class="vs-time">' +
-            A.times[i] +
-            "</span>";
-          chat.appendChild(d);
-          chat.scrollTop = chat.scrollHeight;
+        function reveal(html, f) {
+          var re = /(<[^>]+>)|([^<]+)/g, parts = [], t = 0, m;
+          while ((m = re.exec(html))) { parts.push(m); if (m[2]) t += m[2].length; }
+          var n = Math.round(t * f), out = "";
+          parts.forEach(function (m) {
+            if (m[1]) out += m[1];
+            else if (n > 0) { out += m[2].slice(0, n); n -= m[2].length; }
+          });
+          return out;
         }
-        function score(to, k, color) {
-          cancelAnimationFrame(raf);
-          var from = cur,
-            start = null;
-          ring.style.setProperty("--vs-ring", color);
-          (function tick(ts) {
-            if (!start) start = ts;
-            var x = Math.min((ts - start) / 900, 1);
-            cur = Math.round(from + (to - from) * x);
-            ring.style.setProperty("--p", cur);
-            ringNum.textContent = cur;
-            if (x < 1) raf = requestAnimationFrame(tick);
-          })(performance.now());
-          badge.textContent = A.labels[k];
-          badge.className = "vs-badge " + k;
+        function msgHTML(i, body) {
+          var m = A.chat[i];
+          return (m[0] === "bot" ? '<span class="vx-tag">' + A.tag + "</span>" : "") + body + '<span class="vx-time">' + A.times[i] + "</span>";
         }
-        function confetti() {
-          var deal = q(".vs-deal"),
-            cols = ["#2563eb", "#06b6d4", "#4f46e5", "#f59e0b", "#22c55e"];
-          for (var i = 0; i < 34; i++) {
-            var c = document.createElement("span");
-            c.className = "vs-conf";
-            c.style.background = cols[i % cols.length];
-            c.style.setProperty("--x", Math.random() * 320 - 160 + "px");
-            c.style.setProperty("--y", Math.random() * -220 - 20 + "px");
-            c.style.animationDelay = Math.random() * 0.25 + "s";
-            deal.appendChild(c);
-            setTimeout(c.remove.bind(c), 2200);
+        function cardAt(el, a, b, oa, ob) {
+          var o = ease(clamp((p_ - a) / (b - a), 0, 1));
+          if (oa != null) o *= 1 - ease(clamp((p_ - oa) / (ob - oa), 0, 1));
+          el.style.opacity = o;
+          el.style.transform = "translateY(" + (1 - o) * 28 + "px) scale(" + (0.9 + 0.1 * o) + ")";
+        }
+        var p_ = 0;
+        function render(p) {
+          p_ = p = p * 100;
+          var showTyping = false;
+          M.forEach(function (w, i) {
+            var d = msgs[i], bot = A.chat[i][0] === "bot";
+            if (p < w[0]) { d.style.display = "none"; return; }
+            d.style.display = "";
+            if (bot) {
+              var tf = clamp((p - w[0] - 3) / (w[1] - w[0] - 3), 0, 1);
+              if (p < w[0] + 3) { d.style.display = "none"; showTyping = true; return; }
+              var n = Math.round(tf * 1000);
+              if (d._n !== n) { d._n = n; d.innerHTML = msgHTML(i, reveal(A.chat[i][1], tf)); }
+              d.style.opacity = 1; d.style.transform = "none";
+            } else {
+              if (d._n !== 1) { d._n = 1; d.innerHTML = msgHTML(i, A.chat[i][1]); }
+              var o = ease(clamp((p - w[0]) / 3, 0, 1));
+              d.style.opacity = o; d.style.transform = "translateY(" + (1 - o) * 18 + "px) scale(" + (0.94 + 0.06 * o) + ")";
+            }
+          });
+          msgs.forEach(function (d, i) { if (p < M[i][0]) d._n = -1; });
+          typing.style.display = showTyping ? "" : "none";
+          cardAt(cards.toast, 2, 8, 16, 20);
+          cardAt(cards.score, 19, 25);
+          cardAt(cards.cal, 54, 60);
+          cardAt(cards.agent, 66, 72);
+          /* lead score */
+          var v = 0;
+          for (var k = 0; k < SC.length - 1; k++) {
+            if (p >= SC[k][0] && p <= SC[k + 1][0]) { v = SC[k][1] + (SC[k + 1][1] - SC[k][1]) * (SC[k + 1][0] === SC[k][0] ? 1 : (p - SC[k][0]) / (SC[k + 1][0] - SC[k][0])); }
           }
+          if (p > SC[SC.length - 1][0]) v = SC[SC.length - 1][1];
+          v = Math.round(v);
+          var col = v < 50 ? "#8EA2FF" : v < 80 ? "#F5C86A" : "#34D399", key = v < 50 ? "int" : v < 80 ? "hot" : "ready";
+          ring.style.setProperty("--p", v); ring.style.setProperty("--c", col);
+          ringNum.textContent = v; badge.textContent = v > 0 ? A.labels[key] : ""; badge.style.color = col;
+          /* steps + line */
+          var st = p >= 84 ? 4 : p >= 54 ? 3 : p >= 16 ? 2 : p >= 2 ? 1 : 0;
+          steps.forEach(function (e, i) { e.classList.toggle("is-done", i < st - 1); e.classList.toggle("is-active", i === st - 1); });
+          fill.style.setProperty("--w", clamp((p - 4) / 82, 0, 1) * 100 + "%");
+          /* chat box 3D drift + aurora parallax */
+          var t = p / 100;
+          box.style.transform = "perspective(1600px) rotateY(" + ((0.5 - t) * 7) + "deg) rotateX(" + (2.2 - t * 3) + "deg)";
+          aur.forEach(function (a, i) { a.style.transform = "translate(" + (t * (i % 2 ? -140 : 140)) + "px," + (t * (i === 1 ? -90 : 90)) + "px) scale(" + (1 + t * 0.25) + ")"; });
+          /* deal takeover */
+          var d = ease(clamp((p - 84) / 6, 0, 1));
+          deal.style.opacity = d; deal.style.visibility = d > 0.01 ? "visible" : "hidden";
+          deal.style.transform = "scale(" + (1.06 - 0.06 * d) + ")";
+          var ct = clamp((p - 86) / 14, 0, 1), H = pin.offsetHeight;
+          conf.forEach(function (c) {
+            c.style.opacity = ct > 0 && ct < 1 ? 1 : 0;
+            c.style.transform = "translate(" + c._dx * ct + "px," + (ct * H * 1.15 * c._sp) + "px) rotate(" + c._r * ct + "deg)";
+          });
+          /* hint */
+          var L = HINT[LANG] || HINT.en;
+          hintTxt.textContent = p < 2 ? L[0] : p > 98 ? L[2] + " ↓" : L[1];
+          hintFill.style.width = p + "%";
+          pin.classList.toggle("vs-done", p > 98);
         }
-        function reset() {
-          timers.forEach(clearTimeout);
-          timers = [];
-          chat.innerHTML = "";
-          typingEl = null;
-          cur = 0;
-          ring.style.setProperty("--p", 0);
-          ringNum.textContent = "0";
-          badge.textContent = A.labels["new"];
-          badge.className = "vs-badge";
-          ["toast", "score", "cal", "agent", "deal"].forEach(function (n) {
-            card(n, false);
-          });
-          q(".vs-dim").classList.remove("show");
-          step(0);
+        function readTarget() {
+          var tr = track.getBoundingClientRect(), pr = pin.getBoundingClientRect(),
+            nb = nav ? nav.getBoundingClientRect().height : 0, range = tr.height - pr.height;
+          target = range > 0 ? clamp((nb - tr.top) / range, 0, 1) : 0;
         }
-        function run() {
-          reset();
-          at(300, function () {
-            step(1);
-            card("toast");
-          });
-          at(1100, function () {
-            msg(0);
-          });
-          at(2000, function () {
-            card("toast", false);
-            step(2);
-            typing(true);
-          });
-          at(3000, function () {
-            msg(1);
-            card("score");
-            score(35, "int", "#f59e0b");
-          });
-          at(4400, function () {
-            msg(2);
-          });
-          at(5000, function () {
-            score(72, "hot", "#e11d48");
-            typing(true);
-          });
-          at(6000, function () {
-            msg(3);
-          });
-          at(7200, function () {
-            msg(4);
-          });
-          at(7700, function () {
-            typing(true);
-          });
-          at(8600, function () {
-            msg(5);
-            step(3);
-            card("cal");
-          });
-          at(9600, function () {
-            card("agent");
-            score(88, "ready", "#16a34a");
-          });
-          at(11400, function () {
-            step(4);
-            q(".vs-dim").classList.add("show");
-            card("deal");
-            confetti();
-          });
-          at(12000, function () {
-            steps[3].classList.add("is-done");
-          });
-          at(12800, unlock);
-          at(16500, run);
-        }
-        window.vsAnimRestart = function () {
-          A = ANIM[LANG];
-          root.classList.toggle("vs-rtl", LANG === "ar");
-          if (started) run();
-        };
-        /* ---- first view: user must watch the whole story before scrolling on ---- */
-        var started = false,
-          locked = false,
-          lockY = Infinity,
-          skipLock = !!location.hash,
-          lockHint = $("vsLock"),
-          navEl = document.querySelector(".nav"),
-          wasAbove = root.getBoundingClientRect().top > 0;
-        function unlock() {
-          locked = false;
-          lockY = Infinity;
-          if (lockHint) lockHint.classList.remove("on");
+        function loop() {
+          readTarget();
+          var diff = target - cur;
+          if (Math.abs(diff) > 0.00015 || force) {
+            cur += diff * 0.14; if (Math.abs(target - cur) < 0.0003) cur = target;
+            force = false; render(cur);
+          }
+          requestAnimationFrame(loop);
         }
         function fit() {
-          root.style.transform = "";
-          root.style.marginBottom = "";
-          var h = root.getBoundingClientRect().height,
-            avail =
-              window.innerHeight - navEl.getBoundingClientRect().height - 84,
-            s = Math.max(0.5, Math.min(1, avail / h));
-          if (s < 1) {
-            root.style.transform = "scale(" + s + ")";
-            root.style.marginBottom = (s - 1) * root.offsetHeight + "px";
-          }
+          var z = parseFloat(getComputedStyle(document.documentElement).zoom) || 1,
+            nh = (nav ? nav.getBoundingClientRect().height : 0) / z,
+            H = Math.max(560, window.innerHeight / z - nh);
+          pin.style.top = nh + "px"; pin.style.height = H + "px";
+          track.style.height = H * (SCROLL + 1) + "px"; force = true;
         }
-        function begin() {
-          if (started) return;
-          started = true;
-          fit();
-          if (skipLock) {
-            run();
-            return;
-          }
-          locked = true;
-          lockY = Infinity;
-          if (lockHint) {
-            lockHint.classList.remove("on");
-            void lockHint.offsetWidth;
-            lockHint.classList.add("on");
-          }
-          var r = root.getBoundingClientRect(),
-            nh = navEl.getBoundingClientRect().height;
-          if (r.top < nh + 8 || r.bottom > window.innerHeight)
-            window.scrollTo({
-              top: Math.max(0, window.scrollY + r.top - nh - 16),
-              behavior: "smooth",
-            });
-          setTimeout(function () {
-            if (locked) lockY = window.scrollY;
-          }, 900);
-          setTimeout(unlock, 16000); /* safety net */
-          run();
-        }
-        window.addEventListener(
-          "wheel",
-          function (e) {
-            if (locked && e.deltaY > 0) e.preventDefault();
-          },
-          { passive: false },
-        );
-        var ty = 0;
-        window.addEventListener(
-          "touchstart",
-          function (e) {
-            ty = e.touches[0].clientY;
-          },
-          { passive: true },
-        );
-        window.addEventListener(
-          "touchmove",
-          function (e) {
-            var y = e.touches[0].clientY;
-            if (locked && y < ty && e.cancelable) e.preventDefault();
-            ty = y;
-          },
-          { passive: false },
-        );
-        window.addEventListener("keydown", function (e) {
-          if (!locked) return;
-          var k = e.key;
-          if (
-            k === "ArrowDown" ||
-            k === "PageDown" ||
-            k === "End" ||
-            ((k === " " || k === "Spacebar") && !e.shiftKey)
-          )
-            e.preventDefault();
-        });
-        window.addEventListener(
-          "scroll",
-          function () {
-            if (locked && window.scrollY > lockY + 1) {
-              window.scrollTo({ top: lockY, behavior: "instant" });
-              return;
-            }
-            if (!started) {
-              var top = root.getBoundingClientRect().top;
-              if (top < 0 && wasAbove) begin();
-              wasAbove = top > 0;
-            }
-          },
-          { passive: true },
-        );
-        /* menu / anchor jumps should never get stuck behind the lock */
-        document.addEventListener("click", function (e) {
-          var a = e.target.closest && e.target.closest('a[href^="#"]');
-          if (a && !started) skipLock = true;
-        });
-        window.addEventListener("resize", fit);
-        window.addEventListener("load", fit);
-        fit();
-        if ("IntersectionObserver" in window) {
-          new IntersectionObserver(
-            function (en) {
-              if (en[0].isIntersecting && !started) begin();
-            },
-            { threshold: 0.25 },
-          ).observe(root);
-        } else begin();
+        window.vsAnimRestart = function () { A = ANIM[LANG]; root.classList.toggle("vx-rtl", LANG === "ar"); build(); force = true; };
+        window.addEventListener("resize", fit); window.addEventListener("load", fit);
+        root.classList.toggle("vx-rtl", LANG === "ar");
+        build(); fit(); readTarget(); cur = target; loop();
       })();
     </script>
   </body>
